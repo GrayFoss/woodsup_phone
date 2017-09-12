@@ -1,0 +1,358 @@
+@import "../../../../assets/scss/global";
+
+.detailClass{
+  color: #f49853;
+  border-bottom: 3px solid #f49853;
+}
+.product_detail_header{
+  @include flexBox;
+  height: 42px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: #fff;
+  div{
+    width: 36px;
+    position: relative;
+    img{
+      @include Center;
+      width: 8px;
+      height: 15px;
+    }
+  }
+  ul{
+    @include flexBox;
+    @include flex(1);
+    li{
+      width: 33.3%;
+      text-align: center;
+      p{
+        font: 16px/30px '';
+        margin-top: 8px;
+        border-right: 1px solid #eee;
+      }
+    }
+    li:last-of-type{
+
+      p{
+        border: none;
+      }
+    }
+  }
+}
+#product_three{
+  width: 100%;
+}
+.product_name{
+  @include flexBox;
+  @include justify-content(space-between);
+  padding: a(20px) a(30px) 0;
+  p{
+    font-size: a(32px);
+    color: #272727;
+  }
+  img{
+    width: a(32px);
+    height: a(32px);
+  }
+  div:last-of-type{
+    font-size: a(32px);
+    color: #272727;
+  }
+}
+.product_price{
+  @include flexBox;
+  @include justify-content(space-between);
+  padding: a(28px) a(30px) 0;
+  p{
+    font-size: a(28px);
+    display: inline-block;
+    color: #f49853;
+    font-weight: bold;
+  }
+  div:last-of-type{
+    font-size: a(24px);
+    line-height: 1;
+    color: #a8a8a8;
+  }
+}
+.guarantee{
+  @include flexBox;
+  @include justify-content(space-between);
+  padding: 0 a(30px);
+  background-color: #eeeeee;
+  height: a(60px);
+  margin-top: a(20px);
+  margin-bottom: a(40px);
+  div{
+    font-size: a(20px);
+    width: a(200px);
+    line-height: a(60px);
+    color: #545454;
+    img{
+      width: a(24px);
+      margin-top: a(-4px);
+    }
+  }
+  div:nth-of-type(2){
+    text-align: center;
+  }
+  div:last-of-type{
+    text-align: right;
+  }
+}
+.ruled{
+  width: 100%;
+  height: a(20px);
+  background-color: #eee;
+}
+
+.certificate{
+  padding: 0 15px a(20px);
+  & > div:first-of-type{
+    margin: a(20px) auto;
+    text-align: center;
+    img{
+      width: a(282px);
+      height: a(28px);
+    }
+  }
+  &> div:nth-of-type(2){
+    img{
+     width: 100%;
+    }
+  }
+}
+canvas{
+  margin-top: a(20px);
+}
+.parameter{
+  width: 100%;
+  text-align: center;
+  height: a(45px);
+  margin-bottom: a(30px);
+  overflow: auto;
+  p{
+    font-size: a(32px);
+  }
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  @include flexBox;
+  a{
+    color: #fff;
+  }
+  & > div:first-of-type{
+    @include flexBox;
+    @include flex(2);
+    background-color: #f49853;
+    .service, .experience{
+      @include flex(1);
+      text-align: center;
+      color: #fff;
+      font: 16px/50px '';
+    }
+  }
+  img{
+    width: 25px;
+  }
+  .centre{
+    width: 2px;
+    height: 20px;
+    margin-top: 15px;
+    background-color: #fff;
+  }
+  & > div:last-of-type{
+    @include flex(1);
+    background-color: #dd2727;
+    text-align: center;
+    p{
+      color: #fff;
+      font: 15px/50px '';
+    }
+  }
+}
+.show_List{
+  width: 100%;
+  margin: 0 auto;
+}
+.change{
+  @include flexBox;
+  height: a(68px);
+  padding: a(20px) 0;
+  div{
+    width: 50%;
+    text-align: center;
+    font-size: a(28px);
+    line-height: a(28px);
+    color: #f49853;
+    &:first-of-type{
+      border-right: 1px solid #c1c1c1;
+    }
+    img{
+      width: a(28px);
+    }
+  }
+}
+.recommend_list{
+  padding: 0 15px;
+  ul{
+    width: 100%;
+    overflow: auto;
+    li{
+      float: left;
+      width: 33.3%;
+      position: relative;
+      text-align: center;
+      img{
+        height: a(200px);
+        width: a(220px);
+      }
+      h5{
+        position: absolute;
+        bottom: a(56px);
+        font-size: a(28px);
+        line-height: a(50px);
+        width: 100%;
+        color: #fff;
+        left: 50%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        @include transform(translate(-50%,0));
+      }
+      p{
+        font-size: a(28px);
+        line-height: a(56px);
+        color: #f49853;
+      }
+    }
+  }
+}
+.qianghua{
+  text-align: center;
+  img{
+    width: 100%;
+  }
+  canvas{
+    width: 300px;
+    height: 100px;
+  }
+}
+.unjinkou{
+  padding: 0 a(12px);
+  li{
+    width: a(350px);
+    float: left;
+    text-align: left;
+    margin-bottom: a(14px);
+    @include flexBox;
+    &:nth-of-type(2n+1) {
+      margin-right: a(10px);
+    }
+    p{
+      font-size: a(24px);
+      line-height: a(36px);
+    }
+    div{
+      height: a(36px);
+      padding-left: a(12px);
+      &:first-of-type{
+        background-color: #fedf7f;
+        width: a(130px);
+      }
+      &:last-of-type{
+        background-color: #fef4d8;
+        width: a(210px);
+        p{
+          height: a(36px);
+          color: #b07821;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp :1;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+  }
+}
+.jinkou{
+  padding-left: a(36px);
+  ul{
+    width: 100%;
+    overflow: auto;
+    margin-bottom: a(50px);
+  }
+  li{
+    border-bottom: 1px dashed #e4e4e3;
+    @include flexBox;
+    height: a(60px);
+    float: left;
+    &:first-of-type, &:nth-of-type(2){
+      border-top: 1px dashed #e4e4e3;
+    }
+    &:nth-of-type(2n+1){
+      width: 60%;
+    }
+    &:nth-of-type(2n){
+      width: 40%;
+    }
+    div{
+      height: 100%;
+      p{
+        line-height: a(60px);
+        font-size: a(24px);
+        color: #555;
+        text-align: left;
+      }
+    }
+    div:first-of-type{
+      width: a(140px);
+    }
+    div:last-of-type{
+      @include flex(1);
+    }
+  }
+}
+.designer, .expert{
+  margin-top: a(50px);
+  width: 100%;
+  img:first-of-type{
+    width: 100%;
+    margin-bottom: a(30px);
+  }
+}
+.designer{
+  margin-bottom: a(20px);
+}
+.review_content{
+  @include flexBox;
+  padding: 0 a(70px);
+  div{
+    img{
+      width: a(40px);
+      height: a(36px);
+    }
+  }
+  div:nth-of-type(2){
+    @include flex(1);
+    p{
+      font-size: a(24px);
+      line-height: a(40px);
+      margin-left: a(10px);
+      color: #555;
+    }
+  }
+  div:last-of-type{
+    @include transform(rotate(180deg));
+  }
+}

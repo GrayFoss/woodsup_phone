@@ -1,0 +1,56 @@
+<!--头部-->
+<div class="header-container" *ngIf="sceneInfo">
+   <div class="header-portrait">
+     <img [src]="sceneInfo.headerPortrait" class="img-all">
+   </div>
+  <div class="recommend-title">{{sceneInfo.recommendTitle}}</div>
+  <div class="recommend-tag" *ngIf="sceneInfo.recommendTagShow"><img src="assets/img/main/tag_recommend.png" class="img-all"></div>
+  <div class="clear-all"></div>
+  <div class="recomend-detail">
+    <span class="recommend-type">[{{sceneInfo.recomendType}}]</span> <span>{{sceneInfo.recommendSummary}}</span>
+  </div>
+</div>
+<!--内容区-->
+<div class="ui-g ui-g-height" *ngIf="sceneInfo.products && sceneInfo.products.length > 0">
+  <div class="ui-g-7 ui-g-padding">
+    <img alt="图片出小差了~" [src]="sceneInfo.sceneImg" class="img-all" id="{{sceneInfo.sceneName}}"  (click)="goSceneDetail($event)">
+    <div class="nest-container-big"></div>
+    <div class="nest-name-big">{{sceneInfo.sceneName}}</div>
+    <div class="nest-love">
+      <img [src]="likeImg" (click)="clickLike()" class="img-all">
+    </div>
+  </div>
+  <div class="ui-g-5 ui-g-padding-clear">
+    <div class="ui-g-6 ui-g-padding-clear">
+      <div class="nest-small top-left">
+        <img alt="图片出小差了~"  [src]="sceneInfo.products[0].productImg" class="img-all" id="productImg{{sceneInfo.products[0].productID}}"  (click)="goProductDetail($event, sceneInfo.products[0])" >
+        <div class="nest-container"></div>
+        <div class="nest-name"  id="productName{{sceneInfo.products[0].productID}}" (click)="goProductDetail($event, sceneInfo.products[0])" >{{sceneInfo.products[0].productName}}</div>
+        <div class="nest-price" >￥<span id="productPrice{{sceneInfo.products[0].productID}}"  (click)="goProductDetail($event, sceneInfo.products[0])">{{sceneInfo.products[0].productPrice}}</span></div>
+      </div>
+    </div>
+    <div class="ui-g-6 ui-g-padding-clear">
+      <div class="nest-small top-right">
+        <img alt="图片出小差了~"  [src]="sceneInfo.products[1].productImg" class="img-all" id="productImg{{sceneInfo.products[1].productID}}"  (click)="goProductDetail($event, sceneInfo.products[1])" >
+        <div class="nest-container"></div>
+        <div class="nest-name"  id="productName{{sceneInfo.products[1].productID}}" (click)="goProductDetail($event, sceneInfo.products[1])" >{{sceneInfo.products[1].productName}}</div>
+        <div class="nest-price" >￥<span id="productPrice{{sceneInfo.products[1].productID}}"  (click)="goProductDetail($event, sceneInfo.products[1])">{{sceneInfo.products[1].productPrice}}</span></div>
+      </div>
+    </div>
+    <div class="ui-g-6 ui-g-padding-clear">
+      <div class="nest-small bottom-left">
+        <img alt="图片出小差了~"  [src]="sceneInfo.products[2].productImg" class="img-all" id="productImg{{sceneInfo.products[2].productID}}"  (click)="goProductDetail($event, sceneInfo.products[2])" >
+        <div class="nest-container"></div>
+        <div class="nest-name"  id="productName{{sceneInfo.products[2].productID}}" (click)="goProductDetail($event, sceneInfo.products[2])" >{{sceneInfo.products[2].productName}}</div>
+        <div class="nest-price" >￥<span id="productPrice{{sceneInfo.products[2].productID}}"  (click)="goProductDetail($event, sceneInfo.products[2])">{{sceneInfo.products[2].productPrice}}</span></div>
+      </div>
+    </div>
+    <div class="ui-g-6 ui-g-padding-clear">
+      <div class="nest-small bottom-right">
+        <img alt="图片出小差了~"  [src]="sceneInfo.products[3].productImg"  class="img-all">
+        <div class="nest-container2"></div>
+        <div class="nest-container3" id="moreFlooring" (click)="goProducts($event)"></div>
+      </div>
+    </div>
+  </div>
+</div>

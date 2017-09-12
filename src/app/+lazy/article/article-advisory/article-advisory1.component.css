@@ -1,0 +1,8 @@
+ul { width: 100%; }
+ul li { margin-bottom: 15px; }
+ul li img { width: 100%; }
+ul .summary { position: relative; }
+ul .summary img { width: 100%; }
+ul .summary p { font-size: 0.42667rem; padding: 0.53333rem 2rem; position: absolute; top: 0; line-height: 0.48rem; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; height: 1.97333rem; }
+
+/*# sourceMappingURL=article-advisory1.component.css.map */

@@ -1,0 +1,25 @@
+<div class="main styleto" style="position: relative" *ngIf="!screen.type">
+  <img src="./assets/img/share/back_black.png" alt="" style="width: 20px;left: 15px;height:20px;position: absolute;top: 25px;" routerLink="/mall/promotion">
+  <h3>您的家属于什么风格?</h3>
+  <ul *ngIf="stylezs" onload="sele_height()">
+    <li *ngFor="let stylea of stylezs" (click)="ShowType(stylea.title)" [style.height.px]="style_height">
+      <div class="Introduction">
+        <p>{{stylea.title}}</p>
+      </div>
+      <div class="grasp" [routerLink]="['/article/theme', stylea.id]">
+        <p>{{stylea.title}}</p>
+        <img src="../../../assets/img/mall/question.png">
+      </div>
+    </li>
+  </ul>
+</div>
+<section class="main floor_type" style="position: relative" *ngIf="screen.type">
+  <img src="./assets/img/share/back_black.png" alt="" style="position:absolute;top: 25px;left: 15px;width: 20px;height: 20px" (click)="ShowStyle()">
+  <h3>您需要什么类型的地板？</h3>
+  <ul>
+    <li *ngFor="let type of typees" (click)="gotoProduct(type.name)">
+      <img src="../assets/img/mall/qianghua.png" alt="">
+      <p>{{type.name}}</p>
+    </li>
+  </ul>
+</section>

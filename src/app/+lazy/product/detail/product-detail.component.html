@@ -1,0 +1,275 @@
+<div class="product_detail_header">
+  <div (click)="back()">
+    <img src="../assets/img/product/back.png" alt="">
+  </div>
+  <ul>
+    <li *ngFor="let detailList of detailLists" (click)="clickDetail(detailList)" [class.detailClass]="detailClass === detailList"><p>{{detailList.name}}</p></li>
+  </ul>
+  <div></div>
+</div>
+<div style="width: 100%;height: 42px;"></div>
+<div id="product_three"  [style.height.px]="window_width * 0.618">
+  <webvr-pano-component *ngIf="commonVR" [commonVR]="commonVR" [fileName]="fileName" [MatName]="matName"></webvr-pano-component>
+</div>
+<div class="product_name">
+  <div>
+    <p>{{product?.name}}</p>
+  </div>
+  <div (click)="IsLike()">
+    <img src="../assets/img/product/favority.png" alt="" *ngIf="!like"><img src="../assets/img/product/favorite.png" alt="" *ngIf="like">
+  </div>
+</div>
+<div class="product_price">
+  <div>
+    <p>￥{{product?.orgin_price}}/m<sup>2</sup></p>
+  </div>
+  <div *ngIf="product?.type == 'LaminateFlooring'">
+    强化地板&nbsp;&nbsp;{{product?.resistance}}&nbsp;&nbsp;防潮
+  </div>
+  <div *ngIf="product?.type !== 'LaminateFlooring'">
+    实木地板&nbsp;&nbsp;{{product?.tree}}&nbsp;&nbsp;A级
+  </div>
+</div>
+<div class="guarantee">
+  <div>
+    <img src="../assets/img/product/quality.png" alt="">官方品牌
+  </div>
+  <div>
+    <img src="../assets/img/product/quality.png" alt="">质量保证
+  </div>
+  <div>
+    <img src="../assets/img/product/quality.png" alt="">值得信赖
+  </div>
+</div>
+<div class="qianghua" *ngIf="product">
+  <div class="parameter" id="parameter"><p>基本参数</p></div>
+  <canvas detail width="600" height="200" [product]="product"></canvas>
+  <div class="details">
+    <div *ngIf="product.brand !== '比利时Lalegno'" class="unjinkou">
+      <ul *ngIf="product.type==='LaminateFlooring'">
+        <li>
+          <div><p>产品名称:</p></div>
+          <div><p>强化地板</p></div>
+        </li>
+        <li>
+          <div><p>单片规格:</p></div>
+          <div><p>{{product.standard}}</p></div>
+        </li>
+        <li>
+          <div><p>产品型号:</p></div>
+          <div><p>{{product.code}}</p></div>
+        </li>
+        <li>
+          <div><p>表面工艺:</p></div>
+          <div><p>{{product.flooring_surface}}</p></div>
+        </li>
+        <li>
+          <div><p>环保等级:</p></div>
+          <div><p>E0</p></div>
+        </li>
+        <li>
+          <div><p>产品材质:</p></div>
+          <div><p>橡木</p></div>
+        </li>
+        <li>
+          <div><p>适用地面:</p></div>
+          <div><p>干燥平整地面</p></div>
+        </li>
+        <li>
+          <div><p>安装工艺:</p></div>
+          <div><p>损耗8%-10%</p></div>
+        </li>
+        <li>
+          <div><p>耐磨转数:</p></div>
+          <div><p>AC2</p></div>
+        </li>
+      </ul>
+      <ul *ngIf="product.type==='SolidwoodFlooring'">
+        <li>
+          <div><p>产品名称:</p></div>
+          <div><p>实木地板</p></div>
+        </li>
+        <li>
+          <div><p>单片规格:</p></div>
+          <div><p>{{product.standard}}</p></div>
+        </li>
+        <li>
+          <div><p>产品型号:</p></div>
+          <div><p>{{product.code}}</p></div>
+        </li>
+        <li>
+          <div><p>表面工艺:</p></div>
+          <div><p>{{product.flooring_surface}}</p></div>
+        </li>
+        <li>
+          <div><p>木种:</p></div>
+          <div><p>{{product.tree}}</p></div>
+        </li>
+        <li>
+          <div><p>计价单位:</p></div>
+          <div><p>1m²</p></div>
+        </li>
+        <li>
+          <div><p>锁扣类型:</p></div>
+          <div><p>匠心扣</p></div>
+        </li>
+      </ul>
+      <ul *ngIf="product.type==='EngineeredFlooring'">
+        <li>
+          <div><p>产品名称:</p></div>
+          <div><p>多层实木地板</p></div>
+        </li>
+        <li>
+          <div><p>单片规格:</p></div>
+          <div><p>{{product.standard}}</p></div>
+        </li>
+        <li>
+          <div><p>产品型号:</p></div>
+          <div><p>{{product.code}}</p></div>
+        </li>
+        <li>
+          <div><p>表面工艺:</p></div>
+          <div><p>{{product.flooring_surface}}</p></div>
+        </li>
+        <li>
+          <div><p>木种:</p></div>
+          <div><p>{{product.materials}}</p></div>
+        </li>
+        <li>
+          <div><p>产品材质:</p></div>
+          <div><p>橡木</p></div>
+        </li>
+        <li>
+          <div><p>锁扣类型:</p></div>
+          <div><p>锁扣</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="jinkou" *ngIf="product.brand === '比利时Lalegno'">
+      <ul>
+        <li>
+          <div><p>产品名称:</p></div>
+          <div><p>多层实木地板</p></div>
+        </li>
+        <li>
+          <div><p>表面工艺:</p></div>
+          <div><p>{{product.flooring_surface}}</p></div>
+        </li>
+        <li>
+          <div><p>单片规格:</p></div>
+          <div><p>{{product.standard}}</p></div>
+        </li>
+        <li>
+          <div><p>木种:</p></div>
+          <div><p>{{product.materials}}</p></div>
+        </li>
+        <li>
+          <div><p>产品型号:</p></div>
+          <div><p>{{product.code}}</p></div>
+        </li>
+        <li>
+          <div><p>锁扣类型:</p></div>
+          <div><p>锁扣</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="product.brand !== '比利时Lalegno'">
+    <img src="../assets/img/product/qianghua1.png" alt="" *ngIf="product.type==='LaminateFlooring'">
+    <img src="../assets/img/product/duoceng1.png" alt="" *ngIf="product.type==='EngineeredFlooring'">
+    <img src="../assets/img/product/shimu1.png" alt="" *ngIf="product.type==='SolidwoodFlooring'">
+    <img src="../assets/img/product/product_bottom.png" alt="">
+    <img src="../assets/img/product/qianghua01.png" alt="" *ngIf="product.type==='LaminateFlooring'">
+    <img src="../assets/img/product/duoceng01.png" alt="" *ngIf="product.type==='EngineeredFlooring'">
+    <img src="../assets/img/product/shimu01.png" alt="" *ngIf="product.type==='SolidwoodFlooring'">
+  </div>
+  <div *ngIf="product.brand === '比利时Lalegno'">
+    <img src="../assets/img/product/1_01.png" alt="" style="width: 100%">
+    <img src="../assets/img/product/1_02.png" alt="" style="width: 100%">
+    <img src="../assets/img/product/{{product.code}}_03.png" alt="" style="width: 100%">
+    <img src="../assets/img/product/{{product.code}}_04.png" alt="" style="width: 100%">
+  </div>
+</div>
+<div class="sort4">
+  <div class="expert">
+    <img src="../assets/img/product/expert.png" alt="">
+    <div class="review_content">
+      <div>
+        <img src="../assets/img/product/quotes.png" alt="">
+      </div>
+      <div>
+        <p>{{product?.expert_comment}}</p>
+      </div>
+      <div>
+        <img src="../assets/img/product/quotes.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="designer">
+    <img src="../assets/img/product/designer.png" alt="">
+    <div class="review_content">
+      <div>
+        <img src="../assets/img/product/quotes.png" alt="">
+      </div>
+      <div>
+        <p>{{product?.designer_comment}}</p>
+      </div>
+      <div>
+        <img src="../assets/img/product/quotes.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="ruled"></div>
+</div>
+<div class="certificate" *ngIf="product?.brand !== '比利时Lalegno'">
+  <div>
+    <img src="../assets/img/product/correlation-certificate.png" alt="">
+  </div>
+  <div>
+    <img src="../assets/img/product/certificate.png" alt="">
+  </div>
+  <div class="ruled"></div>
+</div>
+<home [sceneID]="3"></home>
+<div class="ruled"></div>
+<div class="show_List">
+  <div class="change">
+    <div>
+      <img src="../assets/img/product/recommend.png" alt="">&nbsp;为你推荐
+    </div>
+    <div (click)="random()">
+      <img src="../assets/img/product/change.png" alt="">&nbsp;换一批
+    </div>
+  </div>
+  <div class="recommend_list">
+    <ul>
+      <li *ngFor="let seleProduc of seleProduct" (click)="gotoProduct(seleProduc.id)">
+        <img src="http://m.wecareroom.com/upload/product_t/{{seleProduc.code}}.png" alt="">
+        <h5>{{seleProduc.name}}</h5>
+        <p>
+          ￥{{seleProduc.label_price}}/m²
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="qianghua">
+  <img src="../assets/img/product/qianghua02.png" alt="">
+</div>
+<footer style="width: 100%;height: 50px;"></footer>
+<div class="footer">
+  <div>
+    <div class="service">
+      <a href="https://static.meiqia.com/dist/standalone.html?eid=57686&groupid=227cbe71d73dc0bc8d335d8f9d5acdc6">
+      <img src="../assets/img/product/kefu.png" alt="">&nbsp;&nbsp;客服
+      </a>
+    </div>
+    <div class="centre"></div>
+    <div class="experience" (click)="gotoExperience()">
+      <img src="../assets/img/product/vr.png" alt="">&nbsp;&nbsp;VR体验
+    </div>
+  </div>
+  <div (click)="gotoOrder()">
+    <p>立即下单</p>
+  </div>
+</div>

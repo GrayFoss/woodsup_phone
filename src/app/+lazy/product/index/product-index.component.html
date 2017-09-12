@@ -1,0 +1,69 @@
+<header-component></header-component>
+<div style="overflow: hidden;">
+  <product-sidebar *ngIf="scerenList.state === 'active'" [screen]="scren"></product-sidebar>
+  <section class="filter" [@filterState]="scerenList.state">
+    <div class="filter_more">
+      <div (click)="toggleState()">
+        <img src="../assets/img/product/back.png" alt="">
+        <p id="product_moreFilter">更多筛选</p>
+      </div>
+      <ul class="filter_list">
+        <li *ngIf="scerenList.tone">
+          <p>{{scerenList?.tone}}</p>
+        </li>
+        <li *ngIf="scerenList.brand">
+          <p>{{scerenList?.brand}}</p>
+        </li>
+        <li *ngIf="scerenList.type">
+          <p>{{scerenList?.type}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="sort">
+      <div>
+        <div>
+          <p>价格排序</p>
+        </div>
+        <div id="Price_down" (click)="filterProducts($event, scren.tone,scren.brand,scren.style,scren.type,priceBackground,1)" *ngIf="scren.sort !== 2">
+          <img src="../assets/img/product/down.png" alt="">
+        </div>
+        <div id="Price_up" (click)="filterProducts($event, scren.tone,scren.brand,scren.style,scren.type,priceBackground,2)" *ngIf="scren.sort == 2">
+          <img src="../assets/img/product/up.png" alt="">
+        </div>
+      </div>
+      <ul class="sort_list">
+        <li *ngFor="let price of prices" (click)="filterProducts($event, scren.tone,scren.brand,scren.style,scren.type,price)" [class.price_background]="price===priceBackground"><p id="Price_{{price.data}}">{{price.data}}</p></li>
+      </ul>
+    </div>
+    <ul (click)="backleft()" class="product_list">
+      <li *ngFor="let seleproduct of seleproductes">
+        <figure id="product_{{seleproduct.id}}">
+          <img src="http://m.wecareroom.com/upload/product_t/{{seleproduct.code}}.png" alt="" (click)="gotoProductDetail($event,seleproduct)">
+          <img src="../assets/img/product/jingpin.png" alt="" *ngIf="seleproduct.state == 'Hot'">
+          <img src="../assets/img/product/new.png" alt="" *ngIf="seleproduct.state == 'New'" style="width: 37px">
+          <figcaption (click)="gotoProductDetail($event,seleproduct)"><p>{{seleproduct.name}}</p></figcaption>
+          <div>
+            <div>
+              <p>￥{{seleproduct.label_price}}/m²</p>
+            </div>
+            <div>
+              <img src="../assets/img/product/heart_not-click.png" alt="" (click)="like($event)">
+            </div>
+          </div>
+        </figure>
+      </li>
+    </ul>
+    <ul *ngIf="!seleproductes" (click)="backleft()">
+      <p style="text-align: center;font-size: 14px;">
+        殿下，网页正在加载中，请稍等ss
+      </p>
+    </ul>
+    <ul *ngIf="seleproductes&&(seleproductes.length==0)" (click)="backleft()">
+      <p style="text-align: center;font-size: 14px;">
+        暂无相关产品，请点击左上角重新筛选
+      </p>
+    </ul>
+  </section>
+</div>
+
+<footer-component [selectV]="selectV"></footer-component>

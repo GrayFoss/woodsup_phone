@@ -1,0 +1,44 @@
+<user-header></user-header>
+<section class="log" *ngIf="!phone">
+  <form  #mobileLoginForm="ngForm" (ngSubmit)="doLogin()">
+    <div class="tele">
+      <img src="./assets/img/personal/personal.png" alt="">
+      <input type="text" id="username" placeholder="手机号" required [(ngModel)]="user.phone" name="phone" (keyup)="lose()">
+    </div>
+    <div class="tele">
+      <img src="./assets/img/personal/pass.png" alt="">
+      <input type="password" id="password" placeholder="密码" required [(ngModel)]="user.password" name="password">
+    </div>
+    <p class="eooer" *ngIf="loginError">{{loginError}}</p>
+    <button type="submit" class="logbott">登录</button>
+  </form>
+  <p class="register" (click)="gotoSignup()">立即注册</p>
+  <p class="forget" (click)="phone = true;lose()">手机号登录</p>
+ <!-- <h4>第三方登录</h4>
+  <ul class="logins">
+    <div id="wb_connect_btn" (click)="bbb()"></div>
+    <span id="qqLoginBtn"></span>
+  </ul>-->
+</section>
+<section class="log" *ngIf="phone">
+  <div class="tele">
+    <img src="./assets/img/personal/personal.png" alt="">
+    <input type="number" placeholder="手机号" required [(ngModel)]="phone" (keyup)="lose()">
+  </div>
+  <div class="tele">
+    <img src="./assets/img/personal/pass.png" alt="">
+    <input type="text" placeholder="验证码" required [(ngModel)]="smsVerifyCode" class="smsVerifyCode">
+    <div class="send-phone">
+      <send-phone [phone]="phone" (confirm)="confirm($event)"></send-phone>
+    </div>
+  </div>
+  <p class="eooer" *ngIf="loginError !== ''">{{loginError}}</p>
+  <button type="submit" class="logbott" (click)="phoneLogin(phone, smsVerifyCode)">登录</button>
+  <p style="padding-top: 20px;" class="register" (click)="gotoSignup()">立即注册</p>
+  <p style="padding-top: 20px;" class="forget" (click)="phone = false;lose()">账号密码登录</p>
+  <!-- <h4>第三方登录</h4>
+   <ul class="logins">
+     <div id="wb_connect_btn" (click)="bbb()"></div>
+     <span id="qqLoginBtn"></span>
+   </ul>-->
+</section>

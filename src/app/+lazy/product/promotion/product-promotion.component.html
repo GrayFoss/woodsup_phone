@@ -1,0 +1,17 @@
+<header-component></header-component>
+<section class="main picking">
+  <div style="position: absolute;top: 10px;z-index: 1;left: 15px;width: 25px" (click)="back()">
+    <img id="mall_picking_back" src="./assets/img/share/back_black.png" alt="" style="width: 100%;">
+  </div>
+  <h4>促销产品</h4>
+  <ul>
+    <li *ngFor="let promotion of promotiones">
+      <figure (click)="gotoProductDetail(promotion.id)">
+        <img src="http://m.forwoodsup.com/upload/product_list/{{promotion.code}}.png" alt="">
+        <figcaption><p>{{promotion.name}}</p></figcaption>
+        <figcaption><p>{{promotion.label_price}}/m<sup>2</sup></p>&nbsp;&nbsp;<del>{{promotion.orgin_price}}/m<sup>2</sup></del></figcaption>
+      </figure>
+    </li>
+  </ul>
+</section>
+<footer-component [selectV]="selectV"></footer-component>

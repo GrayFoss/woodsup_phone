@@ -1,0 +1,150 @@
+@import "../../../../assets/scss/global";
+.height{
+  overflow: auto;
+}
+.order_top{
+  @include flexBox;
+  position: fixed;
+  width: 100%;
+  height: 37px;
+  background-color: #fff;
+  z-index: 50;
+  img{
+    margin: 11px 0 0 18px;
+    width: 8px;
+    height: 15px;
+  }
+  p{
+    @include Center;
+    font: 18px/37px '';
+    color: #545454;
+  }
+}
+.shadow{
+  width: 100%;
+  height: a(6px);
+  background-color: #eeeeee;
+}
+.remind_img{
+  width: 100%;
+  padding: a(30px) a(50px);
+  img{
+    width: 100%;
+  }
+}
+.remind_message{
+  margin: a(30px) 0 a(20px) a(36px);
+  p{
+    font-size: a(32px);
+    color: #545454;
+  }
+}
+
+.order_footer{
+  position: fixed;
+  @include flexBox;
+  height: 49px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  div:first-of-type{
+    text-align: center;
+    background-color: #f49853;
+    width: 50%;
+  }
+  p{
+    color: #fff;
+    font: 18px/49px '';
+  }
+  div:last-of-type{
+    text-align: center;
+    width: 50%;
+    background-color: #dd2727;
+  }
+}
+
+.harvest{
+  width: 100%;
+  padding: 0 a(36px);
+  margin: a(40px) 0 a(60px);
+  .user{
+    width: 100%;
+    border: 2px solid red;
+    height: a(144px);
+    position: relative;
+    & > div:first-of-type{
+      @include flexBox;
+      @include justify-content(space-between);
+      padding: a(16px) a(16px) a(20px);
+    }
+    p{
+      font-size: a(28px);
+      color: #545454;
+    }
+    img{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: a(40px);
+      height: a(40px);
+    }
+  }
+}
+.user_address{
+  @include flexBox;
+  padding: 0 a(16px);
+  div:first-of-type{
+    width: a(140px);
+  }
+  div:last-of-type{
+    @include flex(1);
+    p{
+      margin-top: a(-5px);
+      line-height: a(38px);
+    }
+  }
+}
+
+.add_address{
+  width: 100%;
+  padding: 0 a(36px);
+  div{
+    width: 100%;
+    height: a(74px);
+    background-color: #f49853;
+    text-align: center;
+    p{
+      color: #fff;
+      font-size: a(36px);
+      line-height: a(74px);
+    }
+  }
+}
+.add_prompt{
+  margin-top: a(292px);
+  text-align: center;
+  img{
+    width: a(30px);
+  }
+  p{
+    line-height: a(52px);
+    font-size: a(32px);
+    color: #a1a1a1;
+  }
+}
+.tip{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include Center;
+    width: a(400px);
+    height: a(500px);
+  }
+}

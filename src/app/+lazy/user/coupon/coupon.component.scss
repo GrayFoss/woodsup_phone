@@ -1,0 +1,216 @@
+@import "../../../../assets/scss/global";
+.main_coupon{
+  background-color: #f0f0f0;
+}
+.header{
+  padding: a(28px) a(75px) 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  img{
+   width: a(600px);
+  }
+  .countdown{
+    position: absolute;
+    bottom: a(14px);
+    left: a(150px);
+    p{
+      color: #fff;
+      font-size: a(40px);
+      span{
+        font-size: a(54px);
+      }
+    }
+  }
+}
+.fuli1{
+  margin: a(34px) auto 0;
+  width: a(590px);
+  height: a(372px);
+  //background: url("../../../../assets/img/coupon/top_fuli1.png") no-repeat 100%;
+  background-size: 100% 100%;
+  .content{
+    padding-top: a(128px);
+    text-align: center;
+  }
+  h4{
+    color: #fff;
+    font-size: a(28px);
+    span{
+      font-size: a(44px);
+    }
+  }
+  .phone{
+    @include flexBox;
+    width: a(390px);
+    margin: a(32px) auto 0;
+    & > div:first-of-type{
+      width: a(110px);
+      p{
+        color: #fff;
+        font-size: a(36px);
+        line-height: a(46px);
+      }
+    }
+    & > div:last-of-type{
+      @include flex(1);
+      input{
+        width: 100%;
+        padding-left: a(10px);
+        border: none;
+        height: a(46px);
+        margin-left: a(12px);
+        font-size: a(24px);
+      }
+    }
+  }
+  .receive{
+    width: a(260px);
+    margin: a(26px) auto 0;
+    height: a(60px);
+    border-radius: a(30px);
+    background-color: #f49853;
+    p{
+      font-size: a(36px);
+      color: #fff;
+    }
+  }
+}
+.fuli2{
+  width: a(660px);
+  height: a(366px);
+  //background: url("../../../../assets/img/coupon/top_fuli2.png") no-repeat 100%;
+  background-size: 100% 100%;
+  margin: a(28px) 0 0 a(80px);
+  text-align: center;
+  .fuli_title{
+    margin-left: a(24px);
+    width: a(545px);
+  }
+  h6{
+    padding-top: a(134px);
+    color: #fff;
+    font-size: a(28px);
+  }
+  h5{
+    font-size: a(36px);
+    color: #fff;
+    margin-top: a(10px);
+  }
+  .share{
+    margin: a(28px) 0 0 a(92px);
+    width: a(421px);
+    @include flexBox;
+    div{
+      @include flex(1);
+      text-align: center;
+      img{
+        width: a(74px);
+      }
+    }
+  }
+}
+.receive{
+  margin-top: a(24px);
+  text-align: center;
+  img{
+    width: a(34px);
+  }
+  p:first-of-type{
+    display: inline-block;
+    font-size: a(28px);
+    color: #000;
+  }
+  span{
+    color: #ff0000;
+    font-size: a(36px);
+  }
+  p:last-of-type{
+    margin-top: a(14px);
+  }
+}
+.filter_floor{
+  margin-top: a(60px);
+  text-align: center;
+  img{
+    width: a(530px);
+  }
+}
+.floor_list{
+  padding: 0 a(12px);
+  overflow: auto;
+  margin-top: a(30px);
+  li{
+    width: a(242px);
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-bottom: a(40px);
+    img{
+      width: a(230px);
+      height: a(200px);
+    }
+    div{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      @include transform(translate(-50%,0));
+      width: a(230px);
+      height: a(40px);
+      background-color: rgba(0,0,0,0.5);
+      p{
+        color: #fff;
+        font-size: a(28px);
+        line-height: a(40px);
+
+      }
+    }
+  }
+}
+.view{
+  text-align: center;
+  width: a(380px);
+  height: a(80px);
+  background-color: #2598e5;
+  margin: a(40px) auto 0;
+  border-radius: a(40px);
+  p{
+    font-size: a(48px);
+    line-height: a(80px);
+    color: #fff;
+  }
+}
+.instruction{
+  position: relative;
+  padding-bottom: a(38px);
+  margin-top: a(64px);
+  padding-top: a(18px);
+  h5{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: a(36px);
+    color: #000;
+    display: inline-block;
+    padding: 0 a(18px);
+    background-color: #f0f0f0;
+    z-index: 10;
+    @include transform(translate(-50%,0));
+  }
+  .instruction_content{
+    width: a(600px);
+    height: a(180px);
+    margin: 0 auto;
+    border: 2px solid #2598e5;
+    border-radius: a(18px);
+    p{
+      font-size: a(24px);
+      line-height: a(34px);
+      color: #000;
+      margin-left: a(36px);
+      &:first-of-type{
+        margin-top: a(28px);
+      }
+    }
+  }
+}

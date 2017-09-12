@@ -1,0 +1,75 @@
+<header-component></header-component>
+
+<div class="main">
+  <div class="process">
+    <h3>常见问题</h3>
+    <ul>
+      <li *ngFor="let problemone of problemonees">
+        <p (click)="Show(problemone)">{{problemone.title}}<img src="./assets/img/mall/small.png" alt=""></p>
+        <p *ngIf="problemone.show">{{problemone.answer}}</p>
+      </li>
+      <li>
+        <p (click)="SHow11()">收货说明<img src="./assets/img/mall/small.png" alt=""></p>
+        <div *ngIf="show1">
+          <p>当您收到云深间造产品，在签收之前，请您花几分钟时间：</p>
+          <p>核对外包装上的产品信息，交货单据的产品信息，与您订购的产品是否一致，如有误差请不要打开包装并联系云深间造客服；</p>
+          <p>检查产品外包装是否完好，如果外包装轻微破损但不影响产品使用，请您拍照存档并在交货单据上注明“包装轻微破损”；如果外包装严重破损，请您现场开箱验货、拍照存档并联系云深间造客服，我们将与您沟通下一步处理方案。</p>
+          <p>感谢您的时间，如产品出现问题，这几分钟将为后续快速妥善解决您的问题提供宝贵的依据</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="process">
+    <h3>安装问题</h3>
+    <ul>
+      <li *ngFor="let problemtwo of problemtwoes" class="oo">
+        <p (click)="Show(problemtwo)">{{problemtwo.title}}<img src="./assets/img/mall/small.png" alt=""></p>
+        <p *ngIf="problemtwo.show">{{problemtwo.answer}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="process">
+    <h3>售后问题</h3>
+    <ul>
+      <li>
+        <p (click)="SHow22()">质量保障<img src="./assets/img/mall/small.png" alt=""></p>
+        <div *ngIf="show2" class="oo">
+          <p>云深间造为出售的产品提供为期一年的修理、更换、退货（“三包”）保障。“三包”保障的起始日以产品实际签收日期为准，请您在签收交货单据时，注意查看交货日期。“三包”质保期内,在正常使用和维护的情况下,经检验属于产品材料和工艺问题而导致的损坏，本公司将免费维修，直至更换。保障范围： </p>
+          <p>修理：在“三包”期限内，产品质量问题属于修理范围； </p>
+          <p>更换：在“三包”期限内，同一故障经两次维修后仍未能达到质量标准的进行更换； </p>
+          <p>退货：在“三包”期限内， 同一故障经两次更换后仍无法达到质量标准的，您可以选择更换其他同类产品或者退货。</p>
+        </div>
+      </li>
+      <li>
+        <p (click)="SHow33()">维修服务<img src="./assets/img/mall/small.png" alt=""></p>
+        <div *ngIf="show3" class="oo">
+          <p>三包”有效期内，云深间造将提供优质服务并负责相关费用(包括材料、工时等费用，双方另有约定的情况除外)；“三包”有效期外，云深间造将根据实际情况收取原材料成本及上门维修费，具体费用将会在服务发生前与您商定。 </p>
+          <p>不属于“三包”范围的特例情况：</p>
+          <p>没有按照云深间造接货标准程序操作的情况拆包引起的损坏； </p>
+          <p>没有按照组装说明书要求正确操作引起的产品损坏； </p>
+          <p>没有按照组装说明书要求，自行更换部件引起的损坏； </p>
+          <p>客户自行拆装,调换产品到错误的使用环境引起的损坏； </p>
+          <p>不正确的维护保养、或者没有按照云深间造产品使用和保养手册操作引起的损坏； </p>
+          <p>非专业人士修理引起的损坏； </p>
+          <p>由于不正当使用产品和产品部件而造成的人身和财产损失； </p>
+          <p>客户不能提供购买发票与保修卡,或者擅自涂改保修卡； </p>
+          <p>已经超过云深间造退换货和维修期限的产品； </p>
+          <p>因其它不可抗拒力(地震,火灾)等造成的产品损坏； </p>
+          <p>其它使用、维护、保管不当及人为损坏的情况； </p>
+          <p>玻璃镜子发生霉变和雾光的三包期限为六个月，处理家具商品只享受包修服务。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="process">
+    <h3>投诉与受理</h3>
+    <p>
+      若云深间造的产品或服务出现任何问题，我们深表歉意，同时请您第一时间与我们取得联系。我们将在收到投诉后一个工作日之内与您联系，沟通后续的处理方法及时限，解决您的问题 。<br/>
+      电子邮件：service@wecareroom.com<br/>
+      服务电话：0731-85594580<br/>
+      快递服务：快递查询<br/>
+      本说明解释权归云深间造所有
+    </p>
+  </div>
+</div>
+<footer-component [selectV]="selectV"></footer-component>

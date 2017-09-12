@@ -1,0 +1,13 @@
+<header-component></header-component>
+<ul>
+  <li *ngFor="let article of articles" routerLink="/article/{{article.id}}">
+    <img src="{{article.titleImg}}" alt="">
+    <div class="summary">
+      <img src="../../../assets/img/article/article_background.png" alt="">
+      <p>
+        {{article.summary}}
+      </p>
+    </div>
+  </li>
+</ul>
+<footer-component [selectV]="selectV"></footer-component>

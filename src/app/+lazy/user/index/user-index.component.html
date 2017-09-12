@@ -1,0 +1,35 @@
+<section *ngIf="currentUser" class="main">
+  <header class="core">
+    <img src="./assets/img/personal/geren.png" alt="">
+    <h4>{{currentUser?.displayname}}</h4>
+    <p>{{currentUser?.state}}&nbsp;&nbsp;&nbsp;&nbsp;{{currentUser?.city}}</p>
+  </header>
+  <div class="list">
+    <ul>
+      <li>
+        <img src="./assets/img/personal/coll.png" alt="">
+        <div class="cor" (click)="showPrompt()">
+          <p>我的收藏</p>
+          <img src="./assets/img/3d/234.png" alt="">
+        </div>
+      </li>
+      <li>
+        <img src="./assets/img/personal/order.png" alt="">
+        <div class="cor" routerLink="/user/order">
+          <p>我的订单</p>
+          <img src="./assets/img/3d/234.png" alt="">
+        </div>
+      </li>
+      <li>
+        <img src="./assets/img/personal/setting.png" alt="">
+        <div class="cor" routerLink="/user/setting">
+          <p>用户设置</p>
+          <img src="./assets/img/3d/234.png" alt="">
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<div class="prompt" *ngIf="prompt">
+  <p>暂未开放</p>
+</div>

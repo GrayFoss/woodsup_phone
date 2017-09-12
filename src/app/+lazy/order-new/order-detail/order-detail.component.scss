@@ -1,0 +1,301 @@
+@import "../../../../assets/scss/global";
+.height{
+  overflow: auto;
+}
+.order_top{
+  @include flexBox;
+  position: fixed;
+  width: 100%;
+  height: 37px;
+  background-color: #fff;
+  z-index: 50;
+  img{
+    margin: 11px 0 0 18px;
+    width: 8px;
+    height: 15px;
+  }
+  p{
+    @include Center;
+    font: 18px/37px '';
+    color: #545454;
+  }
+}
+.shadow{
+  width: 100%;
+  height: a(6px);
+  background-color: #eeeeee;
+}
+.remind_img{
+  width: 100%;
+  padding: a(30px) a(50px);
+  img{
+    width: 100%;
+  }
+}
+.remind_message{
+  margin: a(30px) 0 a(20px) a(36px);
+  p{
+    font-size: a(32px);
+    color: #545454;
+  }
+}
+
+.order_footer{
+  position: fixed;
+  @include flexBox;
+  height: 49px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  div:first-of-type{
+    text-align: center;
+    background-color: #f49853;
+    width: 50%;
+  }
+  p{
+    color: #fff;
+    font: 18px/49px '';
+  }
+  div:last-of-type{
+    text-align: center;
+    width: 50%;
+    background-color: #dd2727;
+  }
+}
+
+.order_detail{
+  padding-top: a(32px);
+  text-align: center;
+  h6{
+    font-size: a(28px);
+    color: #a1a1a1;
+    margin-bottom: a(20px);
+  }
+  .pay{
+    margin-top: a(10px);
+    border: 1px solid #f49853;
+    border-radius: a(16px);
+    text-align: center;
+    padding: a(10px) a(20px);
+    display: inline-block;
+    p{
+      font-size: a(36px);
+      color: #f49853;
+    }
+  }
+}
+
+.harvest{
+  width: 100%;
+  padding: 0 a(36px);
+  margin: a(40px) 0 a(60px);
+  .user{
+    width: 100%;
+    border: 2px solid red;
+    height: a(144px);
+    position: relative;
+    & > div:first-of-type{
+      @include flexBox;
+      @include justify-content(space-between);
+      padding: a(16px) a(16px) a(20px);
+    }
+    p{
+      font-size: a(28px);
+      color: #545454;
+    }
+    img{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: a(40px);
+      height: a(40px);
+    }
+  }
+}
+.user_address{
+  @include flexBox;
+  padding: 0 a(16px);
+  div:first-of-type{
+    width: a(140px);
+  }
+  div:last-of-type{
+    @include flex(1);
+    p{
+      margin-top: a(-5px);
+      line-height: a(38px);
+    }
+  }
+}
+.order_price{
+  padding: 0 a(36px);
+  .order_product{
+    padding: a(20px) 0;
+    border-top: 1px solid#d6d6d6;
+    border-bottom: 1px solid#d6d6d6;
+    @include flexBox;
+  }
+  .product_img{
+    img{
+      width: a(170px);
+      height: a(130px);
+    }
+  }
+  .product_information{
+    @include flex(1);
+    padding-left: a(20px);
+    & > div:first-of-type{
+      padding-top: a(16px);
+      text-align: left;
+      p{
+        font-size: a(32px);
+        color: #545454;
+      }
+    }
+    & > div:last-of-type{
+      margin-top: a(46px);
+    }
+  }
+  .product_price{
+    @include flexBox;
+    @include justify-content(space-between);
+    div:first-of-type{
+      p{
+        color: #ff0000;
+        font-size: a(32px);
+      }
+    }
+    div:last-of-type{
+      p{
+        color: #545454;
+        font-size: a(28px);
+      }
+    }
+  }
+}
+.original_price{
+  @include flexBox;
+  @include justify-content(space-between);
+  margin: a(20px) 0;
+  padding: 0 a(36px);
+  & > div:first-of-type{
+    p{
+      color: #545454;
+      font-size: a(28px);
+    }
+  }
+  & > div:last-of-type{
+    p{
+      color: #f49853;
+      font-size: a(32px);
+    }
+  }
+}
+.divider{
+  width: 100%;
+  height: a(10px);
+  background-color: #eee;
+}
+.payPrice{
+  padding: a(30px) a(36px) 0;
+}
+.preferential{
+  @include flexBox;
+  div{
+    @include flex(1);
+    color: #ff0000;
+  }
+  div:first-of-type{
+    img{
+      width: a(154px);
+      height: a(40px);
+    }
+  }
+  div:last-of-type{
+    text-align: right;
+    padding-top: a(4px);
+  }
+  span{
+    font-size: a(24px);
+  }
+  p{
+    display: inline-block;
+    font-size: a(32px);
+  }
+}
+.actual{
+  @include flexBox;
+  margin-top: a(30px);
+  div{
+    @include flex(1);
+  }
+  div:first-of-type{
+    p{
+      font-size: a(28px);
+      color: #545454;
+    }
+  }
+  div:last-of-type{
+    text-align: right;
+    p{
+      color: #f49853;
+      font-size: a(32px);
+    }
+  }
+}
+.pay_success{
+  margin: a(330px) auto a(60px);
+  width: a(678px);
+  height: a(80px);
+  background-color: #f49853;
+  text-align: center;
+  p{
+    line-height: a(80px);
+    font-size: a(36px);
+    color: #fff;
+  }
+}
+.pay_deposit{
+  margin-top: a(100px);
+  margin-bottom: a(130px);
+}
+.already, .Waiting{
+  width: a(678px);
+  height: a(80px);
+  text-align: center;
+  margin: a(30px) auto;
+  p{
+    line-height: a(80px);
+    font-size: a(36px);
+    color: #fff;
+  }
+}
+.bg-orange{
+  background-color: #f49853;
+}
+.bg-gray{
+  background-color: #898989;
+}
+.deposit{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: a(98px);
+  @include transform(translate(-50%,0));
+  @include flexBox;
+  div{
+    @include flex(1);
+    text-align: center;
+  }
+  p{
+    color: #fff;
+    font-size: a(36px);
+    line-height: a(98px);
+  }
+  div:first-of-type{
+    background-color: #f49853;
+  }
+  div:last-of-type{
+    background-color: #dd2727;
+  }
+}

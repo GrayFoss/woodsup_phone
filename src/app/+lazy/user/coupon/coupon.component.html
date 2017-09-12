@@ -1,0 +1,68 @@
+<div class="main_coupon" *ngIf="couponByCode">
+  <div class="header">
+    <img src="./assets/img/coupon/top_main.png" alt="">
+    <div class="countdown">
+      <p>优惠倒计时:&nbsp;<span>{{day}}</span></p>
+    </div>
+  </div>
+  <div class="fuli1">
+    <div class="content">
+      <h4>全场地板
+        <span *ngIf="couponByCode?.currentUserNum <10">{{couponByCode.coupon.discount * 10}}折</span>
+        <span *ngIf="couponByCode?.currentUserNum >=10">{{couponByCode.coupon.discount * 10 - 0.5}}折</span>
+        随你挑!</h4>
+      <div class="phone">
+        <div>
+          <p>手机号</p>
+        </div>
+        <div>
+          <input type="number" placeholder="请输入手机号码" #phone/>
+        </div>
+      </div>
+      <div class="receive" (click)="getCoupon(phone.value, code)">
+        <p>{{lingqu}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="fuli2">
+    <div class="fuli_title">
+      <h6>分享好友</h6>
+      <h5>升级您的优惠券</h5>
+    </div>
+    <div class="share">
+      <div><img src="./assets/img/coupon/icon_weibo.png" alt=""></div>
+      <div><img src="./assets/img/coupon/icon_wechat.png" alt=""></div>
+      <div><img src="./assets/img/coupon/icon_momonts.png" alt=""></div>
+    </div>
+  </div>
+  <div class="receive">
+    <img src="./assets/img/coupon/icon_attention.png" alt="">
+    <p *ngIf="couponByCode?.currentUserNum <10">已领取<span>{{couponByCode?.currentUserNum}}</span>人,再分享<span>{{surplus}}</span>人,即可</p>
+    <p *ngIf="couponByCode?.currentUserNum <10">升级至<span>{{couponByCode.coupon.discount * 10 - 0.5}}折</span>优惠券</p>
+    <p *ngIf="couponByCode?.currentUserNum >10">已领取<span>{{couponByCode?.currentUserNum}}</span>人,获得了<span>{{couponByCode.coupon.discount * 10 - 0.5}}折</span>优惠券</p>
+  </div>
+  <div class="filter_floor">
+    <img src="./assets/img/coupon/top_main2.png" alt="">
+  </div>
+  <ul class="floor_list">
+    <li *ngFor="let product of productList">
+      <img src="./assets/img/coupon/product_list/{{product.name}}.png" alt="">
+      <div>
+        <p>{{product.name}}</p>
+      </div>
+    </li>
+  </ul>
+  <div class="view" routerLink="/product">
+    <p>查看更多商品</p>
+  </div>
+  <div class="instruction">
+    <h5>使用说明</h5>
+    <div class="instruction_content">
+      <p>1.该优惠券仅限所填手机号使用。</p>
+      <p>2.该优惠券仅限使用于云深间造线上商城。 </p>
+      <p>3.该优惠券只能使用一次，且不能同时使用多张。</p>
+      <p>解释权归云深间造所有</p>
+    </div>
+  </div>
+</div>
+

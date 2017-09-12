@@ -1,0 +1,31 @@
+@import "../../../../assets/scss/global";
+
+.footer{
+  height: 49px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  li{
+    float: left;
+    width: 25%;
+    height: 49px;
+    position: relative;
+    img{
+      position: absolute;
+      left: 50%;
+      top:5px;
+      @include transform(translate(-50%,0));
+      width: 20px;
+      height: 20px;
+    }
+    p{
+      text-align: center;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  }
+}

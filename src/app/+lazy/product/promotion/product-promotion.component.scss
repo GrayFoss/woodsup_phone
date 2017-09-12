@@ -1,0 +1,57 @@
+@import "../../../../assets/scss/global";
+.picking{
+  text-align: center;
+  position: relative;
+  h4{
+    font:bold 18px/40px '';
+    color: #282522;
+  }
+  ul{
+    overflow: auto;
+    li{
+      float: left;
+      margin-top: 15px;
+      width: 50%;
+      text-align: center;
+    }
+    img{
+      width: a(305px);
+      height: a(305px);
+    }
+  }
+  figcaption{
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    width: a(305px);
+    font: normal 16px/20px '';
+  }
+  p{
+    font-size: 14px;
+  }
+  del{
+    font-size: 12px;
+    text-align: left;
+  }
+  figure{
+    width: 100%;
+    figcaption:first-of-type{
+      padding: 0 10px;
+    }
+    figcaption:first-of-type p{
+      border-bottom: 1px dashed #000;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp:1;
+      -webkit-box-orient: vertical;
+      height: 25px;
+      font: normal 16px/25px '';
+    }
+    figcaption:last-of-type p{
+      display: inline-block;
+      color: #df0e0e;
+      height: 25px;
+      font: normal 16px/25px '';
+    }
+  }
+}

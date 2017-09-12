@@ -1,0 +1,28 @@
+<header class="headamfi" [class.rig]="aaa">
+  <img class="img_first" src="/assets/img/main/top_scan.png" (click)="showMengban()" alt="">
+  <div class="img_centerLogo">
+    <img src="/assets/img/main/top_logo.png"  width="100%">
+  </div>
+  <img class="img_last" src="/assets/img/main/top_menu.png" (click)="toggleState()">
+  <ul class="han-list" [style.height.px]="win_hei">
+    <li routerLink="/user/login" *ngIf="!currentUser?.displayname || currentUser?.displayname == ''"><p>登录</p></li>
+    <li routerLink="/user/signup" *ngIf="!currentUser?.displayname || currentUser?.displayname == ''"><p>注册</p></li>
+    <li routerLink="/user/index" *ngIf="currentUser?.displayname && currentUser?.displayname != ''"><p>{{currentUser.displayname}}</p></li>
+    <li routerLink="/about"><p>关于我们</p></li>
+    <li routerLink="/user/server"><p>服务协议</p></li>
+    <!--<li><p>商务合作</p></li>-->
+    <!--<li><p>加入我们</p></li>-->
+    <li (click)="logout()" *ngIf="currentUser?.displayname && currentUser?.displayname != ''"><p>退出登录</p></li>
+  </ul>
+</header>
+<div style="height: 40px;width: 100%"></div>
+<div [style.width.px]="win_wid" [style.height.px]="win_hei-89" *ngIf="aaa" (click)="toggleState()" class="ms"></div>
+<div class="mengban" *ngIf="haveMengban"></div>
+<div  class="chooseSex" *ngIf="haveBarCode">
+  <div class="quxiao" (click)="hideMengban()">
+    <img src="../../../assets/img/main/close.png" height="40">
+  </div>
+  <div style="width: 100%;height: 100%;text-align: center">
+    <img src="../../../assets/img/main/barCode.jpeg" width="250">
+  </div>
+</div>

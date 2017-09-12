@@ -1,0 +1,115 @@
+@import "../../../../assets/scss/global";
+.styleto{
+  text-align: center;
+  h3{
+    font: 24px/70px '';
+  }
+  ul{
+    li{
+      width: 100%;
+      position: relative;
+    }
+    li:first-of-type{
+      //background: url("../../../assets/img/mall/xiandaijianyue.png") no-repeat 100%;
+      background-size: 100% 100%;
+    }
+    li:nth-of-type(2){
+      //background: url("../../../assets/img/mall/oushi.png") no-repeat 100%;
+      background-size: 100% 100%;
+    }
+    li:last-of-type{
+      //background: url("../../../assets/img/mall/xinzhongshi.png") no-repeat 100%;
+      background-size: 100% 100%;
+    }
+  }
+  .Introduction{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    @include transform(translate(-50%,-50%));
+    &:first-child{
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+  .grasp{
+    position: absolute;
+    bottom: 25px;
+    right: 40px;
+    text-align: right;
+    //background-color: #000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    p{
+      display: inline-block;
+      font-size: 12px;
+      color: #fff;
+      border-bottom: 1px solid #fff;
+    }
+    img{
+      width: 15px;
+    }
+  }
+}
+.floor_type{
+  text-align: center;
+  h3{
+    font: 24px/78px '';
+  }
+  ul{
+    overflow: auto;
+  }
+  li{
+    float: left;
+    width: 50%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 18px;
+    img{
+      width: a(260px);
+      height: a(260px);
+    }
+    p{
+      font-size: 16px;
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top:50%;
+      @include transform(translate(-50%,-50%));
+    }
+  }
+}
+.floor_type{
+  text-align: center;
+  h3{
+    font: 24px/78px '';
+  }
+  ul{
+    overflow: auto;
+  }
+  li{
+    float: left;
+    width: 50%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 18px;
+    img{
+      width: a(260px);
+      height: a(260px);
+    }
+    p{
+      font-size: 16px;
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top:50%;
+      @include transform(translate(-50%,-50%));
+    }
+  }
+}
+@media (max-width: 375px) {
+  .floor_type h3{
+    font: 18px/74px '';
+  }
+}
+

@@ -1,0 +1,163 @@
+@import "../../../../assets/scss/global";
+.height{
+  overflow: auto;
+}
+.order_top{
+  @include flexBox;
+  position: fixed;
+  width: 100%;
+  height: 37px;
+  background-color: #fff;
+  z-index: 50;
+  img{
+    margin: 11px 0 0 18px;
+    width: 8px;
+    height: 15px;
+  }
+  p{
+    @include Center;
+    font: 18px/37px '';
+    color: #545454;
+  }
+}
+.shadow{
+  width: 100%;
+  height: a(6px);
+  background-color: #eeeeee;
+}
+.remind_img{
+  width: 100%;
+  padding: a(30px) a(50px);
+  img{
+    width: 100%;
+  }
+}
+.remind_message{
+  margin: a(30px) 0 a(20px) a(36px);
+  p{
+    font-size: a(32px);
+    color: #545454;
+  }
+}
+
+.order_footer{
+  position: fixed;
+  @include flexBox;
+  height: 49px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  div:first-of-type{
+    text-align: center;
+    background-color: #f49853;
+    width: 50%;
+  }
+  p{
+    color: #fff;
+    font: 18px/49px '';
+  }
+  div:last-of-type{
+    text-align: center;
+    width: 50%;
+    background-color: #dd2727;
+  }
+}
+
+.order_one{
+  padding: 0 a(36px);
+  margin-top: a(20px);
+}
+.order_main{
+  @include flexBox;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  & > div:first-of-type{
+    width: a(170px);
+    height: a(130px);
+    margin: a(20px) a(32px) 0 0;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & > div:last-of-type{
+    padding-top: a(30px);
+    @include flex(1);
+    @include flexBox;
+    @include flex-flow(row wrap);
+    @include align-content(space-between);
+    & > div:first-of-type{
+      width: 100%;
+      @include flexBox;
+      @include justify-content(space-between);
+      div{
+        @include flex(1);
+      }
+      p{
+        font-size: a(24px);
+        color: #545454;
+      }
+    }
+  }
+}
+.total_prices{
+  width: 100%;
+  @include flexBox;
+  @include justify-content(space-between);
+  & > div:last-of-type{
+    p:first-of-type{
+      font-size: a(26px);
+    }
+    p{
+      color: #f49853;
+    }
+    & > p:last-of-type{
+      margin-top: a(12px);
+      font-size: a(28px);
+    }
+  }
+  .input_box{
+    @include flexBox;
+    width: a(150px);
+    height: a(40px);
+    border: 1px solid #545454;
+    margin-top: a(40px);
+    div:first-of-type,div:last-of-type{
+      width: a(40px);
+      font-size: a(36px);
+      line-height: a(36px);
+      text-align: center;
+    }
+    div:nth-of-type(2){
+      @include flex(1);
+      input{
+        width: 100%;
+        border: none;
+        text-align: center;
+        height: 100%;
+        font-size: a(18px);
+      }
+    }
+  }
+  .combined{
+    text-align: right;
+    margin: a(30px) 0;
+  }
+}
+.order_prompt{
+  width: 100%;
+  div{
+    width: 100%;
+    text-align: center;
+  }
+  div:first-of-type{
+    margin-top: a(84px);
+  }
+  div:last-of-type{
+    margin-top: a(120px);
+  };
+  img{
+    width: 50%;
+    margin: 0 auto;
+  }
+}

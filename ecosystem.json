@@ -1,0 +1,17 @@
+{
+  "apps" : [
+    {
+      name     : "mobile",
+      max_memory_restart: "1024M",
+      script    : "dist/server.js",
+      out_file : "nova_out.log",
+      error_file : "nova_error.log",
+      instances  : 1,
+      exec_mode  : "forks",
+      env: {
+        "NODE_ENV": "production",
+        "PORT": 3000
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<collection-orders></collection-orders>
+<!--<nav>
+ <div *ngFor="let orderStatus of ORDERSTATUS" (click)="seleStatus(orderStatus)">
+   <p [class.seleStatus]="ClassStatus === orderStatus">{{orderStatus.name}}</p>
+ </div>
+</nav>-->
+<section class="unpaid">
+  <div *ngIf="orders" class="ul">
+    <div class="li">
+      <ng-template ngFor let-order [ngForOf]="orders">
+        <div *ngIf="order.product" style="margin-bottom: 20px;">
+          <p>日期:{{order?.createTime}}</p>
+          <div class="order_details">
+            <img src="http://m.wecareroom.com/upload/product_t/{{order.product.code}}.png" alt="">
+            <p class="order_title">{{order.product?.name}}</p>
+            <p class="total_price">合计:￥{{order.balences | toFixedPipe: '2'}}</p>
+            <p>预付定金:<span>{{0.1 * order.balences | toFixedPipe: '2'}}</span></p>
+          </div>
+          <hr>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</section>
