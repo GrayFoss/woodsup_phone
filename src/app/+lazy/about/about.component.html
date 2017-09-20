@@ -1,6 +1,6 @@
 <section class="main">
   <ul class="about_list">
-    <li >
+    <li class="server">
       <div class="banner serv">
         <img src="./assets/img/about1/1.png" alt="" [style.height.px]="0.618*window_width">
         <div class="banner_title">
@@ -11,7 +11,7 @@
       <p>身临其境选购家居，开启新时代沉浸式购物体验</p>
       <about-server *ngIf="about_server" (about_server)="show_server()"></about-server>
     </li>
-    <li>
+    <li class="team">
       <div class="banner tea">
         <img src="./assets/img/about1/2.png" alt="" [style.height.px]="0.618 * window_width">
         <div class="banner_title">
@@ -22,7 +22,7 @@
       <p>我们相信，唯一重要的，是你的想象力</p>
       <about-team *ngIf="about_team" (about_team)="show_team()"></about-team>
     </li>
-    <li>
+    <li class="brand">
       <div class="banner bran">
         <img src="./assets/img/about1/3.png" alt="" [style.height.px]="0.618*window_width">
         <div class="banner_title">

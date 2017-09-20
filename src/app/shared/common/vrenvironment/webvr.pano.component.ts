@@ -40,7 +40,7 @@ export class webvrPanoComponent implements OnInit, AfterViewInit {
   constructor(
     private render: Renderer2,
     private el: ElementRef) {
-    console.clear();
+    // console.clear();
     /* Creating scene object */
   }
   init() {

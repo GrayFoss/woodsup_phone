@@ -25,5 +25,7 @@ export class Apply {
     public address?: string,
     public ip?: string,
     public endTime?: Date,
-  ) {}
+  ) {
+    this.action = 'click'
+  }
 }
