@@ -25,6 +25,7 @@ import { APP_PROVIDERS } from './app.providers';
 import { routes } from './app.routing';
 
 import { AppComponent } from './app.component';
+import {CoreModule} from "./core/core.module";
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     APP_IMPORTS,
     RouterModule.forRoot(routes, { useHash: false, preloadingStrategy: PreloadAllModules }),
+    CoreModule.forRoot()
   ],
   bootstrap: [AppComponent],
   exports: [AppComponent],
