@@ -12,19 +12,19 @@
        <h3>色系</h3>
      </div>
      <ul>
-       <li *ngFor="let toneq of tonees" (click)="seleTone($event, toneq)" [class.selected]="toneClass == toneq.name"><p id="product_{{toneq.name}}">{{toneq.name}}</p></li>
+       <li *ngFor="let toneq of tonees" (click)="seleTone(toneq)" [class.selected]="toneClass == toneq.name"><p id="product_{{toneq.name}}">{{toneq.name}}</p></li>
      </ul>
      <div class="title">
        <h3>品牌</h3>
      </div>
      <ul>
-       <li *ngFor="let brandq of brandes" (click)="seleBrand($event, brandq)" [class.selected]="brandClass == brandq.name"><p id="product_{{brandq.name}}">{{brandq.name}}</p></li>
+       <li *ngFor="let brandq of brandes" (click)="seleBrand(brandq)" [class.selected]="brandClass == brandq.name"><p id="product_{{brandq.name}}">{{brandq.name}}</p></li>
      </ul>
      <div class="title">
        <h3>类型</h3>
      </div>
      <ul>
-       <li *ngFor="let typeq of typees" (click)="seleType($event, typeq)" [class.selected]="typeClass == typeq.name"><p id="product_{{typeq.name}}">{{typeq.name}}</p></li>
+       <li *ngFor="let typeq of typees" (click)="seleType(typeq)" [class.selected]="typeClass == typeq.name"><p id="product_{{typeq.name}}">{{typeq.name}}</p></li>
      </ul>
   </div>
   <div [style.width.px]="win_width - 160" class="sidebar_right" [style.height.px]="win_height - 89" *ngIf="!showRight">

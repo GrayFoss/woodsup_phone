@@ -13,4 +13,3 @@ export class ScreenService {
     this.screenSource.next(x);
   }
 }
-
