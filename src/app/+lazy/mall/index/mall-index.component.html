@@ -19,11 +19,13 @@
   <home [sceneID]="7"></home>
   <home [sceneID]="8"></home>
 </div>
-<div class="mengban" *ngIf="showMengban && isFirst">
-  <div class="chooseSex" *ngIf="showChooseSex && isFirst">
-    <div class="quxiao" (click)="hideMengban()">
-      <img src="../../../assets/img/main/close.png" height="40">
-    </div>
+<!--<div class="mengban" *ngIf="showMengban && isFirst">-->
+<div class="mengban" [style.width.px]="window_width" [style.height.px]="window_height" *ngIf="isFirst">
+  <!--<div class="chooseSex" *ngIf="showChooseSex && isFirst">-->
+  <div class="quxiao" (click)="hideMengban()">
+    <img src="../../../assets/img/main/close.png" height="40">
+  </div>
+  <div class="chooseSex">
     <img src="../../../assets/img/main/balloon.png" width="290">
     <ul class="chooseSexUl">
       <li class="chooseSexLi" (click)="hideMengban()" id="main_man">

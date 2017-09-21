@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public recommendMessage: Apply = new Apply();
   constructor(
     private buriedService: BuriedSerivce,
-    public route: ActivatedRoute,
+    private route: ActivatedRoute,
     private router: Router
   ) {
   }
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       // document.addEventListener('click', this.aa, false);
     }
   }
-  buriedPoint(e) {
+/*  buriedPoint(e) {
     this.date = new Date();
     let nodeAll = e.path.reverse().splice(5);
     nodeAll = nodeAll.reverse().slice(0, 3);
@@ -50,5 +50,5 @@ export class AppComponent implements OnInit {
   }
   @HostListener('touchstart') bb($event) {
     this.buriedPoint(event)
-  }
+  }*/
 }

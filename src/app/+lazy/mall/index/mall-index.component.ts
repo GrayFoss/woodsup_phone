@@ -13,8 +13,8 @@ import { Carousel } from '../../../shared/common/header/carousel/carousel';
   templateUrl: './mall-index.component.html',
   styleUrls: ['./mall-index.component.scss'],
 })
-export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit {
-  public isFirst: boolean;
+export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit, OnDestroy {
+  public isFirst: boolean = true;
   public promotiones;
   public window_width;
   public window_height;
@@ -37,38 +37,34 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit {
     public el: ElementRef,
     public renderer: Renderer2
   ) {
-    if (typeof window !== 'undefined') {
-      const first = sessionStorage.getItem('isFirst');
-      if ( !first ) {
-        this.isFirst = true;
-        sessionStorage.setItem('isFirst', 'false');
-        renderer.listen(document, 'touchstart', (event) => {
-          // event.preventDefault();
-          // document.body.style.overflow = 'hidden';
-          // document.documentElement.style.overflow = 'hidden';
-        });
-      }else {
-        this.isFirst = false;
-      }
-      this.onBom();
-    }
   }
   end() {
     event.preventDefault();
   }
   onBom() {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth < 540) {
-        this.window_width = window.innerWidth;
-      }else {
-        this.window_width = 540;
-      }
+      this.window_width = window.innerWidth;
       this.window_height = window.innerHeight;
       this.window_ob = [this.window_width, this.window_height];
     }
   }
   ngOnInit() {
+    if (typeof window !== 'undefined') {
+      const first = sessionStorage.getItem('isFirst');
+      console.log(first)
+      if (first ) {
+        this.isFirst = false;
+        sessionStorage.setItem('isFirst', 'false');
+      }
+      this.onBom();
+    }
     this.getBanner();
+  }
+  ngAfterViewInit(): void {
+    if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
+      const mengban = document.querySelector('.mengban');
+      mengban.addEventListener('touchmove', this.end, false);
+    }
   }
   getBanner() {
     this.articleservice.getArticleBaner().then((res) => {
@@ -78,50 +74,33 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit {
       });
     });
   }
-  ngAfterViewInit(): void {
-    if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
-      const mengban = document.querySelector('.mengban');
-      mengban.addEventListener('touchmove', this.end, false);
-    }
-  }
+
   goScenes(e) {
     this.router.navigate(['/experience']);
-  }
-  getMSG(e) {
-      if  ( e.type ) {
-        this.recommendMessage.action = e.type;
-      }
-      e = e.target || e;
-      this.endTime = new Date();
-      this.recommendMessage.other = '首页';
-      this.recommendMessage.urlPath =  this.router.url;
-      this.recommendMessage.endTime =  this.endTime.getTime();
-      this.recommendMessage.type = 'Normal';
-      if ( document.referrer !== '' ) {
-        this.recommendMessage.other = '{来源页:' + decodeURI(document.referrer) + '}';
-      }
-      if ( e.tagName ) {
-        this.recommendMessage.target = e.tagName;
-      }
-      if ( e.id ) {
-        this.recommendMessage.target += '#' + e.id;
-      }
   }
   goProducts(e) {
     this.router.navigate(['/product']);
   }
   ngOnDestroy() {}
   isWoman() {
-    this.isMan = false;
-    this.hideMengban();
+    const mengban = document.querySelector('.mengban');
+    mengban.removeEventListener('touchmove', this.end, false);
+    this.isFirst = false;
+    this.isFirst = false;
+    sessionStorage.setItem('isFirst', 'true');
+    sessionStorage.setItem('isMan', 'false');
+    const first = sessionStorage.getItem('isFirst');
+    console.log(first)
   }
   hideMengban() {
     if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
       const mengban = document.querySelector('.mengban');
       mengban.removeEventListener('touchmove', this.end, false);
-      this.showMengban = false;
-      this.showChooseSex = false;
-      localStorage.setItem('isMan', '' + this.isMan);
     }
+    this.isFirst = false;
+    sessionStorage.setItem('isFirst', 'true');
+    sessionStorage.setItem('isMan', 'true');
+    const first = sessionStorage.getItem('isFirst');
+    console.log(first)
   }
 }
