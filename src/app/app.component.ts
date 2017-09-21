@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
     }
   }
   buriedPoint(e) {
-    // console.log(e.path)
     this.date = new Date();
     let nodeAll = e.path.reverse().splice(5);
     nodeAll = nodeAll.reverse().slice(0, 3);
@@ -47,10 +46,9 @@ export class AppComponent implements OnInit {
     // 分类
     this.recommendMessage.type = 'mobile';
     this.buriedService.sendMessage(this.recommendMessage).then((response) => {
-      console.log(response)
     })
   }
-  @HostListener('click') bb($event) {
+  @HostListener('touchstart') bb($event) {
     this.buriedPoint(event)
   }
 }
