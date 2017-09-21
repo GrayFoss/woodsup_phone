@@ -42,10 +42,29 @@ header{
     width: 40%;
     li{
       overflow: auto;
+      height: c(90);
+      text-align: center;
+      border-top: 1px solid #a3a3a3;
+      img{
+        width: c(120);
+        height: c(120);
+      }
+      &:first-of-type{
+        height: c(74+36+120);
+        border: none;
+        padding-top: c(74);
+      }
+      &:nth-of-type(2){
+        padding-top: c((90-32)/2);
+      }
     }
     p{
-      font-size: 16px;
-      margin: 16px;
+      font-size: c(32);
+      color: #555;
+      line-height: c(88);
+    }
+    a{
+      color: #555;
     }
   }
 }

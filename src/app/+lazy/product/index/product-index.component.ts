@@ -64,7 +64,7 @@ export class ProductIndexComponent implements OnInit , OnDestroy, AfterViewInit 
             this.scerenList.brand = '比利时';
           }
         }
-        this.filterProducts(event, this.scren.tone, this.scren.brand, this.scren.style, this.scren.type, this.scren.price);
+        this.filterProducts(this.scren.tone, this.scren.brand, this.scren.type, this.scren.price);
       }
     );
   }
@@ -108,7 +108,7 @@ export class ProductIndexComponent implements OnInit , OnDestroy, AfterViewInit 
     this.productService.getProducts(page, limit).then((res) => {
       this.allproductes = res;
       this.seleproductes = this.allproductes;
-      this.filterProducts('', this.TONE, this.BRAND, this.STYLENAME, this.TYPENAME);
+      this.filterProducts(this.TONE, this.BRAND, this.STYLENAME, this.TYPENAME);
     });
   }
   public toggleState() {
@@ -124,7 +124,7 @@ export class ProductIndexComponent implements OnInit , OnDestroy, AfterViewInit 
     this.BRAND = null;
     this.TONE = null;
   }
-  public filterProducts(event: any, tone?: string, brand?: string, style?: string, type?: string, price?: Price, sort?: number) {
+  public filterProducts(tone?: string, brand?: string, type?: string, price?: Price, sort?: number) {
     this.seleproductes = this.allproductes;
     if (tone) {
       this.seleproductes = this.seleproductes.filter((res) => {
@@ -182,10 +182,6 @@ export class ProductIndexComponent implements OnInit , OnDestroy, AfterViewInit 
         this.seleproductes.sort(this.compareLarge);
         this.scren.sort = 1;
       }
-    }
-    if (event) {
-      this.collectMsg(event, this.sendType);
-      this.productService.sendMessage(this.recommendMessage);
     }
   }
   gotoProductDetail(event, res) {

@@ -24,15 +24,15 @@
         <div>
           <p>价格排序</p>
         </div>
-        <div id="Price_down" (click)="filterProducts($event, scren.tone,scren.brand,scren.style,scren.type,priceBackground,1)" *ngIf="scren.sort !== 2">
+        <div id="Price_down" (click)="filterProducts(scren.tone,scren.brand,scren.type,priceBackground,1)" *ngIf="scren.sort !== 2">
           <img src="../assets/img/product/down.png" alt="">
         </div>
-        <div id="Price_up" (click)="filterProducts($event, scren.tone,scren.brand,scren.style,scren.type,priceBackground,2)" *ngIf="scren.sort == 2">
+        <div id="Price_up" (click)="filterProducts(scren.tone,scren.brand,scren.type,priceBackground,2)" *ngIf="scren.sort == 2">
           <img src="../assets/img/product/up.png" alt="">
         </div>
       </div>
       <ul class="sort_list">
-        <li *ngFor="let price of prices" (click)="filterProducts($event, scren.tone,scren.brand,scren.style,scren.type,price)" [class.price_background]="price===priceBackground"><p id="Price_{{price.data}}">{{price.data}}</p></li>
+        <li *ngFor="let price of prices" (click)="filterProducts(scren.tone,scren.brand, scren.type,price)" [class.price_background]="price===priceBackground"><p id="Price_{{price.data}}">{{price.data}}</p></li>
       </ul>
     </div>
     <ul (click)="backleft()" class="product_list">

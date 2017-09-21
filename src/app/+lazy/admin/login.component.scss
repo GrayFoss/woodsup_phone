@@ -1,0 +1,104 @@
+@import "../../../assets/scss/global";
+
+.login{
+  background: url("/assets/img/admin/bg@2x.png") no-repeat 100%;
+  background-size: 100% 100%;
+  .title{
+    width: 100%;
+    height: c(88);
+    @include flexBox;
+    position: relative;
+    .back{
+      width: c(36*3);
+      height: c(88);
+      text-align: center;
+    }
+    img{
+      margin-top: c(52/2);
+      width: c(36);
+      height: c(36);
+    }
+    .dengLu{
+      position: absolute;
+      left: 50%;
+      @include transform(translateX(-50%));
+      p{
+        line-height: c(88);
+        font-size: c(36);
+        color: #fff;
+      }
+    }
+  }
+}
+.bg_login{
+  background-color: #f49953!important;
+}
+
+.phone_account{
+  width: c(250*2);
+  height: c(70);
+  margin: c(40) auto c(274);
+  @include flexBox;
+  div{
+    width: c(250);
+    height: c(70);
+    background-color: #e4e3e3;
+    text-align: center;
+    &:first-of-type{
+      border-radius: c(35) 0 0 c(35);
+    }
+    &:last-of-type{
+      border-radius: 0 c(35) c(35) 0;
+    }
+    p{
+      font-size: c(36);
+      line-height: c(70);
+      color: #fff;
+    }
+  }
+}
+.input_phone, .input_yan{
+  background-color: #fff;
+  position: relative;
+}
+.item{
+  width: c(600);
+  margin: c(30) auto 0;
+  height: c(80);
+  border-radius: c(40);
+  @include flexBox;
+  img{
+    width: c(27);
+    height: c(27);
+    margin-top: c((80-27)/2);
+    margin-left: c(40);
+    margin-right: c(14);
+  }
+  input{
+    font-size: c(32);
+    border: none;
+    color: #fff;
+  }
+}
+.login_button{
+  text-align: center;
+  display: block;
+  height: c(80);
+  margin-top: c(50);
+  p{
+    font-size: c(40);
+    background-color: #f49863;
+    color: #fff;
+    line-height: c(80);
+    border-radius: c(80);
+  }
+}
+.register{
+  text-align: center;
+  margin-top: c(40);
+  p{
+    font-size: c(28);
+    color: #fff;
+    text-decoration: underline;
+  }
+}

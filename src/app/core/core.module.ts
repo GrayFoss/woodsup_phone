@@ -1,12 +1,11 @@
-/**
- * Created by joe on 2017/9/18.
- */
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BuriedSerivce } from './buried.service';
+import { UsersService } from './users.service';
 
 const PROVIDERS = [
-  BuriedSerivce
+  BuriedSerivce,
+  UsersService
 ];
 
 @NgModule({
