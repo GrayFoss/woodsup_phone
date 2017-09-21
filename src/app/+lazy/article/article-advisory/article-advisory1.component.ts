@@ -13,7 +13,7 @@ export class ArticleAdvisory1Component implements OnInit {
   constructor(
     private articleservice: ArticleService
   ) {
-    this.getArticles(1, ' ');
+    this.getArticles(1, '木上学堂');
   }
   ngOnInit(): void {
   }
