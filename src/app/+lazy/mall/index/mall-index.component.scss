@@ -137,20 +137,20 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 110;
 }
 .chooseSex{
   width: 290px;
   height: 221px;
   top: 50%;
   left: 50%;
-  position: absolute;
+  position: fixed;
   margin-top: -180px;
   margin-left: -145px;
   z-index: 1000;
 }
 .quxiao{
-  position: absolute;
+  position: fixed;
   top: 40px;
   right: 18px;
   width:40px;

@@ -1,42 +1,46 @@
 <div class="product-list">
-  <div *ngIf="myObjects.length > 0">
-    <carousel [myObjects]="myObjects"></carousel>
+    <div *ngIf="myObjects.length > 0">
+      <carousel [myObjects]="myObjects"></carousel>
+    </div>
   </div>
-</div>
-<div class="main_container">
-  <div class="main_content">
-    <ul>
-      <li id="TopScene" (click)="goScenes($event)"></li>
-      <li id="TopFlooring" (click)="goProducts($event)"></li>
-    </ul>
+  <div class="main_container">
+    <div class="main_content">
+      <ul>
+        <li id="TopScene" (click)="goScenes($event)"></li>
+        <li id="TopFlooring" (click)="goProducts($event)"></li>
+      </ul>
+    </div>
+    <div></div>
+    <h5>精品推荐</h5>
+    <home [sceneID]="6"></home>
+    <home [sceneID]="5"></home>
+    <home [sceneID]="4"></home>
+    <home [sceneID]="3"></home>
+    <home [sceneID]="7"></home>
+    <home [sceneID]="8"></home>
   </div>
-  <div></div>
-  <h5>精品推荐</h5>
-  <home [sceneID]="6"></home>
-  <home [sceneID]="5"></home>
-  <home [sceneID]="4"></home>
-  <home [sceneID]="3"></home>
-  <home [sceneID]="7"></home>
-  <home [sceneID]="8"></home>
-</div>
 <!--<div class="mengban" *ngIf="showMengban && isFirst">-->
-<div class="mengban" [style.width.px]="window_width" [style.height.px]="window_height" *ngIf="isFirst">
+<div class="mengban" [style.width.px]="window_width" [style.height.px]="window_height" *ngIf="isFirst === 'true'">
   <!--<div class="chooseSex" *ngIf="showChooseSex && isFirst">-->
-  <div class="quxiao" (click)="hideMengban()">
+
+</div>
+<div class="ask_content" *ngIf="isFirst === 'true'">
+  <div class="quxiao" (touchstart)="hideMengban()">
     <img src="../../../assets/img/main/close.png" height="40">
   </div>
   <div class="chooseSex">
     <img src="../../../assets/img/main/balloon.png" width="290">
     <ul class="chooseSexUl">
-      <li class="chooseSexLi" (click)="hideMengban()" id="main_man">
+      <li class="chooseSexLi" (touchstart)="hideMengban()" id="main_man">
         <img src="../../../assets/img/main/circle_not-click.png" width="17" id="main_man_img">
       </li>
-      <li class="chooseSexLi" (click)="isWoman()" id="main_woman">
+      <li class="chooseSexLi" (touchstart)="isWoman()" id="main_woman">
         <img src="../../../assets/img/main/circle_not-click.png" width="17" id="main_woman_img">
       </li>
-      <li class="chooseSexLi" (click)="hideMengban()" id="main_no">
+      <li class="chooseSexLi" (touchstart)="hideMengban()" id="main_no">
         <img src="../../../assets/img/main/circle_not-click.png" width="17" id="main_no_img">
       </li>
     </ul>
   </div>
 </div>
+

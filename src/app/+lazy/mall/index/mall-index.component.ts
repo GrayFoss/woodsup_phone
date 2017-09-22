@@ -14,7 +14,7 @@ import { Carousel } from '../../../shared/common/header/carousel/carousel';
   styleUrls: ['./mall-index.component.scss'],
 })
 export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit, OnDestroy {
-  public isFirst: boolean = true;
+  public isFirst: string = 'true';
   public promotiones;
   public window_width;
   public window_height;
@@ -50,11 +50,9 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit, OnD
   }
   ngOnInit() {
     if (typeof window !== 'undefined') {
-      const first = sessionStorage.getItem('isFirst');
-      console.log(first)
-      if (first ) {
-        this.isFirst = false;
-        sessionStorage.setItem('isFirst', 'false');
+      const first = localStorage.getItem('isFirst');
+      if (first) {
+        this.isFirst = 'false';
       }
       this.onBom();
     }
@@ -63,7 +61,7 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit, OnD
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
       const mengban = document.querySelector('.mengban');
-      mengban.addEventListener('touchmove', this.end, false);
+      mengban.addEventListener('touchstart', this.end, false);
     }
   }
   getBanner() {
@@ -74,7 +72,6 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit, OnD
       });
     });
   }
-
   goScenes(e) {
     this.router.navigate(['/experience']);
   }
@@ -83,24 +80,22 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit, OnD
   }
   ngOnDestroy() {}
   isWoman() {
-    const mengban = document.querySelector('.mengban');
-    mengban.removeEventListener('touchmove', this.end, false);
-    this.isFirst = false;
-    this.isFirst = false;
-    sessionStorage.setItem('isFirst', 'true');
-    sessionStorage.setItem('isMan', 'false');
-    const first = sessionStorage.getItem('isFirst');
-    console.log(first)
+    if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
+      const mengban = document.querySelector('.mengban');
+      mengban.removeEventListener('touchstart', this.end, false);
+    }
+    this.isFirst = 'false';
+    localStorage.setItem('isFirst', 'false');
+    localStorage.setItem('isMan', 'false');
+
   }
   hideMengban() {
     if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
       const mengban = document.querySelector('.mengban');
-      mengban.removeEventListener('touchmove', this.end, false);
+      mengban.removeEventListener('touchstart', this.end, false);
     }
-    this.isFirst = false;
-    sessionStorage.setItem('isFirst', 'true');
-    sessionStorage.setItem('isMan', 'true');
-    const first = sessionStorage.getItem('isFirst');
-    console.log(first)
+    this.isFirst = 'false';
+    localStorage.setItem('isFirst', 'false');
+    localStorage.setItem('isMan', 'true');
   }
 }
