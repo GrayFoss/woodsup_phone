@@ -108,6 +108,7 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     this.isFirst = 'false';
     localStorage.setItem('isFirst', 'false');
     localStorage.setItem('isMan', 'false');
+    event.preventDefault();
   }
   hideMengban() {
     if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
@@ -117,5 +118,6 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     this.isFirst = 'false';
     localStorage.setItem('isFirst', 'false');
     localStorage.setItem('isMan', 'true');
+    event.preventDefault();
   }
 }
