@@ -1,28 +1,49 @@
 <div class="product-list">
-    <div *ngIf="myObjects.length > 0">
+   <!-- <div *ngIf="myObjects.length > 0">
       <carousel [myObjects]="myObjects"></carousel>
+    </div>-->
+  <div class="swiper-container" [style.width.px]="window_width"  [style.height.px]="window_width * 9/16">
+    <div class="swiper-wrapper" *ngIf="article_banneres">
+      <div class="swiper-slide" *ngFor="let banner of article_banneres">
+        <img src="{{banner.titleImg}}" alt="" style="width: 100%; height: 100%">
+      </div>
+    <!--  <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>-->
     </div>
   </div>
-  <div class="main_container">
-    <div class="main_content">
-      <ul>
-        <li id="TopScene" (click)="goScenes($event)"></li>
-        <li id="TopFlooring" (click)="goProducts($event)"></li>
-      </ul>
+  <div class="swiper-container" [style.width.px]="window_width"  [style.height.px]="window_width * 9/16">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="http://image.wecareroom.com/upload/article/2_1498219702554.jpeg" alt="" style="width: 100%; height: 100%">
+      </div>
+      <div class="swiper-slide">
+        <img src="http://image.wecareroom.com/upload/article/2_1498219670405.jpeg" alt="" style="width: 100%; height: 100%">
+      </div>
+      <div class="swiper-slide">
+        <img src="http://image.wecareroom.com/upload/article/2_1498220209986.jpeg" alt="" style="width: 100%; height: 100%">
+      </div>
+      <!--  <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>-->
     </div>
-    <div></div>
-    <h5>精品推荐</h5>
-    <home [sceneID]="6"></home>
-    <home [sceneID]="5"></home>
-    <home [sceneID]="4"></home>
-    <home [sceneID]="3"></home>
-    <home [sceneID]="7"></home>
-    <home [sceneID]="8"></home>
   </div>
-<!--<div class="mengban" *ngIf="showMengban && isFirst">-->
+</div>
+<div class="main_container">
+  <div class="main_content">
+    <ul>
+      <li id="TopScene" (click)="goScenes($event)"></li>
+      <li id="TopFlooring" (click)="goProducts($event)"></li>
+    </ul>
+  </div>
+  <div></div>
+  <h5>精品推荐</h5>
+  <home [sceneID]="6"></home>
+  <home [sceneID]="5"></home>
+  <home [sceneID]="4"></home>
+  <home [sceneID]="3"></home>
+  <home [sceneID]="7"></home>
+  <home [sceneID]="8"></home>
+</div>
 <div class="mengban" [style.width.px]="window_width" [style.height.px]="window_height" *ngIf="isFirst === 'true'">
-  <!--<div class="chooseSex" *ngIf="showChooseSex && isFirst">-->
-
 </div>
 <div class="ask_content" *ngIf="isFirst === 'true'">
   <div class="quxiao" (touchstart)="hideMengban()">
