@@ -88,9 +88,9 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
           this.ngZone.run(() => {
             this.commonVR = new CommonVR(host);
             this._webvr.initialVR(host, _render, this.commonVR);
-            this.getProduct(this.id);
           });
         });
+        this.getProduct(this.id);
         if (this.commonVR) {
           // this.webvrPanoComponent.setMaterials(this.fileName, this.matName);
         }

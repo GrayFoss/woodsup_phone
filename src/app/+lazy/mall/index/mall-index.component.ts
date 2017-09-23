@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, ElementRef, OnDestroy, Renderer2, AfterViewInit
+  Component, OnInit, ElementRef, OnDestroy, Renderer2
 } from '@angular/core';
 import { ProductService } from '../../../shared/services/products/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,7 +13,8 @@ declare const Swiper: any;
   templateUrl: './mall-index.component.html',
   styleUrls: ['./swiper.min.css', './mall-index.component.scss'],
 })
-export class MallIndexComponent implements OnInit, AfterViewInit, OnDestroy {
+
+export class MallIndexComponent implements OnInit, OnDestroy {
   public isFirst: string = 'true';
   public promotiones;
   public window_width;
@@ -49,28 +50,23 @@ export class MallIndexComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
   ngOnInit() {
-    if (typeof window !== 'undefined') {
+    /*if (typeof window !== 'undefined') {
       const first = localStorage.getItem('isFirst');
       if (first) {
         this.isFirst = 'false';
       }
       this.onBom();
       this.getBanner();
-    }
-
-  }
-  ngOnDestroy(): void {
-    if (typeof window !== 'undefined') {
-      document.getElementsByTagName('head')[0].removeChild(document.getElementById('swiper'));
-    }
-  }
-  ngAfterViewInit(): void {
-    if (typeof window !== 'undefined') {
       if (document.querySelector('.mengban')) {
         const mengban = document.querySelector('.mengban');
         mengban.addEventListener('touchstart', this.end, false);
       }
-    }
+    }*/
+  }
+  ngOnDestroy(): void {
+    /*if (typeof window !== 'undefined') {
+      document.getElementsByTagName('head')[0].removeChild(document.getElementById('swiper'));
+    }*/
   }
   /**
    * swiper.min.js
