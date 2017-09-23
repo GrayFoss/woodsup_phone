@@ -12,7 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
-
 import {
   BrowserTransferStateModule
 } from '../modules/transfer-state/browser-transfer-state.module';

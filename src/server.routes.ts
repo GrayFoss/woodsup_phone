@@ -11,6 +11,7 @@ export const routes: string[] = [
   'product',
   'product/*',
   'product/**/*',
+  'product;*',
   'togo/*',
   'about',
   'about/*',
