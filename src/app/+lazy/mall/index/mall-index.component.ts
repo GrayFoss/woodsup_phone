@@ -29,7 +29,7 @@ export class MallIndexComponent implements OnInit, OnDestroy {
   public recommendMessage: Apply = new Apply();
   // 性别判断
   public isMan: boolean = true;
-  private article_banneres;
+  public article_banneres;
   constructor(
     public router: Router,
     public articleservice: ArticleService,
@@ -85,6 +85,7 @@ export class MallIndexComponent implements OnInit, OnDestroy {
   getBanner() {
     this.articleservice.getArticleBaner().then((res) => {
       this.article_banneres = res;
+      console.log(this.article_banneres);
       this.loadScript('assets/lib/swiper.min.js', 'swiper', () => {
         const swiper = new Swiper('.swiper-container', {
           autoplay: 2500,
