@@ -50,7 +50,7 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     }
   }
   ngOnInit() {
-    /*if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
       const first = localStorage.getItem('isFirst');
       if (first) {
         this.isFirst = 'false';
@@ -61,12 +61,12 @@ export class MallIndexComponent implements OnInit, OnDestroy {
         const mengban = document.querySelector('.mengban');
         mengban.addEventListener('touchstart', this.end, false);
       }
-    }*/
+    }
   }
   ngOnDestroy(): void {
-    /*if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
       document.getElementsByTagName('head')[0].removeChild(document.getElementById('swiper'));
-    }*/
+    }
   }
   /**
    * swiper.min.js
