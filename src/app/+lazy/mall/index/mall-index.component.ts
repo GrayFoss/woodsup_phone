@@ -19,7 +19,6 @@ export class MallIndexComponent implements OnInit, OnDestroy {
   public promotiones;
   public window_width;
   public window_height;
-  public window_ob;
   public myObjects = [];
   public scenesArray = [0, 1, 2, 3];
   public showMengban: boolean = true;
@@ -46,11 +45,13 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     if (typeof window !== 'undefined') {
       this.window_width = window.innerWidth;
       this.window_height = window.innerHeight;
-      this.window_ob = [this.window_width, this.window_height];
     }
   }
   ngOnInit() {
-    /*if (typeof window !== 'undefined') {
+    this.window_height = this.el.nativeElement.parentElement.parentElement.parentElement.clientHeight;
+    this.window_width = this.el.nativeElement.parentElement.parentElement.parentElement.clientWidth;
+    console.log(this.window_width)
+    if (typeof window !== 'undefined') {
       const first = localStorage.getItem('isFirst');
       if (first) {
         this.isFirst = 'false';
@@ -61,12 +62,12 @@ export class MallIndexComponent implements OnInit, OnDestroy {
         const mengban = document.querySelector('.mengban');
         mengban.addEventListener('touchstart', this.end, false);
       }
-    }*/
+    }
   }
   ngOnDestroy(): void {
-    /*if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
       document.getElementsByTagName('head')[0].removeChild(document.getElementById('swiper'));
-    }*/
+    }
   }
   /**
    * swiper.min.js
@@ -85,7 +86,6 @@ export class MallIndexComponent implements OnInit, OnDestroy {
   getBanner() {
     this.articleservice.getArticleBaner().then((res) => {
       this.article_banneres = res;
-      console.log(this.article_banneres);
       this.loadScript('assets/lib/swiper.min.js', 'swiper', () => {
         const swiper = new Swiper('.swiper-container', {
           autoplay: 2500,
