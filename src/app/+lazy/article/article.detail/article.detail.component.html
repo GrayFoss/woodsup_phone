@@ -6,27 +6,6 @@
       <div [innerHTML]="article.content | sanitizeHtml"></div>
     </div>
   </div>
-  <!--<article class="article_similar">
-    <div class="main">
-      <h4>类似文章</h4>
-    </div>
-    <div class="article_detail" *ngFor="let similar of similarArticles">
-      <div class="media">
-        &lt;!&ndash;<a routerLink="/article/{{similar.id}}" (click)="bb(similar.id)">&ndash;&gt;
-        <a (click)="bb(similar.id)">
-          <div class="media-left">
-            <img class="media-object" src="{{similar.titleImg}}" alt="" >
-          </div>
-          <div class="media-body" >
-            <h4 class="media-heading">{{similar.title}}</h4>
-            <p>
-              {{similar.summary}}
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </article>-->
   <div class="article_product" *ngIf="article_product">
     <div>
       相关好物
@@ -70,7 +49,7 @@
       <img src="../assets/img/product/dow.png" alt="">
     </div>
     <ul>
-      <li *ngFor="let similar of similarArticles">
+      <li *ngFor="let similar of similarArticles" id="article_recommend_{{similar.id}}">
         <div>
           <img src="{{similar.titleImg}}" alt="">
         </div>

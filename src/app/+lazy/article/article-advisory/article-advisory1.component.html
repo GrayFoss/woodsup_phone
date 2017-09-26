@@ -1,10 +1,10 @@
 <header-component></header-component>
 <ul>
   <li *ngFor="let article of articles" routerLink="/article/{{article.id}}">
-    <img src="{{article.titleImg}}" alt="">
+    <img src="{{article.titleImg}}" alt="" id="{{article.id}}_img">
     <div class="summary">
       <img src="../../../assets/img/article/article_background.png" alt="">
-      <p>
+      <p id="{{article.title}}">
         {{article.summary}}
       </p>
     </div>

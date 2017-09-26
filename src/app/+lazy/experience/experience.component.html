@@ -1,5 +1,5 @@
 <header-component *ngIf="hiddRotate"></header-component>
-<div *ngIf="hiddRotate" [style.width.px]="win_width" [style.height.px]="win_height-89" class="Prompt">
+<div *ngIf="hiddRotate" [style.width.px]="win_width" [style.height.px]="win_height-89" class="Prompt" id="experience_prompt">
   <div>
     <img src="./assets/img/experience/screen-cut.png" alt="">
     <p>请将手机处于横屏状态</p>
@@ -12,9 +12,9 @@
     <p style="position: fixed;top: 50%;left: 40%;font-size: 16px;font-weight: 600;" *ngIf="!MatName">拼命加载中~~~~</p>
   </div>
   <div class="transverse" *ngIf="!hiddRotate && Main === ''" [style.width.px]="win_width" [style.height.px]="canvasHeight">
-    <img src="./assets/img/experience/back-to-main-page.png" alt="" routerLink="/">
+    <img src="./assets/img/experience/back-to-main-page.png" alt="" routerLink="/" id="back_index">
     <div class="screening" [style.height.px]="win_height">
-      <div class="select_scene" (click)="getType('场景选择')">
+      <div class="select_scene" (click)="getType('场景选择')" id="sele_sence">
         <div>
           <img src="./assets/img/experience/jiantou.png" alt="" *ngIf="typeSelect === '场景选择'">
         </div>
@@ -26,14 +26,14 @@
         </div>
         <div class="scene_main">
           <ul>
-            <li *ngFor="let scene of scenes" (click)="setScene(scene)"><img src="{{scene.imgUrl}}" alt="" [class.border_white]="fileName === scene.name"></li>
+            <li *ngFor="let scene of scenes" (click)="setScene(scene)" id="{{scene.id}}"><img src="{{scene.imgUrl}}" alt="" [class.border_white]="fileName === scene.name"></li>
           </ul>
         </div>
-        <div class="button" (click)="slidingUnder('scene_main')">
+        <div class="button" (click)="slidingUnder('scene_main')" id="scene_main">
           <img src="./assets/img/experience/bottom.png" alt="">
         </div>
       </div>
-      <div class="select_product" (click)="getType('产品挑选')">
+      <div class="select_product" (click)="getType('产品挑选')" id="sele_product">
         <div>
           <img src="./assets/img/experience/jiantou.png" alt="" *ngIf="typeSelect==='产品挑选'">
         </div>
@@ -44,7 +44,7 @@
       <div class="product_list" *ngIf="typeSelect==='产品挑选'">
         <div>
           <ul>
-            <li (click)="selectProduct('floor')"><img src="./assets/img/experience/floor.png" alt=""></li>
+            <li (click)="selectProduct('floor')" id="sele_floor"><img src="./assets/img/experience/floor.png" alt=""></li>
           </ul>
         </div>
       </div>
@@ -52,7 +52,7 @@
   </div>
   <div *ngIf="!hiddRotate && Main === 'floor'">
     <div class="main_floor_left" [@flyInOutLeft]="'in'" *ngIf="timing">
-      <div class="floor_type" (click)="selectParameter('地板')">
+      <div class="floor_type" (click)="selectParameter('地板')" id="sele_parameter">
         <div>
           <img src="./assets/img/experience/jia.png" alt="" *ngIf="filter !== '地板'">
           <img src="./assets/img/experience/jian.png" alt="" *ngIf="filter === '地板'">
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="type_list" *ngIf="filter === '地板'">
-        <div *ngFor="let kind of kinds" (click)="selectKind(kind)">
+        <div *ngFor="let kind of kinds" (click)="selectKind(kind)" id="sele_kind">
           <div>
             <img src="./assets/img/experience/jiantou.png" alt="" *ngIf="selekind === kind">
           </div>
@@ -82,7 +82,7 @@
       </div>
       <div class="floor_color" *ngIf="filter === '颜色'">
         <ul>
-          <li *ngFor="let color of colors" (click)="filter_floor_color(color)">
+          <li *ngFor="let color of colors" (click)="filter_floor_color(color)" id="sele_color">
             <img src="{{color.imgUrl}}" alt="{{color.name}}" [class.border_white]="floor_color === color">
           </li>
         </ul>

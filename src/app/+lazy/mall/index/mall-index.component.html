@@ -1,11 +1,9 @@
 <div class="product-list">
   <div class="swiper-container" style="height: 200px; width: 100%" [style.width.px]="window_width"  [style.height.px]="window_width * 9/16">
     <div class="swiper-wrapper" >
-      <div class="swiper-slide" *ngFor="let banner of article_banneres" routerLink="/article/{{banner.id}}">
+      <div class="swiper-slide" *ngFor="let banner of article_banneres" id="banner{{banner.id}}" routerLink="/article/{{banner.id}}">
         <img src="{{banner.titleImg}}" alt="" style="width: 100%; height: 100%">
       </div>
-      <!--  <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>-->
     </div>
   </div>
 </div>
@@ -25,10 +23,10 @@
   <home [sceneID]="7"></home>
   <home [sceneID]="8"></home>
 </div>
-<div class="mengban" [style.width.px]="window_width" [style.height.px]="window_height" *ngIf="isFirst === 'true'">
+<div class="mengban" id="mengban" [style.width.px]="window_width" [style.height.px]="window_height" *ngIf="isFirst === 'true'">
 </div>
 <div class="ask_content" *ngIf="isFirst === 'true'">
-  <div class="quxiao" (touchstart)="hideMengban()">
+  <div class="quxiao" id="quxiao" (touchstart)="hideMengban()">
     <img src="../../../assets/img/main/close.png" height="40">
   </div>
   <div class="chooseSex">

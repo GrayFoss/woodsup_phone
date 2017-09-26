@@ -48,9 +48,6 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     }
   }
   ngOnInit() {
-    this.window_height = this.el.nativeElement.parentElement.parentElement.parentElement.clientHeight;
-    this.window_width = this.el.nativeElement.parentElement.parentElement.parentElement.clientWidth;
-    console.log(this.window_width)
     if (typeof window !== 'undefined') {
       const first = localStorage.getItem('isFirst');
       if (first) {
@@ -92,6 +89,7 @@ export class MallIndexComponent implements OnInit, OnDestroy {
           autoplayDisableOnInteraction: false,
           loop: true
         });
+        console.log(document.getElementById('swiper'))
       });
     });
   }
