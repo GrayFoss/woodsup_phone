@@ -19,7 +19,6 @@ export class MallIndexComponent implements OnInit, OnDestroy {
   public promotiones;
   public window_width;
   public window_height;
-  public window_ob;
   public myObjects = [];
   public scenesArray = [0, 1, 2, 3];
   public showMengban: boolean = true;
@@ -29,7 +28,7 @@ export class MallIndexComponent implements OnInit, OnDestroy {
   public recommendMessage: Apply = new Apply();
   // 性别判断
   public isMan: boolean = true;
-  private article_banneres;
+  public article_banneres;
   constructor(
     public router: Router,
     public articleservice: ArticleService,
@@ -46,10 +45,11 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     if (typeof window !== 'undefined') {
       this.window_width = window.innerWidth;
       this.window_height = window.innerHeight;
-      this.window_ob = [this.window_width, this.window_height];
     }
   }
   ngOnInit() {
+    this.window_height = this.el.nativeElement.parentElement.parentElement.parentElement.clientHeight;
+    this.window_width = this.el.nativeElement.parentElement.parentElement.parentElement.clientWidth;
     if (typeof window !== 'undefined') {
       const first = localStorage.getItem('isFirst');
       if (first) {
@@ -108,6 +108,7 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     this.isFirst = 'false';
     localStorage.setItem('isFirst', 'false');
     localStorage.setItem('isMan', 'false');
+    event.preventDefault();
   }
   hideMengban() {
     if (typeof window !== 'undefined' && document.querySelector('.mengban')) {
@@ -117,5 +118,6 @@ export class MallIndexComponent implements OnInit, OnDestroy {
     this.isFirst = 'false';
     localStorage.setItem('isFirst', 'false');
     localStorage.setItem('isMan', 'true');
+    event.preventDefault();
   }
 }

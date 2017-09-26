@@ -259,7 +259,7 @@ const clientConfig = function webpackConfig(): WebpackConfig {
     };
   } else {
     config.entry = {
-      main: root('./src/main.browser.ts')
+      main: AOT ? root('./src/main.browser.aot.ts') : root('./src/main.browser.ts')
     };
   }
 
@@ -284,8 +284,7 @@ const clientConfig = function webpackConfig(): WebpackConfig {
     },
     stats: 'minimal',
     host: '0.0.0.0',
-    watchOptions: DEV_SERVER_WATCH_OPTIONS,
-    disableHostCheck: true
+    watchOptions: DEV_SERVER_WATCH_OPTIONS
   };
 
   if (USE_DEV_SERVER_PROXY) {

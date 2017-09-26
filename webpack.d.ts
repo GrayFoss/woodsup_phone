@@ -22,11 +22,10 @@ interface WebpackConfig {
     quiet?: boolean;
     noInfo?: boolean;
     watchOptions?: any;
-    disableHostCheck?: any
   };
   performance?: {
     hints?: boolean;
-  };
+  }
   node?: {
     process?: boolean;
     global?: boolean;
