@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
           <div class="sideBar">
           <ul>
             <li>
-              <a href="javascript:scroll(0,0)">
+              <a href="javascript:scroll(0,0)" id="back_top">
                 <img src="./assets/img/article/totop2.png" alt="">
                 回顶部
               </a>

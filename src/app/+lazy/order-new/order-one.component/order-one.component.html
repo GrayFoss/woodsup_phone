@@ -1,6 +1,6 @@
 <div class="height">
   <div class="order_top">
-    <div (click)="back()">
+    <div (click)="back()" id="bakc_order_one">
       <img src="./assets/img/order-new/goto.png" alt="">
     </div>
     <div>
@@ -21,7 +21,7 @@
         <p>联系客服</p>
       </a>
     </div>
-    <div (click)="nextStep1()">
+    <div (click)="nextStep1()" id="next_one">
       <p>下一步</p>
     </div>
   </div>
@@ -42,7 +42,7 @@
         <div class="input_box">
           <div (click)="reduceQuantity()">-</div>
           <div>
-            <input type="number" [(ngModel)]="quantity" (keyup)="calculate()">
+            <input type="number" [(ngModel)]="quantity" (keyup)="calculate()" id="set_price">
           </div>
           <div (click)="addQuantity()">+</div>
         </div>
