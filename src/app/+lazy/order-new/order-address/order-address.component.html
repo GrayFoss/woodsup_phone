@@ -15,7 +15,7 @@
           <p>省</p>
         </div>
         <div class="province">
-          <select name="province" [(ngModel)]="currentUser.state" id="province">
+          <select name="province" [(ngModel)]="currentUser.state" id="province" (change)="seleState(currentUser.state)">
             <option *ngFor="let pro of addresses" value="{{pro.name}}">{{pro.name}}</option>
           </select>
         </div>
@@ -24,7 +24,6 @@
         <div>
           <p>市</p>
         </div>
-        <!--<div class="province" *ngIf="cities.length>0">-->
         <div class="province">
           <select  name="city" [(ngModel)]="currentUser.city" id="city"><option *ngFor="let ci of cities" value="{{ci.name}}">{{ci.name}}</option></select>
         </div>
@@ -36,7 +35,8 @@
         <div><send-phone [phone]="currentUser.phone"></send-phone></div>
       </div>
       <input type="text" name="smsVerifyCode" [(ngModel)]="currentUser.smsVerifyCode"  required class="xx" placeholder="请输入验证码">
-      <p *ngIf="prompting" class="prom">{{prompting}}</p>
+      <!--<p *ngIf="prompting" class="prom">{{prompting}}</p>-->
       <button *ngIf="smsSend" id="queren" type="submit">确认新地址</button>
   </form>
 </section>
+<shared-prompt [prompting]="prompting"></shared-prompt>

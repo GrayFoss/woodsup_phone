@@ -21,7 +21,7 @@ export class CoreModule {
       providers: [
         ...PROVIDERS
       ]
-    }
+    };
   }
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
