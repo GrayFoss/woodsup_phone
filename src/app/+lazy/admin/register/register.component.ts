@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
       this.prompting = '请输入密码';
       this.setTimer();
       return false;
-    }else if (this.password.length <= 6) {
+    }else if (this.password.length < 6) {
       this.prompting = '密码最少6位数';
       this.setTimer();
       return false;
@@ -85,6 +85,7 @@ export class RegisterComponent implements OnInit {
         this.prompting = '注册成功';
       } else  {
         this.prompting = res.status.message;
+        this.setTimer();
       }
     });
   }

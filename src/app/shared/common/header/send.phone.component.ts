@@ -35,6 +35,7 @@ export class SendPhoneComponent implements OnInit {
    this.seconds = this.Inseconds;
   }
   countDown(): void {
+    console.log(this.phone);
     if (!this.reg.test(this.phone)) {
       this.confirm.emit(false);
     }
