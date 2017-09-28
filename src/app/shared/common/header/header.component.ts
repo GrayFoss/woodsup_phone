@@ -74,7 +74,6 @@ export class HeaderComponent implements OnInit {
     this.haveBarCode = true;
     this.haveMengban = true;
   }
-
   hideMengban() {
     this.haveBarCode = false;
     this.haveMengban = false;

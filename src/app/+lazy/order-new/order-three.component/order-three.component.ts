@@ -138,7 +138,7 @@ export class OrderThreeComponent implements OnInit {
     this.CouponService.getUserCoupon(id).then((res) => {
       this.promotionList = res.result;
       const date = new Date().getTime();
-      if (this.promotionList && this.promotionList.length !== 0) {
+      if (typeof this.promotionList !== 'undefined' && this.promotionList.length !== 0) {
         // 筛选当前时间是否小于促销券的截至时间
         this.promotionList = this.promotionList.filter((res) => {
           return date < new Date(res.endTime).getTime();
