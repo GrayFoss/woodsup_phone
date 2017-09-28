@@ -19,4 +19,5 @@ export const routes: string[] = [
   'experience;*',
   'article',
   'article/*',
+  'admin/*',
 ];

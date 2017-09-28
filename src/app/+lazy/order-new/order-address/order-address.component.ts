@@ -104,4 +104,10 @@ export class OrderNewAddressComponent implements OnInit, AfterContentChecked {
       this.prompting = false;
     }, 1000);
   }
+  confirm(x) {
+    if (!x) {
+      this.prompting = '请输入正确的手机号';
+      this.setTimer();
+    }
+  }
 }

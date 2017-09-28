@@ -89,7 +89,6 @@ export class MallIndexComponent implements OnInit, OnDestroy {
           autoplayDisableOnInteraction: false,
           loop: true
         });
-        console.log(document.getElementById('swiper'))
       });
     });
   }

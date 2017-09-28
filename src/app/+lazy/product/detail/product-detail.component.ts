@@ -11,6 +11,7 @@ import { ProductService } from '../../../shared/services/products/product.servic
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
+import {CouponService} from "../../../shared/services/coupon.service";
 @Component({
   selector: 'product-detail',
   templateUrl: './product-detail.component.html',
@@ -42,6 +43,7 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
   public allProductLength: number;
   public like: boolean;
   constructor(
+    private couponService: CouponService,
     public vrjsLoader: vrJSLoader,
     public el: ElementRef,
     public _render: Renderer2,
@@ -58,19 +60,16 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
       this.window_width = window.innerWidth;
       document.body.scrollTop = 0;
     }
-    this.route.params
-      .switchMap((params: Params) => this.id = params['id'])
-      .subscribe((params: Params) => {
-        this.getProduct(this.id);
-      });
+    this.getProducts(1, 200);
 
-  }
-  ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
       this._host = this.el.nativeElement.querySelector('#product_three');
       this.loadJSFiles(this._host, this._render);
     }
-    this.getProducts(1, 200);
+
+  }
+  ngAfterViewInit(): void {
+
   }
   ngOnDestroy(): void {
     if (typeof window !== 'undefined') {
@@ -88,9 +87,14 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
           this.ngZone.run(() => {
             this.commonVR = new CommonVR(host);
             this._webvr.initialVR(host, _render, this.commonVR);
+            this.route.params
+              .switchMap((params: Params) => this.id = params['id'])
+              .subscribe((params: Params) => {
+                this.getProduct(this.id);
+              });
           });
         });
-        this.getProduct(this.id);
+        // this.getProduct(this.id);
         if (this.commonVR) {
           // this.webvrPanoComponent.setMaterials(this.fileName, this.matName);
         }
@@ -116,6 +120,21 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
       }
       this.webvrPanoComponent.setMaterials(this.fileName, this.matName);
     });
+  }
+  getCoupon() {
+    this.couponService.getShareCouponCode()
+      .then((res) => {
+        if (res.status.error === 0) {
+          this.couponService.getCouponByCode(res.result.code)
+            .then(respones => {
+              if (respones.status.error === 0) {
+                this.router.navigate(['/user/coupon', respones.result.code]);
+              }
+            });
+        }else {
+          this.router.navigate(['/admin/login']);
+        }
+      });
   }
   getProducts(page, limit) {
     this.productService.getProducts(page, limit).then((res) => {

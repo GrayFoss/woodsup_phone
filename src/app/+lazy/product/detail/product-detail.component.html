@@ -22,6 +22,7 @@
 <div class="product_price">
   <div>
     <p>￥{{product?.orgin_price}}/m<sup>2</sup></p>
+    <p style="color: #000" (click)="getCoupon()">领取优惠券</p>
   </div>
   <div *ngIf="product?.type == 'LaminateFlooring'">
     强化地板&nbsp;&nbsp;{{product?.resistance}}&nbsp;&nbsp;防潮
@@ -187,6 +188,15 @@
     <img src="../assets/img/product/1_01.png" alt="" style="width: 100%">
     <img src="../assets/img/product/1_02.png" alt="" style="width: 100%">
     <img src="../assets/img/product/{{product.code}}_03.png" alt="" style="width: 100%">
+    <div class="jieshao">
+      <p>近半世纪的经营</p>
+      <p>让我们与最优质的供货商达成了最坚实的信任和合作</p>
+      <p>来保证我们的货源和进价的绝对优势</p>
+      <p>欧洲天然富饶的森林资源</p>
+      <p>是Lalegno立足世界的优势之一</p>
+      <p>将北纬57度自然的馈赠搬运到您家</p>
+      <p>陪您度过此后悠悠岁月吧</p>
+    </div>
     <img src="../assets/img/product/{{product.code}}_04.png" alt="" style="width: 100%">
   </div>
 </div>

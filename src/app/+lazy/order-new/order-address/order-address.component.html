@@ -32,7 +32,7 @@
       <input class="xx" type="text" id="displayname" placeholder="联系人" required [(ngModel)]="currentUser.displayname" name="displayname" #name="ngModel">
       <div class="my_phone">
         <div><input type="text" id="phone" placeholder="手机号码" required [(ngModel)]="currentUser.phone" name="phone" #phone="ngModel"></div>
-        <div><send-phone [phone]="currentUser.phone"></send-phone></div>
+        <div><send-phone [phone]="currentUser.phone" (confirm)="confirm($event)"></send-phone></div>
       </div>
       <input type="text" name="smsVerifyCode" [(ngModel)]="currentUser.smsVerifyCode"  required class="xx" placeholder="请输入验证码">
       <!--<p *ngIf="prompting" class="prom">{{prompting}}</p>-->
