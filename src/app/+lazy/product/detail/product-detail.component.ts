@@ -58,19 +58,16 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
       this.window_width = window.innerWidth;
       document.body.scrollTop = 0;
     }
-    this.route.params
-      .switchMap((params: Params) => this.id = params['id'])
-      .subscribe((params: Params) => {
-        this.getProduct(this.id);
-      });
+    this.getProducts(1, 200);
 
-  }
-  ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
       this._host = this.el.nativeElement.querySelector('#product_three');
       this.loadJSFiles(this._host, this._render);
     }
-    this.getProducts(1, 200);
+
+  }
+  ngAfterViewInit(): void {
+
   }
   ngOnDestroy(): void {
     if (typeof window !== 'undefined') {
@@ -88,9 +85,14 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
           this.ngZone.run(() => {
             this.commonVR = new CommonVR(host);
             this._webvr.initialVR(host, _render, this.commonVR);
+            this.route.params
+              .switchMap((params: Params) => this.id = params['id'])
+              .subscribe((params: Params) => {
+                this.getProduct(this.id);
+              });
           });
         });
-        this.getProduct(this.id);
+        // this.getProduct(this.id);
         if (this.commonVR) {
           // this.webvrPanoComponent.setMaterials(this.fileName, this.matName);
         }

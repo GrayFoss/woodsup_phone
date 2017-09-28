@@ -6,7 +6,7 @@
   <img class="img_last" src="/assets/img/main/top_menu.png" (click)="toggleState()">
   <ul class="han-list" [style.height.px]="win_hei">
     <li>
-      <img src="../../../../assets/img/admin/new-image@2x.png" alt="">
+      <img src="../../../../assets/img/admin/user@2x.png" alt="">
     </li>
     <li class="loginNo" *ngIf="!currentUser?.displayname || currentUser?.displayname == ''"><span routerLink="/admin/login">登录</span>/<span routerLink="/admin/register">注册</span></li>
     <li routerLink="/user/index" *ngIf="currentUser?.displayname && currentUser?.displayname != ''"><p>{{currentUser.displayname}}</p></li>
