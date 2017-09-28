@@ -11,6 +11,7 @@ import { ProductService } from '../../../shared/services/products/product.servic
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
+import {CouponService} from "../../../shared/services/coupon.service";
 @Component({
   selector: 'product-detail',
   templateUrl: './product-detail.component.html',
@@ -42,6 +43,7 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
   public allProductLength: number;
   public like: boolean;
   constructor(
+    private couponService: CouponService,
     public vrjsLoader: vrJSLoader,
     public el: ElementRef,
     public _render: Renderer2,
@@ -118,6 +120,21 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
       }
       this.webvrPanoComponent.setMaterials(this.fileName, this.matName);
     });
+  }
+  getCoupon() {
+    this.couponService.getShareCouponCode()
+      .then((res) => {
+        if (res.status.error === 0) {
+          this.couponService.getCouponByCode(res.result.code)
+            .then(respones => {
+              if (respones.status.error === 0) {
+                this.router.navigate(['/user/coupon', respones.result.code]);
+              }
+            });
+        }else {
+          this.router.navigate(['/admin/login']);
+        }
+      });
   }
   getProducts(page, limit) {
     this.productService.getProducts(page, limit).then((res) => {

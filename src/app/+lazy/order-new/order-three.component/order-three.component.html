@@ -50,7 +50,7 @@
   </div>
 </div>
 <div class="preferential">
-  <div>
+  <div *ngIf="promotionList">
     <div class="combination">
       <div>
         <div>
@@ -69,6 +69,9 @@
     <div>
       <img src="http://m.wecareroom.com/upload/coupon/{{seleGood?.coupon.name}}.png" alt="" *ngIf="seleGood?.coupon">
     </div>
+  </div>
+  <div *ngIf="!promotionList" class="pick" (click)="getUserCoupon()">
+    <p>领取优惠券</p>
   </div>
 </div>
 <div class="User_information" *ngIf="Order">

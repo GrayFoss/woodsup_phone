@@ -284,7 +284,8 @@ const clientConfig = function webpackConfig(): WebpackConfig {
     },
     stats: 'minimal',
     host: '0.0.0.0',
-    watchOptions: DEV_SERVER_WATCH_OPTIONS
+    watchOptions: DEV_SERVER_WATCH_OPTIONS,
+    disableHostCheck: true
   };
 
   if (USE_DEV_SERVER_PROXY) {

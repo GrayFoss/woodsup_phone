@@ -22,6 +22,7 @@
 <div class="product_price">
   <div>
     <p>￥{{product?.orgin_price}}/m<sup>2</sup></p>
+    <p style="color: #000" (click)="getCoupon()">领取优惠券</p>
   </div>
   <div *ngIf="product?.type == 'LaminateFlooring'">
     强化地板&nbsp;&nbsp;{{product?.resistance}}&nbsp;&nbsp;防潮

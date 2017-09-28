@@ -17,6 +17,8 @@ import { CouponComponent } from './coupon/coupon.component';
 import { SharedModule } from '../../shared/shared.module';
 import { OrderService } from '../../shared/services/order.service';
 import { CouponService } from '../../shared/services/coupon.service';
+import { sha1 } from '../../shared/utils/sha1';
+import { ActivityService } from '../../shared/services/activity.service';
 
 @NgModule({
   imports:      [
@@ -40,6 +42,8 @@ import { CouponService } from '../../shared/services/coupon.service';
     CouponComponent
   ],
   providers: [
+    ActivityService,
+    sha1,
     OrderService,
     CouponService]
 })

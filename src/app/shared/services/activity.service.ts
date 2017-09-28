@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {Headers, Http} from '@angular/http';
-import {UrlChange} from '../utils/helper/url';
-import {Result} from '../utils/models/Result';
-import {Comments} from '../utils/models/Comments';
+import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+import { UrlChange } from '../utils/helper/url';
+import { Result } from '../utils/models/Result';
+import { Comments } from '../utils/models/Comments';
 @Injectable()
 export class ActivityService {
   private headers = new Headers({'Content-Type': 'application/json'});
