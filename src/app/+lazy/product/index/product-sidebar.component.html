@@ -27,10 +27,10 @@
        <li *ngFor="let typeq of typees" (click)="seleType(typeq)" [class.selected]="typeClass == typeq.name"><p id="product_{{typeq.name}}">{{typeq.name}}</p></li>
      </ul>
   </div>
-  <div [style.width.px]="win_width - 160" class="sidebar_right" [style.height.px]="win_height - 89" *ngIf="!showRight">
+  <div [style.width.px]="win_width - 160" class="sidebar_right" [style.height.px]="win_height - 89" *ngIf="!showRight" (click)="onTouchStart($event)">
     <div>
       <img src="../assets/img/product/sidebar_slide.png" alt="">
-      <p>左滑动查看更多产品</p>
+      <p>点击查看更多产品</p>
     </div>
   </div>
   <div [style.width.px]="win_width - 160" class="sidebar_right" [style.height.px]="win_height - 89" *ngIf="showRight" style="background-color:rgba(255,255,255,0.1)">

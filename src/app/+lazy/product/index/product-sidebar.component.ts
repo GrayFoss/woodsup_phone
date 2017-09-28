@@ -107,19 +107,8 @@ export class ProductSidbarComponent implements OnInit, AfterViewInit {
     }
     this.screenService.confirmScreen(JSON.stringify(this.screen));
   }
-  @HostListener('touchstart') onTouchstart() {
-    this.onTouchStart(event);
-  }
-  @HostListener('touchend') onTouchend() {
-    this.onTouchEnd(event);
-  }
   onTouchStart(event) {
-    this.location_stert = event.changedTouches[0].pageX;
-  }
-  onTouchEnd(event) {
-    if (event.changedTouches[0].pageX < this.location_stert - 50) {
-      this.screen.state = 'inactive';
-      this.screenService.confirmScreen(JSON.stringify(this.screen));
-    }
+    this.screen.state = 'inactive';
+    this.screenService.confirmScreen(JSON.stringify(this.screen));
   }
 }
