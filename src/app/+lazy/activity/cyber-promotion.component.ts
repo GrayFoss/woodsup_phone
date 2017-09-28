@@ -10,7 +10,7 @@ import { CouponService } from '../../shared/services/coupon.service';
 @Component({
   selector: 'cyber-promotion',
   templateUrl: './cyber-promotion.component.html',
-  styleUrls: ['./cyber-promotion.component.css']
+  styleUrls: ['./cyber-promotion.component.scss']
 })
 export class CyberPromotionComponent implements OnInit, AfterViewInit {
   code: any;

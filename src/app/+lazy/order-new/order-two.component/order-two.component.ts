@@ -16,7 +16,7 @@ export class OrderTwoComponent implements OnInit {
   public currentUser;
   public productId;
   public quantity;
-  public address;
+  public prompting;
   public product;
   constructor(
     private orderservice: OrderService,
@@ -34,7 +34,7 @@ export class OrderTwoComponent implements OnInit {
     this.userservice.getLoginStatus().then((res) => {
       if (res.status.error === 0) {
         this.currentUser = res.result;
-        this.address = '已登陆';
+        this.prompting = null;
       }
     });
     this.getProduct(this.productId);
@@ -44,13 +44,13 @@ export class OrderTwoComponent implements OnInit {
    * @method close
    */
   close() {
-    this.address = '';
+    this.prompting = null;
   }
   gotoOrder() {
     this.router.navigate(['/order/new/address', {productId: this.productId, quantity: this.quantity }]);
   }
   nextStep2() {
-    if (this.address) {
+    if (this.prompting) {
       const order = new Order();
       const totalPrice = (Number(this.product.label_price) * this.quantity).toString();
       const products = [];
@@ -62,7 +62,8 @@ export class OrderTwoComponent implements OnInit {
         }
       });
     }else {
-      this.address = '未登录';
+      this.prompting = '请您填写收货地址';
+      this.setTimer();
     }
   }
   /**
@@ -75,5 +76,10 @@ export class OrderTwoComponent implements OnInit {
   }
   back() {
     this.location.back();
+  }
+  setTimer() {
+    setTimeout(() => {
+      this.prompting = null;
+    }, 1000);
   }
 }

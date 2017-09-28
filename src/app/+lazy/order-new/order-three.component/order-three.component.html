@@ -74,7 +74,7 @@
     <p>领取优惠券</p>
   </div>
 </div>
-<div class="User_information" *ngIf="Order">
+<div class="User_information" *ngIf="currentUser">
   <div>
     <p>实付款<span>已优惠￥{{originalPrice - actualPrice}}</span></p>
     <p>收货人</p>

@@ -61,6 +61,4 @@
     <p>全国150个城市可包邮到家，具体咨询客服</p>
   </div>
 </div>
-<div class="tip" *ngIf="address == '未登录'">
-  <img src="./../assets/img/order-new/tip_address.png" alt="" (click)="close()">
-</div>
+<shared-prompt [prompting]="prompting"></shared-prompt>

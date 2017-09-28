@@ -114,9 +114,8 @@
   & > div:first-of-type{
     margin: a(20px) auto;
     text-align: center;
-    img{
-      width: a(282px);
-      height: a(28px);
+    p{
+      font-size: c(32);
     }
   }
   &> div:nth-of-type(2){
