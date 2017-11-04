@@ -131,27 +131,30 @@ export class  HomeComponent implements OnInit {
     this.recommendMessage.product = product.product;
     this.collectMsg(e);
     this.recommendMessage.panoSceneRecord = this.sceneInfo.scene;
-    this.allProduct.sendMessage(this.recommendMessage).then( (res) => { console.log(res); } );
-    this.router.navigate(['/product/', id]);
+    // this.allProduct.sendMessage(this.recommendMessage).then( (res) => { console.log(res); } );
+    // this.router.navigate(['/product/', id]);
+    console.log(this.recommendMessage);
     document.body.scrollTop = 0;
   }
   goSceneDetail(e) {
     this.collectMsg(e);
     this.recommendMessage.product = null;
     this.recommendMessage.panoSceneRecord = this.sceneInfo.scene;
-    this.allProduct.sendMessage(this.recommendMessage).then( (res) => { console.log(res); } );
+    // this.allProduct.sendMessage(this.recommendMessage).then( (res) => { console.log(res); } );
+    console.log(this.recommendMessage);
   }
 
   collectMsg(e) {
-    const type = 'Recommend';
+    const type = 'Mobile';
     this.recommendMessage = this.collectmsgservice.collectMsg(e, type);
   }
 
   goProducts(e) {
     this.collectMsg(e);
     this.recommendMessage.panoSceneRecord = this.sceneInfo.scene;
-    this.allProduct.sendMessage(this.recommendMessage).then( (res) => { console.log(res); } );
-    this.router.navigate(['/product']);
+    console.log(this.recommendMessage);
+    // this.allProduct.sendMessage(this.recommendMessage).then( (res) => { console.log(res); } );
+    // this.router.navigate(['/product']);
   }
 
   handleError( error: any ): Promise<any> {

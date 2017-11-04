@@ -25,7 +25,9 @@ export class CollectMsgService {
         this.recommendMessage.other = '{来源页:' + decodeURI(document.referrer) + '}';
       }
     }
+
     if ( e.target && e.target.tagName ) {
+      console.log(e);
       this.recommendMessage.target = e.target.tagName;
     }
     if ( e.target && e.target.id ) {

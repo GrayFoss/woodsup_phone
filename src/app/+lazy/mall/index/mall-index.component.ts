@@ -85,30 +85,13 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
   goScenes(e) {
-    this.router.navigate(['/experience']);
+    console.log(e);
+    // this.router.navigate(['/experience']);
   }
-  getMSG(e) {
-      if  ( e.type ) {
-        this.recommendMessage.action = e.type;
-      }
-      e = e.target || e;
-      this.endTime = new Date();
-      this.recommendMessage.other = '首页';
-      this.recommendMessage.urlPath =  this.router.url;
-      this.recommendMessage.endTime =  this.endTime.getTime();
-      this.recommendMessage.type = 'Normal';
-      if ( document.referrer !== '' ) {
-        this.recommendMessage.other = '{来源页:' + decodeURI(document.referrer) + '}';
-      }
-      if ( e.tagName ) {
-        this.recommendMessage.target = e.tagName;
-      }
-      if ( e.id ) {
-        this.recommendMessage.target += '#' + e.id;
-      }
-  }
+
   goProducts(e) {
-    this.router.navigate(['/product']);
+    console.log(e);
+    // this.router.navigate(['/product']);
   }
   ngOnDestroy() {}
   isWoman() {
