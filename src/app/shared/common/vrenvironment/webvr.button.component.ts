@@ -14,7 +14,7 @@ export class WebvrButtonComponent implements OnInit, AfterViewInit {
   @Input() public commonVR;
   constructor(
       public el: ElementRef,
-      public render: Renderer2,
+      public _render: Renderer2,
       public ngZone: NgZone
     ) {}
   ngOnInit() {
@@ -31,7 +31,13 @@ export class WebvrButtonComponent implements OnInit, AfterViewInit {
       this.commonVR.vrButton.on('show', () => {
         this.el.nativeElement.querySelector('#ui').style.display = 'inherit';
       });
-      this.el.nativeElement.querySelector('#vr-button').appendChild(this.commonVR.vrButton.domElement);
+      this.ngZone.runOutsideAngular(() => {
+        this.el.nativeElement.querySelector('#vr-button').appendChild(this.commonVR.vrButton.domElement);
+        // this._render.appendChild(this.el.nativeElement.querySelector('#vr-button'), this.commonVR.vrButton.domElement);
+        // this.el.nativeElement.querySelector('#magic-window').addEventListener('click', () => {
+        //   this.commonVR.vrButton.requestEnterFullscreen();
+        // });
+      });
     }
   }
 }

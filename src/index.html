@@ -11,28 +11,38 @@
   <title>云深间造 - 为您带来完美的木制家具选购体验</title>
   <meta name="description" content="云深间造科技 - 为您带来完美的木制家具选购体验">
   <meta name="keywords" content="云深间造,woodsup,云深间造woodsup,木地板,木门,VR木地板,VR木门,VR家装,VR家居,VR家具,VR购物">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="robots" content="all">
   <link rel="icon" href="assets/img/1.ico" type="image/x-icon">
   <link rel="shortcut icon" href="assets/img/1.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62597719-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-62597719-1');
+  </script>
 </head>
 <body>
-	<my-app>
-		Loading...
-	</my-app>
-  <!--设置html的字体大小-->
-  <script src="assets/lib/font-size.js"></script>
-  <!-- angular不支持现代浏览器的所有特性。这些脚本实现了浏览器缺失的 JavaScript 特性 勿删-->
-  <script src="assets/lib/shim.min.js"></script>
-  <script src="assets/lib/polyfill.min.js"></script>
-  <!--微信登录-->
-  <script src="assets/lib/jweixin-1.0.0.js"></script>
-  <div id="str-dlls">
-    <%= '<' %>script src="/polyfill.dll.js"<%= '>' %><%= '<' %>/script<%= '>' %>
-    <%= '<' %>script src="/vendor.dll.js"<%= '>' %><%= '<' %>/script<%= '>' %>
-  </div>
-	<script src="/index.js"></script>
+<my-app>
+  Loading...
+</my-app>
+<!--设置html的字体大小-->
+<script src="assets/lib/font-size.js"></script>
+<!-- angular不支持现代浏览器的所有特性。这些脚本实现了浏览器缺失的 JavaScript 特性 勿删-->
+<script src="assets/lib/shim.min.js"></script>
+<script src="assets/lib/polyfill.min.js"></script>
+<!--微信登录-->
+<script src="assets/lib/jweixin-1.0.0.js"></script>
+<div id="str-dlls">
+  <%= '<' %>script src="/polyfill.dll.js"<%= '>' %><%= '<' %>/script<%= '>' %>
+  <%= '<' %>script src="/vendor.dll.js"<%= '>' %><%= '<' %>/script<%= '>' %>
+</div>
+<script src="/index.js"></script>
+
 </body>
 </html>

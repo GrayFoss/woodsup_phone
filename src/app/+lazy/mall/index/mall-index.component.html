@@ -1,6 +1,10 @@
 <div class="product-list">
-  <div *ngIf="myObjects.length > 0">
-    <carousel [myObjects]="myObjects"></carousel>
+  <div class="swiper-container" style="height: 200px; width: 100%" [style.width.px]="window_width"  [style.height.px]="window_width * 9/16">
+    <div class="swiper-wrapper" >
+      <div class="swiper-slide" *ngFor="let banner of article_banneres" id="banner{{banner.id}}" routerLink="/article/{{banner.id}}">
+        <img src="{{banner.titleImg}}" alt="" style="width: 100%; height: 100%">
+      </div>
+    </div>
   </div>
 </div>
 <div class="main_container">
@@ -19,22 +23,25 @@
   <home [sceneID]="7"></home>
   <home [sceneID]="8"></home>
 </div>
-<div class="mengban" *ngIf="showMengban && isFirst">
-  <div class="chooseSex" *ngIf="showChooseSex && isFirst">
-    <div class="quxiao" (click)="hideMengban()">
-      <img src="../../../assets/img/main/close.png" height="40">
-    </div>
+<div class="mengban" id="mengban" [style.width.px]="window_width" [style.height.px]="window_height" *ngIf="isFirst === 'true'">
+</div>
+<div class="ask_content" *ngIf="isFirst === 'true'">
+  <div class="quxiao" id="quxiao" (touchstart)="hideMengban()">
+    <img src="../../../assets/img/main/close.png" height="40">
+  </div>
+  <div class="chooseSex">
     <img src="../../../assets/img/main/balloon.png" width="290">
     <ul class="chooseSexUl">
-      <li class="chooseSexLi" (click)="hideMengban()" id="main_man">
+      <li class="chooseSexLi" (touchstart)="hideMengban()" id="main_man">
         <img src="../../../assets/img/main/circle_not-click.png" width="17" id="main_man_img">
       </li>
-      <li class="chooseSexLi" (click)="isWoman()" id="main_woman">
+      <li class="chooseSexLi" (touchstart)="isWoman($event)" id="main_woman">
         <img src="../../../assets/img/main/circle_not-click.png" width="17" id="main_woman_img">
       </li>
-      <li class="chooseSexLi" (click)="hideMengban()" id="main_no">
+      <li class="chooseSexLi" (touchstart)="hideMengban()" id="main_no">
         <img src="../../../assets/img/main/circle_not-click.png" width="17" id="main_no_img">
       </li>
     </ul>
   </div>
 </div>
+

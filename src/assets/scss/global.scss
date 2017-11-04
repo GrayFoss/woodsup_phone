@@ -7,7 +7,9 @@
   }
   @return ($px / $base-font-size) * 1rem;
 }
-
+@function c($px, $base-font-size: 75) {
+  @return ($px / $base-font-size) * 1rem;
+}
 @function s($px){
   @return ($px/2);
 }
@@ -99,3 +101,7 @@
   -webkit-animation: $x;
 }
 
+@mixin align-items($x) {
+  align-items: $x;
+  -webkit-align-items: $x;
+}

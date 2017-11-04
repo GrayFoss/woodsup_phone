@@ -55,7 +55,6 @@ export class ProductSidbarComponent implements OnInit, AfterViewInit {
     }
   }
   ngAfterViewInit(): void {
-    console.log(this.screen);
     this.screen.state = 'active';
     this.seleLists = this.screen;
     this._changeDetectionRef.detectChanges();
@@ -71,13 +70,8 @@ export class ProductSidbarComponent implements OnInit, AfterViewInit {
       this.brandClass = this.screen.brand;
       this._changeDetectionRef.detectChanges();
     }
-  /*  if (localStorage.getItem('showRight') !== null) {
-      this.showRight = localStorage.getItem('showRight');
-      this._changeDetectionRef.detectChanges();
-    }*/
   }
-  seleTone(event, x) {
-    this.screen.event = event;
+  seleTone( x) {
     if ( this.screen.tone === x.name) {
       this.toneClass = null;
       this.screen.tone = null;
@@ -89,8 +83,7 @@ export class ProductSidbarComponent implements OnInit, AfterViewInit {
     }
     this.screenService.confirmScreen(JSON.stringify(this.screen));
   }
-  seleBrand(event, x) {
-    this.screen.event = event;
+  seleBrand(x) {
     if ( x.name.indexOf(this.screen.brand) >= 0) {
       this.brandClass = null;
       this.screen.brand = null;
@@ -102,8 +95,7 @@ export class ProductSidbarComponent implements OnInit, AfterViewInit {
     }
     this.screenService.confirmScreen(JSON.stringify(this.screen));
   }
-  seleType(event, x) {
-    this.screen.event = event;
+  seleType(x) {
     if ( this.screen.type === x.name) {
       this.typeClass = null;
       this.screen.type = null;
@@ -115,19 +107,8 @@ export class ProductSidbarComponent implements OnInit, AfterViewInit {
     }
     this.screenService.confirmScreen(JSON.stringify(this.screen));
   }
-  @HostListener('touchstart') onTouchstart() {
-    this.onTouchStart(event);
-  }
-  @HostListener('touchend') onTouchend() {
-    this.onTouchEnd(event);
-  }
   onTouchStart(event) {
-    this.location_stert = event.changedTouches[0].pageX;
-  }
-  onTouchEnd(event) {
-    if (event.changedTouches[0].pageX < this.location_stert - 50) {
-      this.screen.state = 'inactive';
-      this.screenService.confirmScreen(JSON.stringify(this.screen));
-    }
+    this.screen.state = 'inactive';
+    this.screenService.confirmScreen(JSON.stringify(this.screen));
   }
 }

@@ -11,7 +11,7 @@ import { User } from '../../../shared/utils/models/User';
   styleUrls: ['./order-address.component.scss'],
 })
 export class OrderNewAddressComponent implements OnInit, AfterContentChecked {
-  public prompting: string;
+  public prompting;
   public quantity: number;
   public productId: number;
   public win_he: number;
@@ -71,13 +71,19 @@ export class OrderNewAddressComponent implements OnInit, AfterContentChecked {
   }
   addAddressToUser() {
       if (!this.currentUser.state || !this.currentUser.city || !this.currentUser.street) {
-        return this.prompting = '请输入正确的地址';
+        this.prompting = '请输入正确的地址';
+        this.setTimer();
+        return;
       }
       if (!this.currentUser.displayname || !this.currentUser.phone) {
-        return this.prompting = '请输入您的联系方式';
+        this.prompting = '请输入您的联系方式';
+        this.setTimer();
+        return;
       }
       if (!this.currentUser.smsVerifyCode) {
-        return this.prompting = '请输入验证码';
+        this.prompting = '请输入验证码';
+        this.setTimer();
+        return;
       }
       this.userservice.updateUserAddress(this.currentUser).then((res) => {
         if (res.status.error === 0) {
@@ -87,7 +93,21 @@ export class OrderNewAddressComponent implements OnInit, AfterContentChecked {
         }
       });
   }
+  seleState(res) {
+     this.currentUser.city = this.addresses.filter(respose => respose.name === res)[0].cityList[0].name;
+  }
   back() {
     this.location.back();
+  }
+  setTimer() {
+    setTimeout(() => {
+      this.prompting = false;
+    }, 1000);
+  }
+  confirm(x) {
+    if (!x) {
+      this.prompting = '请输入正确的手机号';
+      this.setTimer();
+    }
   }
 }

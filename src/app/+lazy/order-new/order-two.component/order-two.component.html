@@ -21,7 +21,7 @@
         <p>联系客服</p>
       </a>
     </div>
-    <div (click)="nextStep2()">
+    <div (click)="nextStep2()" id="next_two">
       <p>下一步</p>
     </div>
   </div>
@@ -49,7 +49,7 @@
   </div>
 </div>
 <div class="add_address">
-  <div (click)="gotoOrder()">
+  <div (click)="gotoOrder()" id="add_address">
     <p>+ &nbsp;添加地址</p>
   </div>
 </div>
@@ -61,6 +61,4 @@
     <p>全国150个城市可包邮到家，具体咨询客服</p>
   </div>
 </div>
-<div class="tip" *ngIf="address == '未登录'">
-  <img src="./../assets/img/order-new/tip_address.png" alt="" (click)="close()">
-</div>
+<shared-prompt [prompting]="prompting"></shared-prompt>

@@ -19,6 +19,8 @@ import { CollectMsgService } from './services/CollectMsg.service';
 import { CouponService } from './services/coupon.service';
 import { FilterCodePipe } from './utils/pips/filterCodePipe';
 import { TofixedPipe } from './utils/pips/toFixedPipe';
+import { VerificationComponent } from './common/header/verification.component';
+import { PromptComponent } from './common/header/prompt.component';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -36,6 +38,8 @@ const PIPES = [
 
 const COMPONENTS = [
   // put shared components here
+  PromptComponent,
+  VerificationComponent,
   WebvrButtonComponent,
   webvrPanoComponent,
   HeaderComponent,
@@ -53,7 +57,7 @@ const COMPONENTS = [
 const PROVIDERS = [
   UserService,
   CollectMsgService,
-  CouponService
+  CouponService,
 ];
 
 @NgModule({

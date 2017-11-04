@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
     <header class="logoc">
       <img src="./assets/img/shop/chacha.png" alt="" (click)="back()">
       <div class="logoo">
-        <img src="./assets/img/share/logo.png" alt="">
+        <img src="./assets/img/share/user@2x.png" alt="">
       </div>
     </header>`,
   styleUrls: ['./user-header.component.scss']

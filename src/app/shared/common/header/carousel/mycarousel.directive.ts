@@ -22,11 +22,7 @@ export class CarouselDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
       this.box = this.el.nativeElement.querySelector('.box');
-      // this.box.innerHTML += this.box.innerHTML;
       this.aLi = this.el.nativeElement.querySelectorAll('.carousel-box-li');
-/*
-      this.aNav = this.el.nativeElement.querySelectorAll('.carousel-nav-span');
-*/
       this.aHeight = this.aLi.clientHeight;
       this.aWidth = this.wrap.clientWidth;
       this.wrap.style.height = this.aHeight + 'px';
@@ -88,7 +84,7 @@ export class CarouselDirective implements AfterViewInit {
       return val;
     }
   }
-  public auto () {
+  public auto() {
     clearInterval(this.timer);
     this.timer = setInterval(() => {
       if (this.now === this.aLi.length - 1) {

@@ -1,17 +1,17 @@
 <header class="headamfi" [class.rig]="aaa">
   <img class="img_first" src="/assets/img/main/top_scan.png" (click)="showMengban()" alt="">
   <div class="img_centerLogo">
-    <img src="/assets/img/main/top_logo.png"  width="100%">
+    <img src="/assets/img/main/logo@2x.png"  width="100%">
   </div>
   <img class="img_last" src="/assets/img/main/top_menu.png" (click)="toggleState()">
   <ul class="han-list" [style.height.px]="win_hei">
-    <li routerLink="/user/login" *ngIf="!currentUser?.displayname || currentUser?.displayname == ''"><p>登录</p></li>
-    <li routerLink="/user/signup" *ngIf="!currentUser?.displayname || currentUser?.displayname == ''"><p>注册</p></li>
+    <li>
+      <img src="../../../../assets/img/admin/user@2x.png" alt="">
+    </li>
+    <li class="loginNo" *ngIf="!currentUser?.displayname || currentUser?.displayname == ''"><span routerLink="/admin/login">登录</span>/<span routerLink="/admin/login">注册</span></li>
     <li routerLink="/user/index" *ngIf="currentUser?.displayname && currentUser?.displayname != ''"><p>{{currentUser.displayname}}</p></li>
-    <li routerLink="/about"><p>关于我们</p></li>
     <li routerLink="/user/server"><p>服务协议</p></li>
-    <!--<li><p>商务合作</p></li>-->
-    <!--<li><p>加入我们</p></li>-->
+    <li routerLink="/user/server"><p><a href="https://static.meiqia.com/dist/standalone.html?eid=57686&groupid=227cbe71d73dc0bc8d335d8f9d5acdc6">联系客服</a></p></li>
     <li (click)="logout()" *ngIf="currentUser?.displayname && currentUser?.displayname != ''"><p>退出登录</p></li>
   </ul>
 </header>

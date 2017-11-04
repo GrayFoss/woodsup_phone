@@ -5,19 +5,7 @@ import { Router } from '@angular/router';
     selector: 'carousel',
     template: `
     <div class="wrap"  MyCarousel [myLength]="myObjects.length" [style.height.px]="win_wi * 9/16">
-      <ul class="box" *ngIf="myObjects[0].id2 !== undefined" [style.height.px]="win_wi * 9/16">
-        <li class="carousel-box-li" *ngFor="let obj of myObjects;">
-          <a [routerLink]="['/product',obj.id1]">
-             <img [src]="obj.src" [style.width.px]="win_wi">
-          </a>
-        </li>
-        <li class="carousel-box-li" *ngFor="let obj of myObjects;">
-          <a [routerLink]="['/product',obj.id1]">
-            <img [src]="obj.src" [style.width.px]="win_wi">
-          </a>
-        </li>
-      </ul>
-      <ul class="box" *ngIf="myObjects[0].id2 === undefined" [style.height.px]="win_wi * 9/16">
+      <ul class="box" [style.height.px]="win_wi * 9/16">
         <li class="carousel-box-li" *ngFor="let xx of myObjects;">
           <div (click)="geArti(xx)">
              <img [src]="xx.src" [style.width.px]="win_wi">

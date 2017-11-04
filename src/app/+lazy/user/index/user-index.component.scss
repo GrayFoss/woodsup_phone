@@ -1,9 +1,11 @@
+@import "../../../../assets/scss/global";
+
 .main {
   background-color: #fff;
   .core {
     height: 8.8rem;
     text-align: center;
-    //background-image: url("./assets/img/personal/geren.png");
+    background-image: url("/assets/img/personal/geren.png");
     background-size: 100%;
     img {
       margin-top: 2.77333rem;
@@ -23,31 +25,34 @@
       color: #fff;
     }
   }
-  .list {
-    padding: 0 0.65333rem;
-    ul li {
-      height: 2rem;
-      line-height: 2rem;
-      width: 100%;
-      > img:first-child {
-        width: 0.58667rem;
-        height: 0.58667rem;
-        margin-right: 0.26667rem;
+
+}
+.list{
+  padding-left: c(49);
+  li{
+    height: c(148);
+    @include flexBox;
+    @include align-items(center);
+    & > img{
+      width: c(44);
+      height: c(44);
+      margin-right: c(20);
+    }
+    .cor{
+      @include flex(1);
+      @include flexBox;
+      @include justify-content(space-between);
+      @include align-items(center);
+      height: 100%;
+      border-bottom: 1px solid #898989;
+      p{
+        font-size: c(36);
+        color: #898989;
       }
-      .cor {
-        display: inline-block;
-        border-bottom: 1px solid #a3a3aa;
-        width: 86%;
-        height: 40px;
-        p {
-          display: inline-block;
-          font-size: 18px;
-        }
-        img {
-          width: 0.21333rem;
-          height: 0.4rem;
-          float: right;
-        }
+      img{
+        margin-right: c(70);
+        width: c(16);
+        height: c(30);
       }
     }
   }

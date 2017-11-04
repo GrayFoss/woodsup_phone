@@ -90,6 +90,21 @@ export class OrderThreeComponent implements OnInit {
       }
     });
   }
+  getUserCoupon() {
+    this.CouponService.getShareCouponCode()
+      .then((res) => {
+        if (res.status.error === 0) {
+          this.CouponService.getCouponByCode(res.result.code)
+            .then(respones => {
+              if (respones.status.error === 0) {
+                this.router.navigate(['/user/coupon', respones.result.code]);
+              }
+            });
+        }else {
+          this.router.navigate(['/admin/login']);
+        }
+      });
+  }
   /**
    * 根据ID获取产品信息
    * method getProduct
@@ -123,7 +138,7 @@ export class OrderThreeComponent implements OnInit {
     this.CouponService.getUserCoupon(id).then((res) => {
       this.promotionList = res.result;
       const date = new Date().getTime();
-      if (this.promotionList.length !== 0) {
+      if (typeof this.promotionList !== 'undefined' && this.promotionList.length !== 0) {
         // 筛选当前时间是否小于促销券的截至时间
         this.promotionList = this.promotionList.filter((res) => {
           return date < new Date(res.endTime).getTime();
