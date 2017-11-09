@@ -54,6 +54,7 @@
     }
   }
   .sort{
+    width: 100%;
     @include flexBox;
     @include justify-content(space-between);
     background-color: #fff;
@@ -186,8 +187,7 @@ header{
   border-bottom: 1px solid #d0d3d4;
   .back {
     float: left;
-    margin-left: 13px;
-    margin-top: 7px;
+    margin: 7px 13px;
     height: 20px;
     width: 11px;
   }
@@ -201,10 +201,12 @@ header{
   }
   input{
     margin-top: 6px;
-    padding-left: 20px;
+    padding-left: 25px;
+    padding-right: 7px;
     width: a(646px);
-    max-width: 323px;
+    max-width: 288px;
     height: 25px;
+    line-height: 24px;
     font-size: 14px;
     border-radius: 13px;
     background-color: #f2f1f2;

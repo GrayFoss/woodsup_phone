@@ -88,12 +88,10 @@ export class MallIndexComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
   ngAfterViewInit() {
-    if (this.isFirst === 'false') {
       setTimeout(() => {
         this.showSmallTimer = true;
         this.showSmall = false;
       }, 3000);
-    }
   }
   ngOnDestroy(): void {
     if (typeof window !== 'undefined') {

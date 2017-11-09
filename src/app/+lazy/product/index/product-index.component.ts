@@ -30,7 +30,7 @@ import { ProductFilter } from '../../../shared/utils/models/ProductFilter';
     // ]),
     trigger('flyInOut', [
       state('in', style({transform: 'translateX(0)'})),
-      state('out', style({transform: 'translateX(-110px)'})),
+      state('out', style({transform: 'translateX(-86px)'})),
       transition('in => out', animate('200ms ease-in')),
       transition('out => in', animate('200ms ease-in'))
     ])
@@ -297,6 +297,7 @@ export class ProductIndexComponent implements OnInit , OnDestroy, AfterViewInit 
        this.searching = 'in';
        this.seleproductes = this.allproductes;
      }else {
+       this.searching = 'out';
        this.seleproductes = this.allproductes.filter( (pro) =>  pro.name.indexOf(this.searchWord) !== -1 );
      }
   }

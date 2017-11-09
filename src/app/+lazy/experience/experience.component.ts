@@ -86,6 +86,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
   public commonVR: CommonVR;
   public _host: HTMLElement;
   public prefix: string = 'vr';
+  public back: string = 'back';
   @ViewChild(webvrPanoComponent) webvrPanoComponent: webvrPanoComponent;
   constructor(
     public _render: Renderer2,
