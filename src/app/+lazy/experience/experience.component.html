@@ -8,7 +8,7 @@
 <div style="width: 100%;" [style.height.px]="canvasHeight">
   <div id="canvas-container" [style.height.px]="canvasHeight">
     <vr-button-component *ngIf="commonVR" [commonVR]="commonVR"></vr-button-component>
-    <webvr-pano-component *ngIf="commonVR" [commonVR]="commonVR" [fileName]="fileName" [MatName]="MatName"></webvr-pano-component>
+    <webvr-pano-component (alreadyInit)="handleAlreadyInit($event)" *ngIf="commonVR" [commonVR]="commonVR" [fileName]="fileName" [MatName]="MatName"></webvr-pano-component>
     <p style="position: fixed;top: 50%;left: 40%;font-size: 16px;font-weight: 600;" *ngIf="!MatName">拼命加载中~~~~</p>
   </div>
   <div class="transverse" *ngIf="!hiddRotate && Main === ''" [style.width.px]="win_width" [style.height.px]="canvasHeight">

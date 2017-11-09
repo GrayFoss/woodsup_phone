@@ -102,7 +102,6 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
                     }
                   );
                 }
-                this.getProduct(this.id);
               });
           });
         });
@@ -195,7 +194,7 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
 
 //   处理子组件传值
   handleAlreadyInit(done) {
-      console.log('111111111111111111');
       console.log(done);
+      this.getProduct(this.id);
   }
 }

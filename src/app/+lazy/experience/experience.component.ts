@@ -318,4 +318,9 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
     this.timing = true;
     // this.setTime();
   }
+
+//   处理子组件传值
+  handleAlreadyInit(done) {
+    console.log(done);
+  }
 }
