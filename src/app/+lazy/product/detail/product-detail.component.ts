@@ -192,4 +192,10 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
     this.router.navigate(['product', res]);
     document.body.scrollTop = 0;
   }
+
+//   处理子组件传值
+  handleAlreadyInit(done) {
+      console.log('111111111111111111');
+      console.log(done);
+  }
 }

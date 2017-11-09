@@ -14,15 +14,6 @@
 <div class="main_container">
   <div class="main_content">
     <ul>
-      <li id="TopScene" (click)="goProducts($event)">
-          <div class="top_mid">
-            <img src="assets/img/mall/top_inter/flooring.png" alt="">
-            <div>
-              <p>看地板</p>
-              <span>多款地板选购</span>
-            </div>
-          </div>
-      </li>
       <li id="TopFlooring" (click)="goScenes($event)">
           <div class="top_mid">
             <img src="assets/img/mall/top_inter/vr.png" alt="">
@@ -31,6 +22,15 @@
               <span>VR场景搭配</span>
             </div>
           </div>
+      </li>
+      <li id="TopScene" (click)="goProducts($event)">
+        <div class="top_mid">
+          <img src="assets/img/mall/top_inter/flooring.png" alt="">
+          <div>
+            <p>看地板</p>
+            <span>多款地板选购</span>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
@@ -81,7 +81,6 @@
     <img src="assets/img/mall/gift/top.png" >
     <p>回顶部</p>
   </div>
-
   <div class="gift_big" [hidden]="showSmall">
     <img width="100%" src="assets/img/main/alert/pic.png"  (click)="getCoupon()">
     <img src="assets/img/main/alert/close.png" (click)="toggleGift()">

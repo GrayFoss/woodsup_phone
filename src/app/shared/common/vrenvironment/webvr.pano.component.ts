@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Renderer2, Output } from '@angular/core';
 import { Product } from '../../utils/models/Product';
 import { PRODUCT } from '../../utils/data/mock_products';
 import { CommonVR } from '../../utils/models/CommonVR';
@@ -21,9 +21,11 @@ export class webvrPanoComponent implements OnInit, AfterViewInit {
   public init_materials;
   public select_materials;
   public mesh;
+  public done: string = 'done';
   @Input() public MatName: string;
   @Input() public fileName: string;
   @Input() public commonVR: CommonVR;
+  @Output() alreadyInit = new EventEmitter();
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
     }
@@ -34,8 +36,11 @@ export class webvrPanoComponent implements OnInit, AfterViewInit {
         this.listen();
       }
     }
-    this.init();
-    this.animate();
+    this.alreadyInit.emit(this.done);
+    if ( this.fileName !== '' ||  !this.fileName ) {
+      this.init();
+      this.animate();
+    }
   }
   constructor(
     private render: Renderer2,
