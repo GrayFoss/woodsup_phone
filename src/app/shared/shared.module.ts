@@ -3,10 +3,9 @@ import { RouterModule } from '@angular/router';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { WebvrButtonComponent } from './common/vrenvironment/webvr.button.component';
 import { webvrPanoComponent } from './common/vrenvironment/webvr.pano.component';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/header/footer.component';
+import { FooterComponent } from './common/footer/footer.component';
 import { RightSidebarComponent } from './common/header/right.sidebar.component';
-import { SideBarComponent } from './common/header/sidebar.component';
+import { SideBarComponent } from './common/sidebar/sidebar.component';
 import { CarouselDirective } from './common/header/carousel/mycarousel.directive';
 import { CarouselComponent } from './common/header/carousel/carousel.component';
 import { SendPhoneComponent } from './common/header/send.phone.component';
@@ -21,6 +20,9 @@ import { FilterCodePipe } from './utils/pips/filterCodePipe';
 import { TofixedPipe } from './utils/pips/toFixedPipe';
 import { VerificationComponent } from './common/header/verification.component';
 import { PromptComponent } from './common/header/prompt.component';
+import { IndexRecommandComponent } from './common/index-recommand/index-recommand.component';
+import { HeaderComponent } from './common/header/header.component';
+import { DesktopScenesService } from './services/desktop.scenes.service';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -52,12 +54,14 @@ const COMPONENTS = [
   SendPhoneComponent,
   HomeComponent,
   CarouselDirective,
+  IndexRecommandComponent
 ];
 
 const PROVIDERS = [
   UserService,
   CollectMsgService,
   CouponService,
+  DesktopScenesService
 ];
 
 @NgModule({

@@ -54,9 +54,6 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
   public id: number;
   // 判断用户登录是否为PC端
   public Brow;
-  // 储存QQ浏览器的宽度和高度
-  public qqWidth: number;
-  public qqHeight: number;
   public scenes = [
     {id: 1, name: '洛克菲勒', imgUrl: './assets/img/experience/1.png', fileName: 'luokefeile'},
     {id: 2, name: '簪缨世家', imgUrl: './assets/img/experience/2.png', fileName: 'zanyingshijia'},
@@ -107,11 +104,6 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
     if (typeof window !== 'undefined') {
       this.getWidthHeight();
       this.canvasHeight = window.innerHeight;
-      this.qqWidth = window.innerWidth;
-      this.qqHeight = window.screen.height;
-      addEventListener('orientationchange', () => {
-        this.Rotate();
-      }, false)
     }
     this.route.params.subscribe((params) => {
       if (params.code) {
@@ -188,7 +180,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
         this.hiddRotate = false;
         this.canvasHeight = window.innerHeight;
       }else {
-        this.canvasHeight = window.innerHeight - 89;
+        this.canvasHeight = window.innerHeight - 35;
       }
     }
   }
@@ -294,28 +286,12 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
     if ( window.orientation === 180 || window.orientation === 0 ) {
       this.hiddRotate = true;
       this.getWidthHeight();
-      /**
-       * QQ浏览器的坑,修改前请测试
-       */
-      if (navigator.userAgent.indexOf('MQQBrowser') > -1) {
-        this.win_width = window.innerHeight;
-        this.win_height = window.innerWidth;
-      }else {
-        this.win_width = window.innerWidth;
-        this.canvasHeight = window.innerHeight - 89;
-      }
+      this.canvasHeight = this.win_height - 35;
     }
     if ( window.orientation === 90 || window.orientation === -90 ) {
       this.hiddRotate = false;
       this.getWidthHeight();
-      if (navigator.userAgent.indexOf('MQQBrowser') > -1) {
-        this.win_width = this.qqHeight;
-        this.canvasHeight = this.qqWidth;
-      }else {
-        // alert(1)
-        this.win_width = window.innerWidth;
-        this.canvasHeight = window.innerHeight;
-      }
+      this.canvasHeight = this.win_height;
     }
   }
   launchFullscreen(element) {
@@ -329,9 +305,9 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
       element.msRequestFullscreen();
     }
   }
-  /*@HostListener('orientationchange') onRotate() {
+  @HostListener('orientationchange') onRotate() {
     this.Rotate();
-  }*/
+  }
   /**
    * 监听手指点击，使左右两边显示,并清除计时器
    * method HostListener(touchstart)

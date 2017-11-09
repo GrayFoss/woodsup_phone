@@ -27,13 +27,6 @@ export class  HomeComponent implements OnInit {
   public strEnd: string;
   public referrer: string;
   public recommendMessage: Apply = new Apply();
-  public sceneAbout = {
-    '欧式' : '追求简练、明快、浪漫、单纯和抽象的欧式风格。',
-    '图兰朵' : '简练、明快、浪漫、单纯和抽象的欧式风格。',
-    '诺亚' : '明快、浪漫、单纯和抽象的欧式风格。',
-    '簪缨世家' : '浪漫、单纯和抽象的欧式风格。',
-    '欢乐颂' : '单纯和抽象的欧式风格。'
-  };
   public title = [ '根据兴趣推荐', '猜你喜欢', '看官请留步', '万里挑一' ];
   public portrait = [ 'assets/img/main/por1.jpg', 'assets/img/main/por1.jpg'
   , 'assets/img/main/por2.jpg', 'assets/img/main/por3.jpg'];

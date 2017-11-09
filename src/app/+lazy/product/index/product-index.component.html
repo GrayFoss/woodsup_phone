@@ -1,69 +1,52 @@
-<header-component></header-component>
+<header>
+  <img src="assets/img/product/search/return@3x.png" class="back" alt="" routerLink="/">
+  <input type="text" placeholder="搜索地板" (focus)="search()" (keyup)="searchPro($event)" (blur)="nosearch()" >
+  <img [@flyInOut]="searching" src="assets/img/product/search/search@3x.png" class="search" alt="">
+</header>
+<div style="height: 35px;width: 100%"></div>
 <div style="overflow: hidden;">
-  <product-sidebar *ngIf="scerenList.state === 'active'" [screen]="scren"></product-sidebar>
-  <section class="filter" [@filterState]="scerenList.state">
-    <div class="filter_more">
-      <div (click)="toggleState()">
-        <img src="../assets/img/product/back.png" alt="">
-        <p id="product_moreFilter">更多筛选</p>
+  <div class="siderbar">
+      <div *ngFor="let item of list">
+          <div class="siderbar-list-item">
+            <div id="{{item.id}}" class="list-menu" (click)="kindToggle($event, list)">
+              {{item.name}}
+              <!--<img *ngIf="item.open" src="assets/img/product/search/zhankai@3x.png"/>-->
+              <!--<img *ngIf="!item.open" src="assets/img/product/search/shouhui@3x.png"/>-->
+            </div>
+            <div ngClass="list-item-bd list-item-bd_show">
+              <!--<div ngClass="list-item-bd {{item.open ? 'list-item-bd_show' : ''}}">-->
+                <div *ngFor="let page of item.pages"  id="{{page.id}}" (click)="kindToggle($event, item.pages);filterPro(page)" ngClass="{{page.open ? 'list-item-active list-item ' : 'list-item ' }}" >
+                    <span ngClass="{{page.open ? 'page-active' : '' }}">{{page.name}}</span>
+                </div>
+            </div>
+          </div>
       </div>
-      <ul class="filter_list">
-        <li *ngIf="scerenList.tone">
-          <p>{{scerenList?.tone}}</p>
-        </li>
-        <li *ngIf="scerenList.brand">
-          <p>{{scerenList?.brand}}</p>
-        </li>
-        <li *ngIf="scerenList.type">
-          <p>{{scerenList?.type}}</p>
-        </li>
-      </ul>
-    </div>
+  </div>
+  <section class="filter">
     <div class="sort">
-      <div>
-        <div>
-          <p>价格排序</p>
-        </div>
-        <div id="Price_down" (click)="filterProducts(scren.tone,scren.brand,scren.type,priceBackground,1)" *ngIf="scren.sort !== 2">
-          <img src="../assets/img/product/down.png" alt="">
-        </div>
-        <div id="Price_up" (click)="filterProducts(scren.tone,scren.brand,scren.type,priceBackground,2)" *ngIf="scren.sort == 2">
-          <img src="../assets/img/product/up.png" alt="">
-        </div>
-      </div>
       <ul class="sort_list">
         <li *ngFor="let price of prices" (click)="filterProducts(scren.tone,scren.brand, scren.type,price)" [class.price_background]="price===priceBackground"><p id="Price_{{price.data}}">{{price.data}}</p></li>
       </ul>
     </div>
-    <ul (click)="backleft()" class="product_list">
+    <div class="sort_support"></div>
+    <ul class="product_list">
       <li *ngFor="let seleproduct of seleproductes">
         <figure id="product_{{seleproduct.id}}">
-          <img src="http://m.wecareroom.com/upload/product_t/{{seleproduct.code}}.png" alt="" (click)="gotoProductDetail($event,seleproduct)">
+          <img src="http://image.wecareroom.com/upload/product_t/256-8/{{seleproduct.code}}.png" alt="" (click)="gotoProductDetail($event,seleproduct)">
           <img src="../assets/img/product/jingpin.png" alt="" *ngIf="seleproduct.state == 'Hot'">
-          <img src="../assets/img/product/new.png" alt="" *ngIf="seleproduct.state == 'New'" style="width: 37px">
+          <img src="../assets/img/product/new.png" alt="" *ngIf="seleproduct.state == 'New'" class="new">
           <figcaption (click)="gotoProductDetail($event,seleproduct)"><p>{{seleproduct.name}}</p></figcaption>
-          <div>
-            <div>
-              <p>￥{{seleproduct.label_price}}/m²</p>
-            </div>
-            <div>
-              <img src="../assets/img/product/heart_not-click.png" alt="" (click)="like($event)">
-            </div>
-          </div>
+          <p  class="product-info">￥{{seleproduct.label_price}}/m²
+                <img src="../assets/img/product/heart_not-click.png" alt="" (click)="like($event)">
+          </p>
         </figure>
       </li>
     </ul>
-    <ul *ngIf="!seleproductes" (click)="backleft()">
-      <p style="text-align: center;font-size: 14px;">
-        殿下，网页正在加载中，请稍等ss
-      </p>
-    </ul>
-    <ul *ngIf="seleproductes&&(seleproductes.length==0)" (click)="backleft()">
-      <p style="text-align: center;font-size: 14px;">
-        暂无相关产品，请点击左上角重新筛选
-      </p>
-    </ul>
+    <p *ngIf="!seleproductes" class="tips" class="tips">
+      殿下，网页正在加载中，请稍等
+    </p>
+    <p  *ngIf="seleproductes&&(seleproductes.length==0)" class="tips" >
+      暂无相关产品，请重新筛选
+    </p>
   </section>
 </div>
-
-<footer-component [selectV]="selectV"></footer-component>

@@ -18,4 +18,5 @@ const aboutrouting: Routes = [
   imports: [RouterModule.forChild(aboutrouting)],
   exports: [RouterModule],
 })
+
 export class AboutRoutingModule { }

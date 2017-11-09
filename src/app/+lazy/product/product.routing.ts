@@ -22,6 +22,10 @@ const ProductRoutes: Routes = [
       {
         path: ':id',
         component: ProductDetailComponent
+      },
+      {
+        path: ':id/:sceneId',
+        component: ProductDetailComponent
       }
     ]
   },

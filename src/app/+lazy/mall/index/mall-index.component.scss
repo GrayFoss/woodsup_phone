@@ -27,10 +27,10 @@
 }
 
 .main_container{
-  padding: 0 17px;
+  //padding: 0 17px;
   width: 100%;
   position: relative;
-  background: #eeeeee;
+  background: #ffffff;
   .main_list{
     padding: 10px 0;
     ul{
@@ -49,96 +49,102 @@
     }
   }
   .main_content{
-    padding-top: 10px;
     ul{
       list-style: none;
       text-align: center;
-      height: 13.5vh;
-      min-height: 90px;
+      height: a(150px);
       width: 100%;
-      li:first-of-type{
-        height: 13.5vh;
-        min-height: 90px;
-        width: 49%;
-        background: red;
-        float: left;
-        background: url('/assets/img/main/content.jpg');
-        -moz-background-size:100% 100%;
-        background-size:100% 100%;
+      border-bottom: 1px solid #d0d3d4;
+      li{
         position: relative;
+        .top_mid{
+          height: a(70px);
+          margin: 0 auto;
+          position: relative;
+          top: 20%;
+          img{
+            height: 100%;
+            padding-right: a(20px);
+          }
+          div{
+            display: inline-block;
+            position: relative;
+            top: a(10px);
+            p{
+              text-align: left;
+              font-size: a(30px);
+              color: #000;
+            }
+            span{
+              position: relative;
+              top: a(10px);
+              font-size: a(22px);
+              color: #bababa;
+            }
+          }
+        }
       }
-      li:first-of-type:before{
-        position:absolute;
-        z-index: 2;
-        height: 90%;
-        width: 80%;
-        left: 10%;
-        top: 5%;
-        display: inline-block;
-        content:'-百搭场景-';
-        color:white;
-        text-align: center;
-        font-size: 16px;
-        line-height: 90px;
-        background: url('/assets/img/main/content_scene.png');
-        -moz-background-size:100% 100%;
-        background-size:100% 100%;
-      }
-      li:after {
-        position:absolute;
-        height: 100%;
-        width: 100%;
-        left:0;
-        display: inline-block;
-        content:"";
-        background: black;
-        opacity: 0.4;
+      li:first-of-type{
+        height: 11vh;
+        min-height: 75px;
+        width: 49%;
+        float: left;
+        position: relative;
+        &:after{
+          display: inline-block;
+          content: '';
+          height: a(80px);
+          width: 1px;
+          background: #d0d3d4;
+          position: absolute;
+          right: a(-10px);
+          top: 20%;
+        }
       }
       li:last-of-type{
         position: relative;
-        height: 13.5vh;
-        min-height: 90px;
+        height: 11vh;
+        min-height: 75px;
         width: 49%;
-        background: black;
         float: right;
-        background: url('/assets/img/main/content2.jpg');
-        -moz-background-size:100% 100%;
-        background-size:100% 100%;
-      }
-      li:last-of-type:before{
-        position:absolute;
-        z-index: 2;
-        height: 90%;
-        width: 80%;
-        left: 10%;
-        top: 10%;
-        display: inline-block;
-        content:'-地板之家-';
-        color:white;
-        text-align: center;
-        font-size: 16px;
-        line-height: 80px;
-        background: url('/assets/img/main/content_shop.png');
-        -moz-background-size:100% 100%;
-        background-size:100% 100%;
       }
     }
   }
   h5{
-    padding: 7px;
-    font-size: 18px;
+    padding: a(54px) 0 a(15px) 0;
+    font-size: a(32px);
     text-align: center;
-    font-weight: 900;
+    font-weight: 100;
+  }
+  h6{
+    padding: 0 0 a(37px) 0;
+    font-size: a(24px);
+    text-align: center;
+    font-weight: 100;
+    color: #bababa;
   }
 }
 
 .mengban{
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.6);
   position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: 110;
 }
+
+.mengban2{
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 110;
+}
+
 .chooseSex{
   width: 290px;
   height: 221px;
@@ -149,6 +155,7 @@
   margin-left: -145px;
   z-index: 120;
 }
+
 .quxiao{
   position: fixed;
   top: 40px;
@@ -157,10 +164,82 @@
   height: 35px;
   z-index: 120;
 }
+
 .chooseSexUl{
   width:250px;height:40px;padding: 0;margin: 0;position:absolute;left:26px;bottom: 17px;
 }
+
 .chooseSexLi{
   list-style-type: none;float: left;width: 33%;height: 100%;padding-top: 12px;padding-left: 8px
 }
+// 礼包
+.gift_small{
+  width: a(100px);
+  height: a(100px);
+  padding-top: a(10px);
+  position: fixed;
+  bottom: a(270px);
+  right: 0;
+  z-index: 3;
+  background-color: #ffffff;
+  text-align: center;
+  img{
+    width: a(50px);
+    height: a(50px);
+  }
+  p{
+    font-size: a(20px);
+    color: #f6ae77;
+    line-height: a(40px);
+  }
+}
+// 回顶部
+.gift_backTop{
+  width: a(100px);
+  height: a(100px);
+  padding-top: a(18px);
+  position: fixed;
+  bottom: a(170px);
+  right: 0;
+  z-index: 3;
+  background-color: #ffffff;
+  text-align: center;
+  hr{
+    position: relative;
+    width: 70%;
+    left: 15%;
+    top: a(-16px);
+    border-top:1px solid #d0d3d4;
+  }
+  img{
+    width: a(45px);
+    height: a(32px);
+  }
+  p{
+    font-size: a(20px);
+    line-height: a(50px);
+  }
+}
 
+.gift_big{
+  width: a(540px);
+  height: a(700px);
+  position: fixed;
+  top: 50%;
+  left:50%;
+  margin-top: a(-350px);
+  margin-left:  a(-270px);
+  z-index: 113;
+  text-align: center;
+  img{
+    width: 100%;
+  }
+  img:nth-last-of-type(1){
+    width: a(78px);
+    //padding-top: a(70px);
+    position: absolute;
+    z-index: 114;
+    top: a(4px);
+    right: a(20px);
+  }
+}

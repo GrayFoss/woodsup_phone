@@ -11,7 +11,9 @@ import { ProductService } from '../../../shared/services/products/product.servic
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
-import {CouponService} from "../../../shared/services/coupon.service";
+import { CouponService } from "../../../shared/services/coupon.service";
+import { DesktopScenesService } from "../../../shared/services/desktop.scenes.service";
+
 @Component({
   selector: 'product-detail',
   templateUrl: './product-detail.component.html',
@@ -31,6 +33,7 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
   @ViewChild(webvrPanoComponent) webvrPanoComponent: webvrPanoComponent;
   public window_width: number;
   public id: any;
+  public sceneId: any;
   // 控制男生版显示的内容
   public showMan: string = 'true';
   public detailLists = [
@@ -52,7 +55,8 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
     private productService: ProductService,
     public route: ActivatedRoute,
     public location: Location,
-    public router: Router
+    public router: Router,
+    private sceneService: DesktopScenesService
   ) {}
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
@@ -88,8 +92,16 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
             this.commonVR = new CommonVR(host);
             this._webvr.initialVR(host, _render, this.commonVR);
             this.route.params
-              .switchMap((params: Params) => this.id = params['id'])
+              .map((params: Params) => {  this.id = params['id']; return  this.sceneId = params['sceneId']; })
               .subscribe((params: Params) => {
+                // 获取场景
+                if ( this.sceneId ) {
+                  this.sceneService.getSceneByID(this.sceneId).then(
+                    ( res ) => {
+                      this.fileName = res.name;
+                    }
+                  );
+                }
                 this.getProduct(this.id);
               });
           });

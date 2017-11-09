@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
 import { CookieUtil } from '../../utils/cookie/CookieUtil';
 import { UserService } from '../../services/User.service';
 import { User } from '../../utils/models/User';
@@ -33,6 +33,7 @@ export class HeaderComponent implements OnInit {
   public win_wid;
   public haveBarCode: boolean = false;
   public haveMengban: boolean = false;
+  @Input() type: string;
   constructor(
     public userservice: UserService,
     public renderer: Renderer2

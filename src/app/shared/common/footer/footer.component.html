@@ -1,0 +1,16 @@
+
+<div class="main_footer">
+  <div>
+    <span routerLink="/about">了解我们</span>
+    <span (click)="toggleConnect()">联系我们</span>
+    <div class="footer_info"  [@showOrHidden]="connectStatus">
+      <div *ngFor="let connect of connect">
+        <img src="{{connect.imgSrc}}" alt="">
+        <p>{{connect.content}}</p>
+      </div>
+    </div>
+    <p>Copyright@云深间造 深圳市塔木科技有限公司</p>
+    <p>ICP主体备案号: 粤ICP备16090858号</p>
+    <!--<p>网站备案号: 粤ICP备16090858号-1</p>-->
+  </div>
+</div>

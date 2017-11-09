@@ -1,7 +1,7 @@
 @import "../../../assets/scss/global";
 .Prompt{
   position: fixed;
-  top: 40px;
+  top: 35px;
   z-index: 100;
   left: 0;
   background-color: rgba(0,0,0,0.4);
@@ -28,28 +28,28 @@
     position: absolute;
     top: 0;
     left: 50%;
-    width: 100px;
-    height: 30px;
+    width: a(100px);
+    height: a(30px);
     @include transform(translate(-50%,0));
   }
   .screening{
     position: absolute;
     right: 0;
-    top: 30px;
-    width: 125px;
+    top: a(50px);
+    width: a(125px);
   }
   .select_scene, .select_product{
     width: 100%;
     background-color: #000;
     opacity: 0.5;
-    height: 35px;
+    height: a(35px);
     color: #fff;
-    font-size: 18px;
-    line-height: 35px;
+    font-size: a(18px);
+    line-height: a(35px);
     text-align: center;
     @include flexBox;
     div:first-of-type{
-      width: 30px;
+      width: a(30px);
       text-align: right;
     }
     div:last-of-type{
@@ -57,24 +57,27 @@
       text-align: left;
     }
     img{
-      width: 17px;
-      height: 19px;
-      margin-top: 7px;
+      width: a(13px);
+      height: a(16px);
+      margin-top: a(-3px);
+      margin-right: a(3px);
     }
   }
   .scene_list{
     text-align: center;
     .scene_main{
-       height: 120px;
+       height: a(185px);
        overflow:hidden;
        ul{
          overflow:auto;
-         height: 120px;
+         height: a(185px);
+         overflow-scrolling: touch;
+         -webkit-overflow-scrolling: touch;
        }
     }
     li{
-      width: 125px;
-      margin-bottom: 5px;
+      width: a(125px);
+      margin-bottom: a(5px);
       img{
         width: 100%;
         opacity: 0.8;
@@ -82,17 +85,17 @@
     }
   }
   .select_product{
-    margin-top: 5px;
+    margin-top: a(5px);
   }
   .product_list{
     text-align: center;
-    margin-top: 5px;
+    margin-top: a(5px);
     ul{
       li{
-        margin-bottom: 5px;
+        margin-bottom: a(5px);
       }
       img{
-        width: 125px;
+        width: a(125px);
       }
     }
   }
@@ -102,68 +105,68 @@
   text-align: center;
   background-color: #000;
   color: #fff;
-  height: 25px;
+  height: a(25px);
   opacity: 0.2;
   img {
-    width: 20px;
-    height: 10px;
-    margin-top: 7px;
+    width: a(20px);
+    height: a(10px);
+    margin-top: a(7px);
   }
 }
 .main_floor_left{
   position: fixed;
-  top: 40px;
+  top: a(40px);
   left: 0;
-  width: 125px;
+  width: a(125px);
   .floor_type{
     @include flexBox;
     background-color: #000;
     opacity: 0.5;
-    height: 30px;
+    height: a(30px);
     color: #fff;
-    margin-bottom: 3px;
+    margin-bottom: a(3px);
     div:first-of-type{
-      width: 35px;
-      height: 30px;
+      width: a(35px);
+      height: a(30px);
       text-align: right;
-      margin-right: 5px;
+      margin-right: a(5px);
       img{
-        margin-top: 8px;
-        width: 16px;
-        height: 16px;
+        margin-top: a(8px);
+        width: a(16px);
+        height: a(16px);
       }
     }
     h6{
-      font-size: 16px;
-      line-height: 30px;
+      font-size: a(16px);
+      line-height: a(30px);
     }
   }
 }
 .type_list{
-  padding: 0 10px 0 15px;
+  padding: 0 a(10px) 0 a(15px);
   background-color: #000;
   opacity: 0.3;
   & > div{
     width: 100%;
     border-bottom: 1px solid #fff;
-    height: 30px;
+    height: a(30px);
     @include flexBox;
     div:first-of-type{
-      width: 22px;
+      width: a(22px);
       text-align: center;
     }
     div:last-of-type{
       @include flex(1);
       p{
         color: #fff;
-        font-size: 14px;
-        line-height: 30px;
+        font-size: a(14px);
+        line-height: a(30px);
       }
     }
     img{
-      margin-top: 8px;
-      width: 12px;
-      height: 12px;
+      margin-top: a(8px);
+      width: a(12px);
+      height: a(12px);
     }
     &:last-of-type{
       border-bottom: none;
@@ -171,16 +174,18 @@
   }
 }
 .floor_color{
-  height: 160px;
+  height: 250px;
   overflow: hidden;
   ul{
-    height: 160px;
+    height: 250px;
     overflow: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
   }
   li{
     width: 100%;
-    height: 40px;
-    margin-bottom: 5px;
+    height: a(40px);
+    margin-bottom: a(5px);
     img{
       width: 100%;
       height: 100%;
@@ -188,40 +193,42 @@
   }
 }
 .main_floor_right{
-  width: 125px;
+  width: a(125px);
   position: fixed;
-  top: 40px;
+  top: a(40px);
   right: 0;
   .back{
-    height: 35px;
-    margin-bottom: 6px;
+    height: a(35px);
+    margin-bottom: a(6px);
     img{
       width: 100%;
     }
   }
   .type{
-    height: 35px;
+    height: a(35px);
     background-color: #000;
     opacity: 0.3;
     text-align: center;
     p{
       color: #fff;
-      font-size: 18px;
-      line-height: 35px;
+      font-size: a(18px);
+      line-height: a(35px);
     }
   }
 }
 .floor_list{
-  height: 160px;
+  height: a(185px);
   overflow: hidden;
   ul{
-    height: 160px;
+    height: a(185px);
     overflow: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
   }
   li{
     width: 100%;
-    height: 80px;
-    margin-bottom: 5px;
+    height: a(80px);
+    margin-bottom: a(5px);
     position: relative;
     img{
       width: 100%;
@@ -229,7 +236,7 @@
     }
     div{
       width: 100%;
-      height: 20px;
+      height: a(20px);
       text-align: center;
       position: absolute;
       bottom: 0;
@@ -238,15 +245,15 @@
       @include transform(translate(-50%,0));
     }
     p{
-      font-size: 16px;
-      line-height: 20px;
+      font-size: a(16px);
+      line-height: a(20px);
       color: #fff;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp :1;
       -webkit-box-orient: vertical;
-      height: 20px;
+      height: a(20px);
     }
   }
 }

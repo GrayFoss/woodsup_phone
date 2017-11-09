@@ -1,0 +1,30 @@
+<!--头部-->
+<div class="header-container" *ngIf="sceneInfo">
+  <img src="assets/img/mall/recommend_scene/{{sceneID}}.png" alt="">
+</div>
+<!--内容区-->
+<div class="ui-g ui-g-height" *ngIf="sceneInfo.products && sceneInfo.products.length > 0">
+    <div *ngFor="let product of showProducts" class="ui-g-6">
+      <div class="nest-small">
+        <img alt="图片出小差了~"  [src]="product.productImg" class="img-all" id="productImg{{product.productID}}"  (click)="goProductDetail($event, product)" >
+        <div class="nest-container"></div>
+        <div class="nest-name"  id="productName{{product.productID}}" (click)="goProductDetail($event, product)" >{{product.productName}}</div>
+      </div>
+      <p class="name">{{product.productName}}</p>
+      <p class="price">￥{{product.productPrice}}</p>
+    </div>
+    <div class="ui-g-6" (click)="showMore()" *ngIf="!isShowMore" >
+          <div class="nest-small">
+              <p>查看</p>
+              <p>更多地板</p>
+              <img src="assets/img/mall/moreFlooring.png" alt="">
+          </div>
+    </div>
+    <div class="ui-g-6" (click)="closeMore()"  *ngIf="isShowMore" >
+      <div class="nest-small">
+        <p>收起</p>
+        <p></p>
+        <img src="assets/img/mall/moreFlooring2.png" alt="">
+      </div>
+    </div>
+</div>
