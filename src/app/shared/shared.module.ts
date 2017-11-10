@@ -23,6 +23,7 @@ import { PromptComponent } from './common/header/prompt.component';
 import { IndexRecommandComponent } from './common/index-recommand/index-recommand.component';
 import { HeaderComponent } from './common/header/header.component';
 import { DesktopScenesService } from './services/desktop.scenes.service';
+import { OrientationChangeDirective } from './utils/directive/orientationChange.directive';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -54,7 +55,8 @@ const COMPONENTS = [
   SendPhoneComponent,
   HomeComponent,
   CarouselDirective,
-  IndexRecommandComponent
+  IndexRecommandComponent,
+  OrientationChangeDirective
 ];
 
 const PROVIDERS = [

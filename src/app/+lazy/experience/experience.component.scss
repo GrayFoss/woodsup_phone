@@ -1,24 +1,31 @@
 @import "../../../assets/scss/global";
-.Prompt{
-  position: fixed;
-  top: 35px;
-  z-index: 100;
-  left: 0;
-  background-color: rgba(0,0,0,0.4);
-  div{
-    @include Center;
-    text-align: center;
-  }
-  img{
-    width: a(130px);
-    height: a(130px);
-  }
-  p{
-    margin-top: a(38px);
-    color: #fff;
-    font-size: a(36px);
+
+@media (orientation: landscape) {
+  .Prompt { display: none; }
+}
+@media (orientation: portrait) {
+  .Prompt{
+    position: fixed;
+    top: 35px;
+    z-index: 100;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    div{
+      @include Center;
+      text-align: center;
+    }
+    img{
+      width: a(130px);
+      height: a(130px);
+    }
+    p{
+      margin-top: a(38px);
+      color: #fff;
+      font-size: a(36px);
+    }
   }
 }
+
 .transverse{
   width: 100%;
   height: 100%;

@@ -1,3 +1,4 @@
+<body orientationChange id="orientation">
 <header-component *ngIf="hiddRotate" [type]="back"></header-component>
 <div *ngIf="hiddRotate" [style.width.px]="win_width" [style.height.px]="win_height-35" class="Prompt">
   <div>
@@ -114,4 +115,5 @@
     </div>
   </div>
 </div>
+</body>
 <!--<footer-component [selectV]="selectV" *ngIf="hiddRotate"></footer-component>-->

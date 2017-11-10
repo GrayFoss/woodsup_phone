@@ -105,6 +105,10 @@ export class ExperienceComponent implements OnInit, AfterViewInit, OnDestroy {
     if (typeof window !== 'undefined') {
       this.getWidthHeight();
       this.canvasHeight = window.innerHeight;
+      let that = this;
+      window.addEventListener('orientationchange', function() {
+        window.location.reload();
+      });
     }
     this.route.params.subscribe((params) => {
       if (params.code) {
