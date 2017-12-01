@@ -200,8 +200,8 @@ export class ProductIndexComponent implements OnInit , OnDestroy, AfterViewInit 
         this.seleproductes = this.seleproductes.filter((product) => product.brand === '比利时Lalegno');
       }else if (brand === '新加坡') {
         this.seleproductes = this.seleproductes.filter((product) => product.brand === '新加坡Greenply');
-      }else {
-        this.seleproductes = this.seleproductes.filter((product) => product.brand === brand);
+      }else if (brand === '圣保罗')  {
+        this.seleproductes = this.seleproductes.filter((product) => product.brand === '圣保罗地板');
       }
     }
     if (type) {

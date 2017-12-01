@@ -105,7 +105,7 @@ export class ProductDetailComponent implements OnInit, AfterViewInit, OnDestroy 
               });
           });
         });
-        // this.getProduct(this.id);
+        this.getProduct(this.id);
         if (this.commonVR) {
           // this.webvrPanoComponent.setMaterials(this.fileName, this.matName);
         }
