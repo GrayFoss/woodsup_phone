@@ -17,7 +17,13 @@ export class ProductService {
   }
   // 获取所有产品
   getProducts(page, limit) {
-    return this.http.post(this.Urlbase + 'listProducts', JSON.stringify({page: page, limit: limit}), { headers: this.headers})
+    const info = {
+      page: page,
+      limit: limit,
+      orderBy: 'latest',
+      tags: 'stpaul_ipad_flooring_all'
+    };
+    return this.http.post(this.Urlbase + 'listProducts', JSON.stringify(info), { headers: this.headers})
       .toPromise()
       .then((res) => res.json().result)
       .catch(this.handleError);

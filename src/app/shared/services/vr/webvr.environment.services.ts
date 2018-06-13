@@ -20,6 +20,7 @@ export class webvrEnvironmentService {
       // Ensures the polyfill is always active when initialized, even if the
       // native API is available. This is probably NOT what most pages want.
       POLYFILL_MODE: 'ALWAYS',
+      TOUCH_PANNER_DISABLED: false,
       // Polyfill optimizations
       DIRTY_SUBMIT_FRAME_BINDINGS: true,
       BUFFER_SCALE: 0.75,

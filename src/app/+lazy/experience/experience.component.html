@@ -6,7 +6,7 @@
     <p>请将手机处于横屏状态</p>
   </div>
 </div>
-<div style="width: 100%;" [style.height.px]="canvasHeight">
+<div style="width: 100%;position: fixed;top:0" [style.height.px]="canvasHeight">
   <div id="canvas-container" [style.height.px]="canvasHeight">
     <vr-button-component *ngIf="commonVR" [commonVR]="commonVR"></vr-button-component>
     <webvr-pano-component (alreadyInit)="handleAlreadyInit($event)" *ngIf="commonVR" [commonVR]="commonVR" [fileName]="fileName" [MatName]="MatName"></webvr-pano-component>
