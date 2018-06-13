@@ -1,0 +1,40 @@
+
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 0.98rem;
+  background-color: #fff;
+  .footer-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    div.footerlist-item {
+      height: 0.98rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 0.49rem;
+      }
+      span {
+        font-size: 0.014rem;
+        color: #a29c9c;
+      }
+      .mat-list-item-content {
+        flex-direction: column;
+        justify-content: flex-start;
+        span {
+          font-size: 0.014rem;
+          color: #a29c9c;
+        }
+
+      }
+    }
+  }
+}
+.active {
+  color: #7a0a10 !important;
+}

@@ -1,0 +1,17 @@
+<div class="contact-us-box" style="background-image: url('../../../assets/img/footer-bg.png');">
+  <div class="contact-link-box">
+    <div class="{{activeLeft? 'active' : ''}}" [routerLink]="'/about-us'">了解我们</div>
+    <div (click)="connectStatus = !connectStatus">联系我们</div>
+  </div>
+  <div class="footer_info"  [@showOrHidden]="connectStatus" *ngIf="connectStatus">
+    <div *ngFor="let connect of connect">
+      <img src="{{connect.imgSrc}}" alt="">
+      <p>{{connect.content}}</p>
+    </div>
+  </div>
+  <div class="copy-right">
+    <span>Copyright@云深间造 Inc.All Rights Reserved 深圳市塔木科技有限公司</span>
+    <!--<br>-->
+    <span>ICP主体备案号: 粤ICP备16090858号 网站备案号: 粤ICP16090858号-1</span>
+  </div>
+</div>

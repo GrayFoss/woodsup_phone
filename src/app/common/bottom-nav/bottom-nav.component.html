@@ -1,0 +1,10 @@
+<footer class="main-footer">
+  <mat-nav-list class="footer-list">
+    <ng-template ngFor let-view [ngForOf]="views" let-even="even" let-odd="odd" let-rowIndex="index">
+      <div mat-list-item class="footerlist-item" [routerLink]="view.link" routerLinkActive="active-link">
+        <img src="../assets/img/{{view.icon}}{{currentRoute === view.link? '' : '_notclick'}}@2x.png" alt="" class="icon">
+        <span [ngClass]="currentRoute === view.link? 'active' : ''">{{view.name}}</span>
+      </div>
+    </ng-template>
+  </mat-nav-list>
+</footer>
