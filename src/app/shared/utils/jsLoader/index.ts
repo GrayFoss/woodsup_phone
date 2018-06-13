@@ -1,1 +1,0 @@
-export {vrJSLoader} from "./vrJSLoader";
