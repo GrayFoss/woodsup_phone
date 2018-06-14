@@ -1,0 +1,40 @@
+<section class="main">
+  <ul class="about_list">
+    <li class="server">
+      <div class="banner serv">
+        <img src="./assets/img/about1/1.png" alt="" [style.height.px]="0.618*window_width">
+        <div class="banner_title">
+          <h5>您的智能家居选购管家</h5>
+        </div>
+      </div>
+      <h4 (click)="show_server()" id="about-server">我们的服务<img src="./assets/img/about1/down.png" alt=""></h4>
+      <p>身临其境选购家居，开启新时代沉浸式购物体验</p>
+      <about-server *ngIf="about_server" (about_server)="show_server()"></about-server>
+    </li>
+    <li class="team">
+      <div class="banner tea">
+        <img src="./assets/img/about1/2.png" alt="" [style.height.px]="0.618 * window_width">
+        <div class="banner_title">
+          <h5>重构生活与科技的关系</h5>
+        </div>
+      </div>
+      <h4 (click)="show_team()" id="about-team">团队介绍<img src="./assets/img/about1/down.png" alt=""></h4>
+      <p>我们相信，唯一重要的，是你的想象力</p>
+      <about-team *ngIf="about_team" (about_team)="show_team()"></about-team>
+    </li>
+    <li class="brand">
+      <div class="banner bran">
+        <img src="./assets/img/about1/3.png" alt="" [style.height.px]="0.618*window_width">
+        <div class="banner_title">
+          <h5>世界工匠精心出品</h5>
+        </div>
+      </div>
+      <h4 (click)="show_brand()" id="about-brand">品牌系列<img src="./assets/img/about1/down.png" alt=""></h4>
+      <p>我们坚守着严苛的标准，宽和的审美</p>
+      <about-brand *ngIf="about_brand" (about_brand)="show_brand()"></about-brand>
+    </li>
+  </ul>
+</section>
+<!--<sidebar></sidebar>-->
+<contact-us></contact-us>
+<bottom-nav></bottom-nav>

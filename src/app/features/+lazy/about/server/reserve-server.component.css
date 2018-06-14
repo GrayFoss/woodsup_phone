@@ -1,0 +1,17 @@
+.reserve { padding: 0 0.85333rem; }
+.reserve h3 { font-size: 18px; margin-top: 0.34667rem; margin-bottom: 0.53333rem; }
+.reserve h4 { font-size: 16px; font-weight: bold; color: #e59661; margin-bottom: 0.66667rem; }
+
+.brand_list { display: flex; width: 100%; }
+.brand_list .brand_left { flex: 23; }
+.brand_list .brand_left img { width: 2.13333rem; height: 2.13333rem; }
+.brand_list .brand_right { flex: 37; }
+.brand_list .brand_right p { font-size: 16px; line-height: 1.2; margin-bottom: 0.53333rem; }
+
+.more_brand { width: 5.2rem; height: 45px; text-align: center; margin: 0 auto 0.53333rem; background-color: #928474; }
+.more_brand p { font: 14px/45px 'Microsoft YaHei UI", Helvetica, sans-serif'; color: #fff; }
+
+.Cooperation { width: 3.86667rem; margin: 0.32rem auto; background-color: #000; text-align: center; border-radius: 10px; }
+.Cooperation p { color: #fff; font: 20px/40px 'Microsoft YaHei UI", Helvetica, sans-serif'; }
+
+/*# sourceMappingURL=reserve-server.component.css.map */

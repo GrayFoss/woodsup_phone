@@ -1,0 +1,17 @@
+/* This file is for setting global styles  */
+@import 'variables';
+@import '~swiper/dist/css/swiper.min.css';
+
+body {
+  background-color: #f6f5fa;
+  overflow-scrolling: touch;
+}
+
+.mb-98 {
+  width: 100%;
+  height: 0.98rem;
+  background-color: transparent;
+}
+div {
+  -webkit-appearance: none;
+}

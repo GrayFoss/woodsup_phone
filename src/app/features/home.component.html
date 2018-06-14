@@ -1,0 +1,46 @@
+<div class="swiper-container" [swiper]='config'>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="../../assets/img/banner1.jpg" alt="" class="swiper-img">
+    </div>
+    <div class="swiper-slide">
+      <img src="../../assets/img/banner2.jpg" alt="" class="swiper-img">
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+<div class="home-main-container">
+  <div class="example-box">
+    <div class="example-header">
+      <div class="header-title">
+        <div class="line"></div>
+        <span>用户分享案例</span>
+      </div>
+      <div class="header-more" [routerLink]="'collection'">查看更多>></div>
+    </div>
+    <div class="example-list">
+      <div class="example-item" *ngFor="let collect of collectionList">
+        <img src="http://image.wecareroom.com/upload/immersive/vrscene/thumbnail/{{collect && collect.panoScene && collect.panoScene.id}}.jpg" alt="" class="example-img">
+        <div class="example-name">{{collect.userName}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="example-box">
+    <div class="example-header">
+      <div class="header-title">
+        <div class="line"></div>
+        <span>用户快照分享</span>
+      </div>
+      <div class="header-more" [routerLink]="'snapshot'">查看更多>></div>
+    </div>
+    <div class="example-list">
+      <div class="example-item" *ngFor="let snapshot of snapshotList">
+        <img src="https://wecareroom.com/{{snapshot && snapshot.uploadedImage && snapshot.uploadedImage.imgUrl}}_X0.2.png" alt="" class="example-img">
+        <div class="example-name">{{snapshot.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<contact-us></contact-us>
+<bottom-nav></bottom-nav>

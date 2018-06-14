@@ -1,0 +1,56 @@
+<div class="page-wrapper" (click)="byPropagation()"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="200"
+     [infiniteScrollContainer]="'#main-product'"
+     (scrolled)="onScroll()">
+  <div class="back-nav back-nav-fixed">
+    <img src="../../../assets/img/back@2x.png" alt="" class="back-img" (click)="back()">
+    <span>案例</span>
+  </div>
+  <div class="wrap-main" id="main-product">
+    <div class="main-container">
+      <div class="top-nav">
+        <div class="room-nav" [ngClass]="showRoom ? 'active': ''" (click)="toggleRoom($event)">
+          <span>{{currentRoom.name}}</span>
+          <img src="../../../assets/img/down@2x.png" alt="" class="nav-img">
+          <div class="slide-menu" *ngIf="showRoom" [@show2hidden]="showRoom">
+            <div class="slide-item"
+                 *ngFor="let room of roomList"
+                 (click)="selectRoom(room)"
+                 [ngClass]="currentRoom.name === room.name ? 'active': ''">{{room.name}}
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="room-nav" [ngClass]="showStyle ? 'active': ''" (click)="toggleStyle($event)">
+          <span>{{currentStyle.name}}</span>
+          <img src="../../../assets/img/down@2x.png" alt="" class="nav-img">
+          <div class="slide-menu" *ngIf="showStyle" [@show2hidden]="showStyle">
+            <div class="slide-item"
+                 *ngFor="let style of styleList"
+                 (click)="selectStyle(style)"
+                 [ngClass]="currentStyle.name === style.name ? 'active': ''">{{style.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-list">
+        <div class="item-box" *ngFor="let collect of collectionList">
+          <img src="http://image.wecareroom.com/upload/immersive/vrscene/thumbnail/{{collect && collect.panoScene && collect.panoScene.id}}.jpg" alt="" class="item-img">
+          <div class="item-title">
+            <div class="name">{{collect.panoScene.name}}</div>
+            <div class="tags">
+              <span>{{collect.fbottomCode}}</span>
+              <span>{{collect.panoScene.position | sceneName}}</span>
+              <span>{{collect.panoScene.tone}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <contact-us></contact-us>
+  </div>
+</div>
+
+<bottom-nav></bottom-nav>

@@ -1,0 +1,49 @@
+<section class="main about_server">
+  <ul class="server_top">
+    <li>
+      <img src="./assets/img/about1/5.png" alt="">
+      <h5>3D虚拟展示</h5>
+      <p>通过云深间造VR技术，您可以身临其境地</p>
+      <p>体验、搭配、选购各种产品</p>
+    </li>
+    <li>
+      <img src="./assets/img/about1/6.png" alt="">
+      <h5>云深间造造家社区</h5>
+      <p>官方海量图库搭配，专业设计师指导,</p>
+      <p>祝您灵感无穷</p>
+    </li>
+    <li>
+      <img src="./assets/img/about1/7.png" alt="">
+      <h5>世界工厂</h5>
+      <p>各类世界上流地板品牌，各种款式种</p>
+      <p>类，满足挑剔的品味</p>
+    </li>
+  </ul>
+  <div class="experience">
+    <h4>立即体验</h4>
+    <ul>
+      <li [style.height.px]="0.618*window_width">
+        <h5>想要购买？</h5>
+        <p>寻找云深间造合作商</p>
+        <p>目前，在全国18个省市自治区，都能通过到我们的智能购物模式，体验并选购最顶尖的建材产品。</p>
+        <button type="button" routerLink="/about-us/reserve">查看更多</button>
+      </li>
+      <li [style.height.px]="0.618*window_width">
+        <h5>想要寻找DIY灵感？</h5>
+        <p>云深间造造家社区，海量案例灵感</p>
+        <p>云深间造专属内容平台，向你提供最新，最有趣，最实用的家居知识。</p>
+        <button type="button">查看更多</button>
+      </li>
+      <li [style.height.px]="0.618*window_width">
+        <h5>需要VIP上门预制服务？</h5>
+        <p>预约云深间造管家</p>
+        <p>云深间造私人管家团队，为您和您的家量身打造AR家装方案，在实际装修前预先感受完成效果。</p>
+        <button type="button">查看更多</button>
+      </li>
+    </ul>
+    <div class="close_a" (click)="close_server()">
+      <img src="./assets/img/about1/close.png" alt="">
+    </div>
+  </div>
+</section>
+<bottom-nav></bottom-nav>

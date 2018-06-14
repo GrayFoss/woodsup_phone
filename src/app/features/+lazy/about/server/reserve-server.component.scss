@@ -1,0 +1,56 @@
+@import "../../../../assets/scss/global";
+.reserve{
+  padding: 0 a(64px);
+  h3{
+    font-size: 18px;
+    margin-top: a(26px);
+    margin-bottom: a(40px);
+  }
+  h4{
+    font-size: 16px;
+    font-weight: bold;
+    color: #e59661;
+    margin-bottom: a(50px);
+  }
+}
+.brand_list{
+  display: flex;
+  width: 100%;
+  .brand_left{
+    flex:23;
+    img{
+      width: a(160px);
+      height: a(160px);
+    }
+  }
+  .brand_right{
+    flex: 37;
+    p{
+      font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: a(40px);
+    }
+  }
+}
+.more_brand{
+  width: a(540px);
+  height: 45px;
+  text-align: center;
+  margin: 0 auto a(40px);
+  background-color: #928474;
+  p{
+    font: 14px/45px 'Microsoft YaHei UI", Helvetica, sans-serif';
+    color: #fff;
+  }
+}
+.Cooperation{
+  width: a(290px);
+  margin: a(24px) auto;
+  background-color: #000;
+  text-align: center;
+  border-radius: 10px;
+  p{
+    color: #fff;
+    font: 20px/40px 'Microsoft YaHei UI", Helvetica, sans-serif';
+  }
+}
